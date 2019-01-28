@@ -656,7 +656,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/settings/settings.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  settings works!\n</p>\n"
+module.exports = "<h2 class=\"page-header\">Settings</h2>\n<p>Welcome to your Settings</p>\n"
 
 /***/ }),
 
