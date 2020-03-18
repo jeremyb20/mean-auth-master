@@ -776,7 +776,7 @@ var AuthService = (function () {
             return this.http.post('http://localhost:8080/users/register', user, { headers: headers }).map(function (res) { return res.json(); });
         }
         else {
-            return this.http.post('users/register', user, { headers: headers });
+            return this.http.post('users/register', user, { headers: headers }).map(function (res) { return res.json(); });
         }
     };
     AuthService.prototype.authenticateUser = function (user) {
@@ -786,7 +786,7 @@ var AuthService = (function () {
             return this.http.post('http://localhost:8080/users/authenticate', user, { headers: headers }).map(function (res) { return res.json(); });
         }
         else {
-            return this.http.post('users/authenticate', user, { headers: headers });
+            return this.http.post('users/authenticate', user, { headers: headers }).map(function (res) { return res.json(); });
         }
     };
     AuthService.prototype.getProfile = function () {
@@ -798,7 +798,7 @@ var AuthService = (function () {
             return this.http.get('http://localhost:8080/users/profile', { headers: headers }).map(function (res) { return res.json(); });
         }
         else {
-            return this.http.get('users/profile', { headers: headers });
+            return this.http.get('users/profile', { headers: headers }).map(function (res) { return res.json(); });
         }
     };
     AuthService.prototype.getSettings = function () {
@@ -810,7 +810,7 @@ var AuthService = (function () {
             return this.http.get('http://localhost:8080/users/settings', { headers: headers }).map(function (res) { return res.json(); });
         }
         else {
-            return this.http.get('users/profile', { headers: headers });
+            return this.http.get('users/profile', { headers: headers }).map(function (res) { return res.json(); });
         }
     };
     AuthService.prototype.storeUserData = function (token, user) {
