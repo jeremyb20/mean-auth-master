@@ -8,26 +8,30 @@ import { tokenNotExpired } from 'angular2-jwt';
 export class AuthService {
   authToken: any;
   user: any;
-  isDev: true;
+  isDev: false;
 
   constructor(private http: Http) {
-      this.isDev = true;  // Change to false before deployment
-      }
+      this.isDev = false;  // Change to false before deployment
+  }
 
   registerUser(user) {
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
-    //return this.http.post('http://localhost:8080/users/register', user, {headers: headers})
-    return this.http.post('users/register', user, {headers: headers})
-      .map(res => res.json());
+    if(this.isDev) {
+      return this.http.post('http://localhost:8080/users/register', user, {headers: headers}).map(res => res.json());
+    }else{
+      return this.http.post('users/register', user, {headers: headers})
+    }
   }
 
   authenticateUser(user) {
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
-    //return this.http.post('http://localhost:8080/users/authenticate', user, {headers: headers})
-    return this.http.post('users/authenticate', user, {headers: headers})
-      .map(res => res.json());
+    if(this.isDev){
+      return this.http.post('http://localhost:8080/users/authenticate', user, {headers: headers}).map(res => res.json());
+    }else{
+      return this.http.post('users/authenticate', user, {headers: headers})
+    }
   }
 
   getProfile() {
@@ -35,9 +39,11 @@ export class AuthService {
     this.loadToken();
     headers.append('Authorization', this.authToken);
     headers.append('Content-Type', 'application/json');
-    //return this.http.get('http://localhost:8080/users/profile', {headers: headers})
-    return this.http.get('users/profile', {headers: headers})
-      .map(res => res.json());
+    if(this.isDev){
+      return this.http.get('http://localhost:8080/users/profile', {headers: headers}).map(res => res.json());
+    }else{
+      return this.http.get('users/profile', {headers: headers})
+    }
   }
 
   getSettings() {
@@ -45,9 +51,11 @@ export class AuthService {
     this.loadToken();
     headers.append('Authorization', this.authToken);
     headers.append('Content-Type', 'application/json');
-    return this.http.get('http://localhost:8080/users/settings', {headers: headers})
-    //return this.http.get('users/profile', {headers: headers})
-      .map(res => res.json());
+    if(this.isDev){
+      return this.http.get('http://localhost:8080/users/settings', {headers: headers}).map(res => res.json());
+    }else{
+      return this.http.get('users/profile', {headers: headers})
+    }
   }
 
   storeUserData(token, user) {

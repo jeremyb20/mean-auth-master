@@ -5,25 +5,36 @@ const cors = require('cors');
 const passport = require('passport');
 const mongoose = require('mongoose');
 const config = require('./config/database');
- 
+
+
+// Port Number
+const port = process.env.PORT || 8080;
  
 // Connect To Database (OLD CODE)
-mongoose.connect(config.database, { useMongoClient: true});
-// On Connection
-mongoose.connection.on('connected', () => {
-  console.log('Connected to Database '+config.database);
-});
-// On Error
-mongoose.connection.on('error', (err) => {
-  console.log('Database error '+err);
+// mongoose.connect(config.database, { useMongoClient: true});
+// // On Connection
+// mongoose.connection.on('connected', () => {
+//   console.log('Connected to Database '+config.database);
+// });
+// // On Error
+// mongoose.connection.on('error', (err) => {
+//   console.log('Database error '+err);
+// });
+
+mongoose.connect(config.database, {
+  useUnifiedTopology: true,
+  useNewUrlParser: true,
+})
+.then(() => 
+  console.log('DB Connected!'))
+.catch(err => {
+  console.log(err.message);
 });
 
 const app = express();
 
 const users = require('./routes/users');
 
-// Port Number
-const port = process.env.PORT || 8080;
 
 // CORS Middleware
 app.use(cors());
