@@ -8,10 +8,10 @@ import { tokenNotExpired } from 'angular2-jwt';
 export class AuthService {
   authToken: any;
   user: any;
-  isDev: false;
+  isDev: true;
 
   constructor(private http: Http) {
-      this.isDev = false;  // Change to false before deployment
+      this.isDev = true;  // Change to false before deployment
   }
 
   registerUser(user) {
