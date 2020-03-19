@@ -1,9 +1,9 @@
-# MEANauthapp
+# MEAN auth app
 
 Complete MEAN stack application with authentication using json web tokens
 
 ### Version
-1.0.0
+1.0.1
 
 ## Usage
 
@@ -21,4 +21,11 @@ Run app
 $ npm start
 ```
 
-### Screenshots in Wiki: https://github.com/tomcatbuzz/meanauthapp/wiki
+### Node version
+
+"node": ">=10.0.0",
+
+
+### NPM version
+
+"npm": ">=6.0.0"
