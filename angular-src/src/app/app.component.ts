@@ -40,8 +40,16 @@ export class AppComponent implements OnInit {
     return false;
   }
 
-  onClickMe(val) {
-    console.log(val);
-    this.test = !val;
+  openModel() {
+    $("#myModal").modal('show');
+  }
+
+  closeModel(val) {
+    if(val){
+      this.onLogoutClick();
+      $("#myModal").modal('hide');
+    }else{
+      $("#myModal").modal('hide');
+    }
   }
 }

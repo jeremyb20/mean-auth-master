@@ -9,6 +9,12 @@ body {
     background: #fafafa;
 }
 
+@media screen and (max-width:768px){
+    .test{
+        margin-top: -180px !important;
+    }
+}
+
 .test {
         margin-top: -70px;
 }

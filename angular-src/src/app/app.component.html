@@ -1,27 +1,33 @@
+<!-- <div *ngIf="!authService.loggedIn()">
+    <router-outlet></router-outlet>
+</div> -->
 <div class="test">
-  <router-outlet *ngIf="!authService.loggedIn()"></router-outlet>
-  <div *ngIf="authService.loggedIn()">
+  <div>
     <div class="wrapper">
       <!-- Sidebar Holder -->
       <nav id="sidebar">
-          <div class="sidebar-header">
+          <div *ngIf="!authService.loggedIn()" class="sidebar-header">
               <h3>Bootstrap Sidebar</h3>
+          </div>
+          <div *ngIf="authService.loggedIn()" class="sidebar-header">
+              <div *ngIf="user">
+                <h3><span>Welcome</span> {{user.name}}</h3>
+              </div>
           </div>
 
           <ul class="list-unstyled components">
-              <p>Dummy Heading</p>
+              <p>Balance</p>
               <li class="active">
                   <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Home</a>
                   <ul class="collapse list-unstyled" id="homeSubmenu">
                       <li *ngIf="authService.loggedIn()" [routerLinkActive]="['active']" [routerLinkActiveOptions] = "{exact:true}">
-                            <a class="nav-link" (click)="onClickMe(true)" [routerLink]="['/profile']">Profile </a>
-                            <!-- <button type="button" (click)="onClickMe(true)" [routerLink]="['/profile']" class="nav-link">Profile</button> -->
+                            <a class="nav-link" [routerLink]="['/profile']">Profile </a>
                       </li>
                       <li *ngIf="authService.loggedIn()" [routerLinkActive]="['active']" [routerLinkActiveOptions] = "{exact:true}">
-                            <a class="nav-link" [routerLink]="['/settings']">Settings</a>
+                        <a class="nav-link" [routerLink]="['/settings']">Create</a>
                       </li>
-                      <li>
-                          <a href="#">Home 3</a>
+                      <li *ngIf="authService.loggedIn()" [routerLinkActive]="['active']" [routerLinkActiveOptions] = "{exact:true}">
+                        <a class="nav-link" [routerLink]="['/settings']">Settings</a>
                       </li>
                   </ul>
               </li>
@@ -40,8 +46,8 @@
                       </li>
                   </ul>
               </li>
-              <li>
-                  <a href="#">Portfolio</a>
+              <li *ngIf="authService.loggedIn()" [routerLinkActive]="['active']" [routerLinkActiveOptions] = "{exact:true}">
+                  <a class="nav-link" [routerLink]="['/mailbox']">Mailbox</a>
               </li>
               <li>
                   <a href="#">Contact</a>
@@ -52,8 +58,8 @@
               <li>
                   <a href="https://bootstrapious.com/tutorial/files/sidebar.zip" class="download">Download source</a>
               </li>
-              <li>
-                  <a href="https://bootstrapious.com/p/bootstrap-sidebar" class="article">Back to article</a>
+              <li class="nav-item" *ngIf="authService.loggedIn()" [routerLinkActive]="['active']" [routerLinkActiveOptions] = "{exact:true}">
+                  <a class="nav-link article" (click)="openModel()">Logout</a>
               </li>
           </ul>
       </nav>
@@ -74,43 +80,44 @@
 
                   <div class="collapse navbar-collapse" id="navbarSupportedContent">
                       <ul class="nav navbar-nav ml-auto">
-                          <li class="nav-item active">
-                              <a class="nav-link" href="#">Page</a>
+                          <li class="nav-item active" *ngIf="authService.loggedIn()" [routerLinkActive]="['active']" [routerLinkActiveOptions] = "{exact:true}">
+                              <a class="nav-link" [routerLink]="['/mailbox']">Mailbox</a>
                           </li>
-                          <li class="nav-item">
-                              <a class="nav-link" href="#">Page</a>
+                          <li class="nav-item" *ngIf="authService.loggedIn()" [routerLinkActive]="['active']" [routerLinkActiveOptions] = "{exact:true}">
+                              <a class="nav-link" [routerLink]="['/mailbox']">Notification</a>
                           </li>
                           <li class="nav-item" *ngIf="authService.loggedIn()" [routerLinkActive]="['active']" [routerLinkActiveOptions] = "{exact:true}">
                               <a class="nav-link" [routerLink]="['/settings']">Settings</a>
                           </li>
-                          <li class="nav-item" *ngIf="authService.loggedIn()">
-                              <a class="nav-link" (click)="onLogoutClick()" href="#">Logout</a>
+                          <li class="nav-item" *ngIf="authService.loggedIn()" [routerLinkActive]="['active']" [routerLinkActiveOptions] = "{exact:true}">
+                              <a class="nav-link" (click)="openModel()">Logout</a>
                           </li>
                       </ul>
                   </div>
               </div>
           </nav>
           <router-outlet></router-outlet>
-          <!-- <h2>Collapsible Sidebar Using Bootstrap 4</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
-          <div class="line"></div>
-
-          <h2>Lorem Ipsum Dolor</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
-          <div class="line"></div>
-
-          <h2>Lorem Ipsum Dolor</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
-          <div class="line"></div>
-
-          <h3>Lorem Ipsum Dolor</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p> -->
+          <flash-messages></flash-messages>
       </div>
-  </div>
+    </div>
+    <div id="myModal" class="modal fade">
+        <div class="modal-dialog">
+          <div class="modal-content">
+           <div class="modal-header">
+              <h5 class="modal-title ">Exit {{user? user.name: ''}}</h5>
+              <button type="button" class="close" (click)="closeModel(false)">
+                  <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <p>Are you sure you want exit?.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" (click)="closeModel(true)" class="btn btn-primary">Exit</button>
+                <button type="button" (click)="closeModel(false)" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+              </div>
+          </div>
+        </div>
+      </div>
 </div>  
-  <flash-messages></flash-messages>
 </div>
