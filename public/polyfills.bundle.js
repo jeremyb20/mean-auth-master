@@ -631,7 +631,7 @@ module.exports = function (NAME, wrapper, methods, common, IS_MAP, IS_WEAK) {
 /***/ "../../../../core-js/modules/_core.js":
 /***/ (function(module, exports) {
 
-var core = module.exports = { version: '2.6.3' };
+var core = module.exports = { version: '2.6.11' };
 if (typeof __e == 'number') __e = core; // eslint-disable-line no-undef
 
 
@@ -804,6 +804,14 @@ var exports = module.exports = function (iterable, entries, fn, that, ITERATOR) 
 };
 exports.BREAK = BREAK;
 exports.RETURN = RETURN;
+
+
+/***/ }),
+
+/***/ "../../../../core-js/modules/_function-to-string.js":
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__("../../../../core-js/modules/_shared.js")('native-function-to-string', Function.toString);
 
 
 /***/ }),
@@ -1228,6 +1236,7 @@ module.exports = {
 "use strict";
 
 // 19.1.2.1 Object.assign(target, source, ...)
+var DESCRIPTORS = __webpack_require__("../../../../core-js/modules/_descriptors.js");
 var getKeys = __webpack_require__("../../../../core-js/modules/_object-keys.js");
 var gOPS = __webpack_require__("../../../../core-js/modules/_object-gops.js");
 var pIE = __webpack_require__("../../../../core-js/modules/_object-pie.js");
@@ -1257,7 +1266,10 @@ module.exports = !$assign || __webpack_require__("../../../../core-js/modules/_f
     var length = keys.length;
     var j = 0;
     var key;
-    while (length > j) if (isEnum.call(S, key = keys[j++])) T[key] = S[key];
+    while (length > j) {
+      key = keys[j++];
+      if (!DESCRIPTORS || isEnum.call(S, key)) T[key] = S[key];
+    }
   } return T;
 } : $assign;
 
@@ -1486,8 +1498,8 @@ var global = __webpack_require__("../../../../core-js/modules/_global.js");
 var hide = __webpack_require__("../../../../core-js/modules/_hide.js");
 var has = __webpack_require__("../../../../core-js/modules/_has.js");
 var SRC = __webpack_require__("../../../../core-js/modules/_uid.js")('src');
+var $toString = __webpack_require__("../../../../core-js/modules/_function-to-string.js");
 var TO_STRING = 'toString';
-var $toString = Function[TO_STRING];
 var TPL = ('' + $toString).split(TO_STRING);
 
 __webpack_require__("../../../../core-js/modules/_core.js").inspectSource = function (it) {
@@ -1810,19 +1822,20 @@ module.exports = __webpack_require__("../../../../core-js/modules/_collection.js
 
 "use strict";
 
+var global = __webpack_require__("../../../../core-js/modules/_global.js");
 var each = __webpack_require__("../../../../core-js/modules/_array-methods.js")(0);
 var redefine = __webpack_require__("../../../../core-js/modules/_redefine.js");
 var meta = __webpack_require__("../../../../core-js/modules/_meta.js");
 var assign = __webpack_require__("../../../../core-js/modules/_object-assign.js");
 var weak = __webpack_require__("../../../../core-js/modules/_collection-weak.js");
 var isObject = __webpack_require__("../../../../core-js/modules/_is-object.js");
-var fails = __webpack_require__("../../../../core-js/modules/_fails.js");
 var validate = __webpack_require__("../../../../core-js/modules/_validate-collection.js");
+var NATIVE_WEAK_MAP = __webpack_require__("../../../../core-js/modules/_validate-collection.js");
+var IS_IE11 = !global.ActiveXObject && 'ActiveXObject' in global;
 var WEAK_MAP = 'WeakMap';
 var getWeak = meta.getWeak;
 var isExtensible = Object.isExtensible;
 var uncaughtFrozenStore = weak.ufstore;
-var tmp = {};
 var InternalMap;
 
 var wrapper = function (get) {
@@ -1850,7 +1863,7 @@ var methods = {
 var $WeakMap = module.exports = __webpack_require__("../../../../core-js/modules/_collection.js")(WEAK_MAP, wrapper, methods, weak, true, true);
 
 // IE11 WeakMap frozen keys fix
-if (fails(function () { return new $WeakMap().set((Object.freeze || Object)(tmp), 7).get(tmp) != 7; })) {
+if (NATIVE_WEAK_MAP && IS_IE11) {
   InternalMap = weak.getConstructor(wrapper, WEAK_MAP);
   assign(InternalMap.prototype, methods);
   meta.NEED = true;
