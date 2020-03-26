@@ -16,13 +16,15 @@
           <input placeholder="Search here" type="text">
         </div>
       </div>
-      <div *ngFor='let value of allUsers; trackBy:index;' class="friend-drawer friend-drawer--onhover">
-        <!-- <img class="profile-image" src="https://filiprastovic.com/wp-content/themes/filip-rastovic/assets/img/bootstrap-chat-app-assets/robocop.jpg" alt=""> -->
-        <div class="text">
-          <h6>{{value.name}}</h6>
-          <p class="text-muted">Hey, you're arrested!</p>
+      <div style='height: 600px;' class='data-list-container'>
+        <div *ngFor='let value of allUsers; trackBy:index;' class="friend-drawer friend-drawer--onhover">
+          <img class="profile-image" [src]="value.photo" alt="">
+          <div class="text">
+            <h6>{{value.name}}</h6>
+            <p class="text-muted">Hey, you're arrested!</p>
+          </div>
+          <span class="time text-muted small">13:21</span>
         </div>
-        <span class="time text-muted small">13:21</span>
       </div>
       <hr>
     </div>

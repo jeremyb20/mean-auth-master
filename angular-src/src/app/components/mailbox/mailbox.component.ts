@@ -38,6 +38,7 @@ export class MailboxComponent implements OnInit {
       console.log(err);
       return false;
     });
+    }
   }
 
 }
