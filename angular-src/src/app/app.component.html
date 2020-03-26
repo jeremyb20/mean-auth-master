@@ -5,7 +5,7 @@
   <div>
     <div class="wrapper">
       <!-- Sidebar Holder -->
-      <nav *ngIf="authService.loggedIn()" id="sidebar">
+      <nav id="sidebar">
           <div *ngIf="authService.loggedIn()" class="sidebar-header">
               <div *ngIf="user">
                 <h3><span>Welcome</span> {{user.name}}</h3>
@@ -13,7 +13,10 @@
           </div>
 
           <ul class="list-unstyled components">
-              <p>Balance</p>
+              <p *ngIf="authService.loggedIn()">
+                <!-- <button class="btn btn-primary article" [routerLink]="['/dashboard']">Dashboard</button> -->
+                <button class="btn btn-primary article" (click)="goDashboard(false)">Dashboard</button>
+              </p>
               <li class="active">
                   <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Home</a>
                   <ul class="collapse list-unstyled" id="homeSubmenu">
@@ -52,8 +55,8 @@
           </ul>
 
           <ul class="list-unstyled CTAs">
-              <li>
-                  <a href="https://bootstrapious.com/tutorial/files/sidebar.zip" class="download">Download source</a>
+              <li class="nav-item" *ngIf="!authService.loggedIn()" [routerLinkActive]="['active']" [routerLinkActiveOptions] = "{exact:true}">
+                  <a class="nav-link" [routerLink]="['/login']" class="download">Login</a>
               </li>
               <li class="nav-item" *ngIf="authService.loggedIn()" [routerLinkActive]="['active']" [routerLinkActiveOptions] = "{exact:true}">
                   <a class="nav-link article" (click)="openModel()">Logout</a>
@@ -63,7 +66,7 @@
 
       <!-- Page Content Holder -->
       <div id="content">
-          <nav *ngIf="authService.loggedIn()" class="navbar navbar-expand-lg navbar-light bg-light">
+          <nav class="navbar navbar-expand-lg navbar-light bg-light">
               <div class="container-fluid">
 
                   <button type="button" id="sidebarCollapse" class="navbar-btn">
