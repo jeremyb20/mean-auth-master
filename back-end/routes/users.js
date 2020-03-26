@@ -5,7 +5,7 @@ const jwt = require('jsonwebtoken');
 const config = require('../config/database');
 const User = require('../models/user');
 
-// Register
+// Register aqui hay ebviar la foto
 router.post('/register', (req, res, next) => {
   let newUser = new User ({
     name: req.body.name,
@@ -22,6 +22,16 @@ router.post('/register', (req, res, next) => {
     }
   });
 });
+
+router.get('/profile/getAllUsers', function(req, res){
+  User.find({}, function(err, users){
+    if(err){
+      res.send('something went really wrong');
+      next();
+    }
+    res.json(users)
+  });
+})
 
 // Authenticate
 router.post('/authenticate', (req, res, next) => {

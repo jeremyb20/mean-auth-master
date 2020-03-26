@@ -42,6 +42,11 @@ module.exports.addUser = function(newUser, callback) {
   });
 }
 
+module.exports.getUsers = function(users, callback){
+  const query = {users: users}
+  User.find();
+}
+
 module.exports.comparePassword = function(candidatePassword, hash, callback) {
   bcrypt.compare(candidatePassword, hash, (err, isMatch) => {
     if(err) throw err;

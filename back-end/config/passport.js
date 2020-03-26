@@ -19,5 +19,18 @@ module.exports = function(passport) {
         return done(null, false);
       }
     });
+
+    User.getUsers(jwt_payload.data, (err, user) => {
+      if(err) {
+        return done(err, false);
+      }
+
+      if(user) {
+        return done(null, user);
+      } else {
+        return done(null, false);
+      }
+    });
+
   }));
 }
