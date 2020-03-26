@@ -41,7 +41,6 @@ export class AppComponent implements OnInit {
   }
 
   goDashboard() {
-    location.reload(true);
     this.router.navigate(['dashboard']);
   }
 

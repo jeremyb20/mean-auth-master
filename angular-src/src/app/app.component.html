@@ -15,7 +15,7 @@
           <ul class="list-unstyled components">
               <p *ngIf="authService.loggedIn()">
                 <!-- <button class="btn btn-primary article" [routerLink]="['/dashboard']">Dashboard</button> -->
-                <button class="btn btn-primary article" (click)="goDashboard(false)">Dashboard</button>
+                <button class="btn btn-primary btn-lg article" (click)="goDashboard()">Dashboard</button>
               </p>
               <li class="active">
                   <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Home</a>
