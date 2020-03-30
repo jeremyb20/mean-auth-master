@@ -173,7 +173,7 @@ hr {
 .chat-box-tray i:last-of-type {
   margin-left: 25px;
 }
-.data-list-container {
+#data-list-container {
   height: 100%;
   flex:1;
   overflow-y: auto;
