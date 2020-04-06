@@ -97,9 +97,9 @@
           <div class="col-12">
             <div class="chat-box-tray">
               <i class="material-icons">sentiment_very_satisfied</i>
-              <input type="text" placeholder="Type your message here...">
+              <input type="text" [(ngModel)]="message" placeholder="Type your message here...">
               <i class="material-icons">mic</i>
-              <i class="material-icons">send</i>
+              <i class="material-icons"><a (click)="sendMessage(message)" >send</a></i>
             </div>
           </div>
         </div>

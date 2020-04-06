@@ -7,24 +7,26 @@ import { AuthService } from '../../services/auth.service';
   styleUrls: ['./mailbox.component.css']
 })
 export class MailboxComponent implements OnInit {
-  user:Object;
+  user: Object;
   allUsers = [];
   searchTerm;
   itemsCopy;
   items = this.itemsCopy;
   itemUserSelected = [];
-  email:string;
+  email: string;
   elementSigned = [];
+  message: string;
 
   constructor(
     private authService: AuthService
   ) { }
 
   ngOnInit() {
-    var isLogged = this.authService.loggedIn();
-      if(isLogged){
+    const isLogged: boolean = this.authService.loggedIn();
+      if (isLogged) {
         this.authService.getProfile().subscribe(profile => {
           this.user = profile.user;
+          this.elementSigned.push(profile.user);
           this.email = profile.user.email;
           this.getAllUsers();
       },
@@ -63,10 +65,29 @@ export class MailboxComponent implements OnInit {
         this.itemUserSelected.push(yesy[0]);
     },
     err => {
-      console.log(err);
       return false;
     });
     }
+  }
+
+  sendMessage(val) {
+    const message = {
+      id : this.elementSigned[0]._id,
+      idUserSent : this.itemUserSelected[0]._id,
+      email : this.elementSigned[0].email,
+      name : this.elementSigned[0].name,
+      username: this.elementSigned[0].username,
+      message: val,
+      isNew: true
+    }
+
+    this.authService.sendMessage(message).subscribe(data => {
+      // console.log(data);
+  },
+  err => {
+    console.log(err);
+    return false;
+  });
   }
 
 }
