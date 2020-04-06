@@ -1084,7 +1084,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var AuthService = (function () {
     function AuthService(http) {
         this.http = http;
-        this.isDev = true; // Change to false when you're gonna deploy your app, true when is on develop 
+        this.isDev = false; // Change to false when you're gonna deploy your app, true when is on develop 
     }
     AuthService.prototype.registerUser = function (user) {
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
