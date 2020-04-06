@@ -20,6 +20,10 @@ const port = process.env.PORT || 8080;
 // mongoose.connection.on('error', (err) => {
 //   console.log('Database error '+err);
 // });
+mongoose.set('useCreateIndex', true);
+mongoose.set('useNewUrlParser', true);
+mongoose.set('useFindAndModify', false);
+mongoose.set('useUnifiedTopology', true);
 
 mongoose.connect(config.database, {
   useUnifiedTopology: true,

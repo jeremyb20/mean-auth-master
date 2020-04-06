@@ -6,9 +6,6 @@
     <div class="wrapper">
       <!-- Sidebar Holder -->
       <nav id="sidebar">
-          <div *ngIf="!authService.loggedIn()" class="sidebar-header">
-              <h3>Bootstrap Sidebar</h3>
-          </div>
           <div *ngIf="authService.loggedIn()" class="sidebar-header">
               <div *ngIf="user">
                 <h3><span>Welcome</span> {{user.name}}</h3>
@@ -16,7 +13,10 @@
           </div>
 
           <ul class="list-unstyled components">
-              <p>Balance</p>
+              <p *ngIf="authService.loggedIn()">
+                <!-- <button class="btn btn-primary article" [routerLink]="['/dashboard']">Dashboard</button> -->
+                <button class="btn btn-primary btn-lg article" (click)="goDashboard()">Dashboard</button>
+              </p>
               <li class="active">
                   <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Home</a>
                   <ul class="collapse list-unstyled" id="homeSubmenu">
@@ -24,7 +24,7 @@
                             <a class="nav-link" [routerLink]="['/profile']">Profile </a>
                       </li>
                       <li *ngIf="authService.loggedIn()" [routerLinkActive]="['active']" [routerLinkActiveOptions] = "{exact:true}">
-                        <a class="nav-link" [routerLink]="['/settings']">Create</a>
+                        <a class="nav-link" [routerLink]="['/users']">Users</a>
                       </li>
                       <li *ngIf="authService.loggedIn()" [routerLinkActive]="['active']" [routerLinkActiveOptions] = "{exact:true}">
                         <a class="nav-link" [routerLink]="['/settings']">Settings</a>
@@ -55,8 +55,8 @@
           </ul>
 
           <ul class="list-unstyled CTAs">
-              <li>
-                  <a href="https://bootstrapious.com/tutorial/files/sidebar.zip" class="download">Download source</a>
+              <li class="nav-item" *ngIf="!authService.loggedIn()" [routerLinkActive]="['active']" [routerLinkActiveOptions] = "{exact:true}">
+                  <a class="nav-link" [routerLink]="['/login']" class="download">Login</a>
               </li>
               <li class="nav-item" *ngIf="authService.loggedIn()" [routerLinkActive]="['active']" [routerLinkActiveOptions] = "{exact:true}">
                   <a class="nav-link article" (click)="openModel()">Logout</a>
@@ -75,7 +75,7 @@
                       <span></span>
                   </button>
                   <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                      <i class="fas fa-align-justify"></i>
+                      <i class="fa fa-align-justify"></i>
                   </button>
 
                   <div class="collapse navbar-collapse" id="navbarSupportedContent">

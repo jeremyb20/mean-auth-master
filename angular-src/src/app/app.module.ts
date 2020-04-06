@@ -18,6 +18,7 @@ import { FlashMessagesModule } from 'angular2-flash-messages';
 import { AuthGuard } from './guards/auth.guard';
 import { SettingsComponent } from './components/settings/settings.component';
 import { MailboxComponent } from './components/mailbox/mailbox.component';
+import { UsersComponent } from './components/users/users.component';
 
 const appRoutes: Routes =  [
   {path:'', component: HomeComponent},
@@ -26,7 +27,9 @@ const appRoutes: Routes =  [
   {path:'dashboard', component: DashboardComponent, canActivate:[AuthGuard]},
   {path:'profile', component: ProfileComponent, canActivate:[AuthGuard]},
   {path:'settings', component: SettingsComponent, canActivate:[AuthGuard]},
-  {path:'mailbox', component: MailboxComponent, canActivate:[AuthGuard]}
+  {path:'mailbox', component: MailboxComponent, canActivate:[AuthGuard]},
+  {path:'users', component: UsersComponent, canActivate:[AuthGuard]}
+
 ]
 
 @NgModule({
@@ -39,7 +42,8 @@ const appRoutes: Routes =  [
     DashboardComponent,
     ProfileComponent,
     SettingsComponent,
-    MailboxComponent
+    MailboxComponent,
+    UsersComponent
   ],
   imports: [
     BrowserModule,

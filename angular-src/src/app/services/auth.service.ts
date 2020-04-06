@@ -8,10 +8,10 @@ import { tokenNotExpired } from 'angular2-jwt';
 export class AuthService {
   authToken: any;
   user: any;
-  isDev: false;
+  isDev: true;
 
   constructor(private http: Http) {
-      this.isDev = false;  // Change to false when you're gonna deploy your app, true when is on develop 
+      this.isDev = true;  // Change to false when you're gonna deploy your app, true when is on develop 
   }
 
   registerUser(user) {
@@ -31,6 +31,32 @@ export class AuthService {
       return this.http.post('http://localhost:8080/users/authenticate', user, {headers: headers}).map(res => res.json());
     }else{
       return this.http.post('users/authenticate', user, {headers: headers}).map(res => res.json());
+    }
+  }
+
+  getUsers() {
+    let headers = new Headers();
+    this.loadToken();
+    headers.append('Authorization', this.authToken);
+    headers.append('Content-Type', 'application/json');
+    if(this.isDev){
+      return this.http.get('http://localhost:8080/users/profile/getAllUsers', {headers: headers}).map(res => res.json());
+    }else{
+      return this.http.get('users/profile/getAllUsers', {headers: headers}).map(res => res.json());
+    }
+  }
+
+  updateUsers(user) { 
+    let headers = new Headers();
+    headers.append('Authorization', this.authToken);
+    headers.append('Content-Type', 'application/json');
+    const token = localStorage.getItem('id_token');
+    this.authToken = token;
+    this.storeUserData(token,user);
+    if(this.isDev){
+      return this.http.put('http://localhost:8080/users/profile/updateUsers', user, {headers: headers}).map(res => res.json());
+    }else{
+      return this.http.put('users/profile/updateUsers', user, {headers: headers}).map(res => res.json());
     }
   }
 
@@ -55,6 +81,19 @@ export class AuthService {
       return this.http.get('http://localhost:8080/users/settings', {headers: headers}).map(res => res.json());
     }else{
       return this.http.get('users/profile', {headers: headers}).map(res => res.json());
+    }
+  }
+
+  //New message 
+
+  sendMessage(message) {
+    let headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    if(this.isDev) {
+      debugger;
+      return this.http.post('http://localhost:8080/mailbox/sendMessage', message, {headers: headers}).map(res => res.json());
+    }else{
+      return this.http.post('mailbox/sendMessage', message, {headers: headers}).map(res => res.json());
     }
   }
 
