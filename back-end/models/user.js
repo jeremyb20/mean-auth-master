@@ -27,7 +27,39 @@ const UserSchema = mongoose.Schema ({
   address: {
     type: String,
     require: false
-  }
+  },
+  message: [{
+    idUserSent: {
+      type: String,
+      require: true,
+      unique: true
+    },
+    username: {
+      type: String,
+      required: true,
+      unique: true
+    },
+    message: {
+      type: String,
+      require: true
+    },
+    timeNow: {
+      type: String,
+      require : true
+    },
+    day: {
+      type: String,
+      require: true
+    },
+    phone: {
+      type: Number,
+      require: false
+    },
+    isnew : {
+      type: String,
+      require: true
+    }
+  }]
 });
 
 const User = module.exports = mongoose.model('User', UserSchema);
@@ -51,10 +83,6 @@ module.exports.addUser = function(newUser, callback) {
   });
 }
 
-// module.exports.sendNewMessage = function(newMessage, callback) {
-//   newMessage.save(UserSchema.Message = callback);
-// }
-
 module.exports.getUsers = function(users, callback){
   const query = {users: users}
   User.find();
@@ -66,17 +94,14 @@ module.exports.deleteOne = function(req,res){
   });
 }
 
-// module.exports.update = function(req,res){
-//   User.findByIdAndUpdate(req.body.id,{$set:req.body}).then(function(data){
-//     res.json({success:true,msg:'Se ha actualizado correctamente.'});
-//   });
-// }
-
 module.exports.update = function(username, callback){
-  // User.findByIdAndUpdate(req.body.id,{$set:req.body}).then(function(data){
-  //   res.json({success:true,msg:'Se ha actualizado correctamente.'});
-  // });
   User.findByIdAndUpdate(username, callback);
+}
+
+module.exports.getUserMessage = function(req, callback){
+  console.log(req, 'que sale');
+  const query = {id: req.body._id}
+  User.find();
 }
 
 module.exports.comparePassword = function(candidatePassword, hash, callback) {

@@ -12,6 +12,11 @@ body {
   border-radius: 7px;
 }
 
+.test {
+  margin: inherit;
+  margin-right: 10px;
+}
+
 .profile-image {
   width: 50px;
   height: 50px;
@@ -79,9 +84,17 @@ input:focus {
 .friend-drawer--grey {
   background: #eee;
 }
+
+@media screen and (max-width:768px){
+  .friend-drawer .text {
+    margin-left: 12px !important;
+    width: 40% !important;
+  }
+}
+
 .friend-drawer .text {
   margin-left: 12px;
-  width: 70%;
+  width: 80%;
 }
 .friend-drawer .text h6 {
   margin-top: 6px;
@@ -107,11 +120,53 @@ hr {
   margin: 5px auto;
   width: 60%;
 }
+.chat-panel {
+  height: 100%;
+  flex:1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  position: relative;
+}
+
+@media screen and (max-width:768px){
+  .chat-content {
+    max-height: 79vh !important;
+    height: 79vh !important;
+  }
+  .offset-md-9 .chat-bubble {
+    right: 0 !important;
+    background: #74b9ff;
+    color: #fff;
+    float: right;
+    max-width: 77% !important;
+
+  }
+  .chat-bubble--left:after {
+    left: 0;
+    border-right-color: #eee;
+    border-left: 0;
+  }
+  .max-left-msg {
+    max-width: 80% !important;
+  }
+  .chat-bubble--right:after {
+    right: 0 !important;
+    border-left-color: #74b9ff !important;
+    border-right: 0 !important;
+  }
+  .text-clock {
+    font-size: 10px !important;
+    float: right !important;
+    margin-top: 10px !important;
+    margin-left: 10px !important;
+  }
+}
 
 .chat-bubble {
   padding: 10px 14px;
-  background: #eee;
-  margin: 10px 30px;
+  background: #82e03a;
+  margin: 10px 0px;
+  width: max-content;
   border-radius: 9px;
   position: relative;
   animation: fadeIn 1s ease-in;
@@ -131,6 +186,15 @@ hr {
   border-right-color: #eee;
   border-left: 0;
   margin-left: -20px;
+  max-width: 77% !important;
+}
+.max-left-msg {
+  max-width: 270% ;
+}
+.max-left-msg-right {
+  max-width:  270%;
+  float: right;
+  right: 0px;
 }
 .chat-bubble--right:after {
   right: 0;
@@ -152,13 +216,32 @@ hr {
   color: #fff;
 }
 
+/* .body-content {
+  height: 74vh;
+} */
+
+#data-list-container{
+  max-height: 79vh;
+}
+
+.message-content {
+  max-height: 80vh;
+  height: 80vh;
+}
+
+.text-clock {
+  font-size: 10px;
+  float: right;
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
 .chat-box-tray {
   background: #eee;
   display: flex;
   align-items: baseline;
-  padding: 10px 15px;
+  padding: 5px;
   align-items: center;
-  margin-top: 19px;
   bottom: 0;
 }
 .chat-box-tray input {

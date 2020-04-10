@@ -80,7 +80,19 @@ export class AuthService {
     if(this.isDev){
       return this.http.get('http://localhost:8080/users/settings', {headers: headers}).map(res => res.json());
     }else{
-      return this.http.get('users/profile', {headers: headers}).map(res => res.json());
+      return this.http.get('users/settings', {headers: headers}).map(res => res.json());
+    }
+  }
+
+  getUserMessages(id) {
+    let headers = new Headers();
+    this.loadToken();
+    headers.append('Authorization', this.authToken);
+    headers.append('Content-Type', 'application/json');
+    if(this.isDev){
+      return this.http.get('http://localhost:8080/users/mailbox/getMessages/' + id, {headers: headers}).map(res => res.json());
+    }else{
+      return this.http.get('users/mailbox/getMessages/' + id, {headers: headers}).map(res => res.json());
     }
   }
 
@@ -90,10 +102,9 @@ export class AuthService {
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
     if(this.isDev) {
-      debugger;
-      return this.http.post('http://localhost:8080/mailbox/sendMessage', message, {headers: headers}).map(res => res.json());
+      return this.http.post('http://localhost:8080/users/mailbox/sendMessage', message, {headers: headers}).map(res => res.json());
     }else{
-      return this.http.post('mailbox/sendMessage', message, {headers: headers}).map(res => res.json());
+      return this.http.post('users/mailbox/sendMessage', message, {headers: headers}).map(res => res.json());
     }
   }
 

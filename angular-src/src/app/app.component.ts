@@ -10,7 +10,7 @@ import { FlashMessagesService } from 'angular2-flash-messages';
 })
 
 export class AppComponent implements OnInit {
-  user:Object;
+  user:any;
   test = false;
 
   constructor(

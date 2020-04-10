@@ -4,7 +4,6 @@ const passport = require('passport');
 const jwt = require('jsonwebtoken');
 const config = require('../config/database');
 const User = require('../models/user');
-const Message = require('../models/user');
 
 // Register aqui hay ebviar la foto
 router.post('/register', (req, res, next) => {
@@ -26,27 +25,6 @@ router.post('/register', (req, res, next) => {
   });
 });
 
-router.post('/mailbox/sendMessage', (req, res, next) => {
-  let newMessage = new Message ({
-    id : req.body._id,
-    idUserSent : req.body._idUserSent,
-    email : req.body.email,
-    name : req.body.name,
-    username: req.body.username,
-    message: req.body.val,
-    isNew: true
-  });
-
-  User.sendNewMessage(newMessage, (err, user) => {
-    console.log(newMessage,'TESTING')
-    if(err) {
-      res.json({success: false, msg: 'Failed to sent message'});
-    } else {
-      res.json({success: true, msg: 'Message sent'});
-    }
-  });
-});
-
 router.get('/profile/getAllUsers', function(req, res){
   User.find({}, function(err, users){
     if(err){
@@ -55,7 +33,7 @@ router.get('/profile/getAllUsers', function(req, res){
     }
     res.json(users)
   });
-})
+});
 
 // Authenticate
 router.post('/authenticate', (req, res, next) => {
@@ -104,6 +82,23 @@ router.route('/users/:_id')
 router.put('/profile/updateUsers', (req, res) => {
   User.findByIdAndUpdate(req.body._id, { $set: req.body }).then(function (data) {
     res.json({ success: true, msg: 'Update success.' });
+  });
+});
+
+router.get('/mailbox/getMessages/:id', function(req, res){
+  var id = req.params.id;
+  User.findById(id, function(err, results){
+    if(err){
+      res.send('something went really wrong');
+      next();
+    }
+    res.json(results.message)
+  });
+});
+
+router.post('/mailbox/sendMessage', (req, res, next) => {
+  User.findOneAndUpdate({ _id: req.body.idUserSent }, { $push: { message: req.body  } }).then(function(data){
+    res.json({success:true,msg: 'Message sent'});
   });
 });
 
