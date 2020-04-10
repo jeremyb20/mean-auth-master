@@ -25,7 +25,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700);", ""]);
 
 // module
-exports.push([module.i, "/*\n    DEMO STYLE\n*/\n\n\nbody {\n    font-family: 'Poppins', sans-serif;\n    background: #fafafa;\n}\n\n@media screen and (max-width:768px){\n    .test{\n        margin-top: -180px !important;\n    }\n}\n\n.test {\n        margin-top: -70px;\n}\n\np {\n    font-family: 'Poppins', sans-serif;\n    font-size: 1.1em;\n    font-weight: 300;\n    line-height: 1.7em;\n    color: #999;\n}\n\na, a:hover, a:focus {\n    color: inherit;\n    text-decoration: none;\n    transition: all 0.3s;\n}\n\n.navbar {\n    padding: 10px 5px;\n    background: #fff;\n    border: none;\n    border-radius: 0;\n    /* margin-bottom: 40px; */\n    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);\n}\n\n.navbar-btn {\n    box-shadow: none;\n    outline: none !important;\n    border: none;\n}\n\n.line {\n    width: 100%;\n    height: 1px;\n    border-bottom: 1px dashed #ddd;\n    margin: 40px 0;\n}\n\n/* ---------------------------------------------------\n    SIDEBAR STYLE\n----------------------------------------------------- */\n\n.wrapper {\n    display: -ms-flexbox;\n    display: flex;\n    width: 100%;\n    -ms-flex-align: stretch;\n        align-items: stretch;\n    perspective: 1500px;\n}\n\n\n#sidebar {\n    min-width: 250px;\n    max-width: 250px;\n    background: #7386D5;\n    color: #fff;\n    transition: all 0.6s cubic-bezier(0.945, 0.020, 0.270, 0.665);\n    transform-origin: bottom left;\n}\n\n#sidebar.active {\n    margin-left: -250px;\n    transform: rotateY(100deg);\n}\n\n#sidebar .sidebar-header {\n    padding: 20px;\n    background: #6d7fcc;\n}\n\n#sidebar ul.components {\n    padding: 20px 0;\n    border-bottom: 1px solid #47748b;\n}\n\n#sidebar ul p {\n    color: #fff;\n    padding: 10px;\n}\n\n#sidebar ul li a {\n    padding: 10px;\n    font-size: 1.1em;\n    display: block;\n}\n#sidebar ul li a:hover {\n    color: #7386D5;\n    background: #fff;\n}\n\n#sidebar ul li.active > a, a[aria-expanded=\"true\"] {\n    color: #fff;\n    background: #6d7fcc;\n}\n\n\na[data-toggle=\"collapse\"] {\n    position: relative;\n}\n\n.dropdown-toggle::after {\n    display: block;\n    position: absolute;\n    top: 50%;\n    right: 20px;\n    transform: translateY(-50%);\n}\n\nul ul a {\n    font-size: 0.9em !important;\n    padding-left: 30px !important;\n    background: #6d7fcc;\n}\n\nul.CTAs {\n    padding: 20px;\n}\n\nul.CTAs a {\n    text-align: center;\n    font-size: 0.9em !important;\n    display: block;\n    border-radius: 5px;\n    margin-bottom: 5px;\n}\n\na.download {\n    background: #fff;\n    color: #7386D5;\n}\n\na.article, a.article:hover {\n    background: #6d7fcc !important;\n    color: #fff !important;\n}\n\n\n\n/* ---------------------------------------------------\n    CONTENT STYLE\n----------------------------------------------------- */\n#content {\n    width: 100%;\n    padding: 20px;\n    min-height: 100vh;\n    transition: all 0.3s;\n}\n\n#sidebarCollapse {\n    width: 40px;\n    height: 40px;\n    background: #f5f5f5;\n    cursor: pointer;\n}\n\n#sidebarCollapse span {\n    width: 80%;\n    height: 2px;\n    margin: 0 auto;\n    display: block;\n    background: #555;\n    transition: all 0.8s cubic-bezier(0.810, -0.330, 0.345, 1.375);\n    transition-delay: 0.2s;\n}\n\n#sidebarCollapse span:first-of-type {\n    transform: rotate(45deg) translate(2px, 2px);\n}\n#sidebarCollapse span:nth-of-type(2) {\n    opacity: 0;\n}\n#sidebarCollapse span:last-of-type {\n    transform: rotate(-45deg) translate(1px, -1px);\n}\n\n\n#sidebarCollapse.active span {\n    transform: none;\n    opacity: 1;\n    margin: 5px auto;\n}\n\n\n/* ---------------------------------------------------\n    MEDIAQUERIES\n----------------------------------------------------- */\n@media (max-width: 768px) {\n    #sidebar {\n        margin-left: -250px;\n        transform: rotateY(90deg);\n    }\n    #sidebar.active {\n        margin-left: 0;\n        transform: none;\n    }\n    #sidebarCollapse span:first-of-type,\n    #sidebarCollapse span:nth-of-type(2),\n    #sidebarCollapse span:last-of-type {\n        transform: none;\n        opacity: 1;\n        margin: 5px auto;\n    }\n    #sidebarCollapse.active span {\n        margin: 0 auto;\n    }\n    #sidebarCollapse.active span:first-of-type {\n        transform: rotate(45deg) translate(2px, 2px);\n    }\n    #sidebarCollapse.active span:nth-of-type(2) {\n        opacity: 0;\n    }\n    #sidebarCollapse.active span:last-of-type {\n        transform: rotate(-45deg) translate(1px, -1px);\n    }\n\n}\n", ""]);
+exports.push([module.i, "/*\n    DEMO STYLE\n*/\n\n\nbody {\n    font-family: 'Poppins', sans-serif;\n    background: #fafafa;\n}\n\n@media screen and (max-width:768px){\n    .test{\n        margin-top: -180px !important;\n    }\n}\n\n.test {\n        margin-top: -70px;\n}\n\np {\n    font-family: 'Poppins', sans-serif;\n    font-size: 1.1em;\n    font-weight: 300;\n    line-height: 1.7em;\n    color: #999;\n}\n\na, a:hover, a:focus {\n    color: inherit;\n    text-decoration: none;\n    transition: all 0.3s;\n}\n\n.navbar {\n    padding: 1px;\n    background: #fff;\n    border: none;\n    border-radius: 0;\n    /* margin-bottom: 40px; */\n    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);\n}\n\n.navbar-btn {\n    box-shadow: none;\n    outline: none !important;\n    border: none;\n}\n\n.line {\n    width: 100%;\n    height: 1px;\n    border-bottom: 1px dashed #ddd;\n    margin: 40px 0;\n}\n\n/* ---------------------------------------------------\n    SIDEBAR STYLE\n----------------------------------------------------- */\n\n.wrapper {\n    display: -ms-flexbox;\n    display: flex;\n    width: 100%;\n    -ms-flex-align: stretch;\n        align-items: stretch;\n    perspective: 1500px;\n}\n\n\n#sidebar {\n    max-height: 100vh;\n    height: 100vh;\n    min-width: 250px;\n    max-width: 250px;\n    background: #7386D5;\n    color: #fff;\n    transition: all 0.6s cubic-bezier(0.945, 0.020, 0.270, 0.665);\n    transform-origin: bottom left;\n}\n\n#sidebar.active {\n    margin-left: -250px;\n    transform: rotateY(100deg);\n}\n\n#sidebar .sidebar-header {\n    padding: 20px;\n    background: #6d7fcc;\n}\n\n#sidebar ul.components {\n    padding: 20px 0;\n    border-bottom: 1px solid #47748b;\n}\n\n#sidebar ul p {\n    color: #fff;\n    padding: 10px;\n}\n\n#sidebar ul li a {\n    padding: 10px;\n    font-size: 1.1em;\n    display: block;\n}\n#sidebar ul li a:hover {\n    color: #7386D5;\n    background: #fff;\n}\n\n#sidebar ul li.active > a, a[aria-expanded=\"true\"] {\n    color: #fff;\n    background: #6d7fcc;\n}\n\n\na[data-toggle=\"collapse\"] {\n    position: relative;\n}\n\n.dropdown-toggle::after {\n    display: block;\n    position: absolute;\n    top: 50%;\n    right: 20px;\n    transform: translateY(-50%);\n}\n\nul ul a {\n    font-size: 0.9em !important;\n    padding-left: 30px !important;\n    background: #6d7fcc;\n}\n\nul.CTAs {\n    padding: 20px;\n}\n\nul.CTAs a {\n    text-align: center;\n    font-size: 0.9em !important;\n    display: block;\n    border-radius: 5px;\n    margin-bottom: 5px;\n}\n\na.download {\n    background: #fff;\n    color: #7386D5;\n}\n\na.article, a.article:hover {\n    background: #6d7fcc !important;\n    color: #fff !important;\n}\n\n\n\n/* ---------------------------------------------------\n    CONTENT STYLE\n----------------------------------------------------- */\n#content {\n    width: 100%;\n    padding: 5px;\n    /* max-height: 100vh; */\n    transition: all 0.3s;\n}\n\n#sidebarCollapse {\n    width: 40px;\n    height: 40px;\n    background: #f5f5f5;\n    cursor: pointer;\n}\n\n#sidebarCollapse span {\n    width: 80%;\n    height: 2px;\n    margin: 0 auto;\n    display: block;\n    background: #555;\n    transition: all 0.8s cubic-bezier(0.810, -0.330, 0.345, 1.375);\n    transition-delay: 0.2s;\n}\n\n#sidebarCollapse span:first-of-type {\n    transform: rotate(45deg) translate(2px, 2px);\n}\n#sidebarCollapse span:nth-of-type(2) {\n    opacity: 0;\n}\n#sidebarCollapse span:last-of-type {\n    transform: rotate(-45deg) translate(1px, -1px);\n}\n\n\n#sidebarCollapse.active span {\n    transform: none;\n    opacity: 1;\n    margin: 5px auto;\n}\n\n\n/* ---------------------------------------------------\n    MEDIAQUERIES\n----------------------------------------------------- */\n@media (max-width: 768px) {\n    #sidebar {\n        margin-left: -250px;\n        transform: rotateY(90deg);\n    }\n    #sidebar.active {\n        margin-left: 0;\n        transform: none;\n    }\n    #sidebarCollapse span:first-of-type,\n    #sidebarCollapse span:nth-of-type(2),\n    #sidebarCollapse span:last-of-type {\n        transform: none;\n        opacity: 1;\n        margin: 5px auto;\n    }\n    #sidebarCollapse.active span {\n        margin: 0 auto;\n    }\n    #sidebarCollapse.active span:first-of-type {\n        transform: rotate(45deg) translate(2px, 2px);\n    }\n    #sidebarCollapse.active span:nth-of-type(2) {\n        opacity: 0;\n    }\n    #sidebarCollapse.active span:last-of-type {\n        transform: rotate(-45deg) translate(1px, -1px);\n    }\n\n}\n", ""]);
 
 // exports
 
@@ -134,21 +134,23 @@ var AppComponent = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__("../../../forms/esm5/forms.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__("../../../http/esm5/http.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_router__ = __webpack_require__("../../../router/esm5/router.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__app_component__ = __webpack_require__("../../../../../src/app/app.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__components_navbar_navbar_component__ = __webpack_require__("../../../../../src/app/components/navbar/navbar.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__components_login_login_component__ = __webpack_require__("../../../../../src/app/components/login/login.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__components_register_register_component__ = __webpack_require__("../../../../../src/app/components/register/register.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__components_home_home_component__ = __webpack_require__("../../../../../src/app/components/home/home.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__components_dashboard_dashboard_component__ = __webpack_require__("../../../../../src/app/components/dashboard/dashboard.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__components_profile_profile_component__ = __webpack_require__("../../../../../src/app/components/profile/profile.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__services_validate_service__ = __webpack_require__("../../../../../src/app/services/validate.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__services_auth_service__ = __webpack_require__("../../../../../src/app/services/auth.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14_angular2_flash_messages__ = __webpack_require__("../../../../angular2-flash-messages/module/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14_angular2_flash_messages___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_14_angular2_flash_messages__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__guards_auth_guard__ = __webpack_require__("../../../../../src/app/guards/auth.guard.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__components_settings_settings_component__ = __webpack_require__("../../../../../src/app/components/settings/settings.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__components_mailbox_mailbox_component__ = __webpack_require__("../../../../../src/app/components/mailbox/mailbox.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__components_users_users_component__ = __webpack_require__("../../../../../src/app/components/users/users.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__services_validate_service__ = __webpack_require__("../../../../../src/app/services/validate.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__services_auth_service__ = __webpack_require__("../../../../../src/app/services/auth.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_angular2_flash_messages__ = __webpack_require__("../../../../angular2-flash-messages/module/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_angular2_flash_messages___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7_angular2_flash_messages__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__guards_auth_guard__ = __webpack_require__("../../../../../src/app/guards/auth.guard.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__services_size_detector_resize_service__ = __webpack_require__("../../../../../src/app/services/size-detector/resize-service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__app_component__ = __webpack_require__("../../../../../src/app/app.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__components_navbar_navbar_component__ = __webpack_require__("../../../../../src/app/components/navbar/navbar.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__components_login_login_component__ = __webpack_require__("../../../../../src/app/components/login/login.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__components_register_register_component__ = __webpack_require__("../../../../../src/app/components/register/register.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__components_home_home_component__ = __webpack_require__("../../../../../src/app/components/home/home.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__components_dashboard_dashboard_component__ = __webpack_require__("../../../../../src/app/components/dashboard/dashboard.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__components_profile_profile_component__ = __webpack_require__("../../../../../src/app/components/profile/profile.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__components_settings_settings_component__ = __webpack_require__("../../../../../src/app/components/settings/settings.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__components_mailbox_mailbox_component__ = __webpack_require__("../../../../../src/app/components/mailbox/mailbox.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__components_mailbox_order_by_pipe__ = __webpack_require__("../../../../../src/app/components/mailbox/order-by.pipe.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__components_users_users_component__ = __webpack_require__("../../../../../src/app/components/users/users.component.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -174,15 +176,17 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
+
+
 var appRoutes = [
-    { path: '', component: __WEBPACK_IMPORTED_MODULE_9__components_home_home_component__["a" /* HomeComponent */] },
-    { path: 'register', component: __WEBPACK_IMPORTED_MODULE_8__components_register_register_component__["a" /* RegisterComponent */] },
-    { path: 'login', component: __WEBPACK_IMPORTED_MODULE_7__components_login_login_component__["a" /* LoginComponent */] },
-    { path: 'dashboard', component: __WEBPACK_IMPORTED_MODULE_10__components_dashboard_dashboard_component__["a" /* DashboardComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_15__guards_auth_guard__["a" /* AuthGuard */]] },
-    { path: 'profile', component: __WEBPACK_IMPORTED_MODULE_11__components_profile_profile_component__["a" /* ProfileComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_15__guards_auth_guard__["a" /* AuthGuard */]] },
-    { path: 'settings', component: __WEBPACK_IMPORTED_MODULE_16__components_settings_settings_component__["a" /* SettingsComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_15__guards_auth_guard__["a" /* AuthGuard */]] },
-    { path: 'mailbox', component: __WEBPACK_IMPORTED_MODULE_17__components_mailbox_mailbox_component__["a" /* MailboxComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_15__guards_auth_guard__["a" /* AuthGuard */]] },
-    { path: 'users', component: __WEBPACK_IMPORTED_MODULE_18__components_users_users_component__["a" /* UsersComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_15__guards_auth_guard__["a" /* AuthGuard */]] }
+    { path: '', component: __WEBPACK_IMPORTED_MODULE_14__components_home_home_component__["a" /* HomeComponent */] },
+    { path: 'register', component: __WEBPACK_IMPORTED_MODULE_13__components_register_register_component__["a" /* RegisterComponent */] },
+    { path: 'login', component: __WEBPACK_IMPORTED_MODULE_12__components_login_login_component__["a" /* LoginComponent */] },
+    { path: 'dashboard', component: __WEBPACK_IMPORTED_MODULE_15__components_dashboard_dashboard_component__["a" /* DashboardComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_8__guards_auth_guard__["a" /* AuthGuard */]] },
+    { path: 'profile', component: __WEBPACK_IMPORTED_MODULE_16__components_profile_profile_component__["a" /* ProfileComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_8__guards_auth_guard__["a" /* AuthGuard */]] },
+    { path: 'settings', component: __WEBPACK_IMPORTED_MODULE_17__components_settings_settings_component__["a" /* SettingsComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_8__guards_auth_guard__["a" /* AuthGuard */]] },
+    { path: 'mailbox', component: __WEBPACK_IMPORTED_MODULE_18__components_mailbox_mailbox_component__["a" /* MailboxComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_8__guards_auth_guard__["a" /* AuthGuard */]] },
+    { path: 'users', component: __WEBPACK_IMPORTED_MODULE_20__components_users_users_component__["a" /* UsersComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_8__guards_auth_guard__["a" /* AuthGuard */]] }
 ];
 var AppModule = (function () {
     function AppModule() {
@@ -190,26 +194,27 @@ var AppModule = (function () {
     AppModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["NgModule"])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_5__app_component__["a" /* AppComponent */],
-                __WEBPACK_IMPORTED_MODULE_6__components_navbar_navbar_component__["a" /* NavbarComponent */],
-                __WEBPACK_IMPORTED_MODULE_7__components_login_login_component__["a" /* LoginComponent */],
-                __WEBPACK_IMPORTED_MODULE_8__components_register_register_component__["a" /* RegisterComponent */],
-                __WEBPACK_IMPORTED_MODULE_9__components_home_home_component__["a" /* HomeComponent */],
-                __WEBPACK_IMPORTED_MODULE_10__components_dashboard_dashboard_component__["a" /* DashboardComponent */],
-                __WEBPACK_IMPORTED_MODULE_11__components_profile_profile_component__["a" /* ProfileComponent */],
-                __WEBPACK_IMPORTED_MODULE_16__components_settings_settings_component__["a" /* SettingsComponent */],
-                __WEBPACK_IMPORTED_MODULE_17__components_mailbox_mailbox_component__["a" /* MailboxComponent */],
-                __WEBPACK_IMPORTED_MODULE_18__components_users_users_component__["a" /* UsersComponent */]
+                __WEBPACK_IMPORTED_MODULE_10__app_component__["a" /* AppComponent */],
+                __WEBPACK_IMPORTED_MODULE_11__components_navbar_navbar_component__["a" /* NavbarComponent */],
+                __WEBPACK_IMPORTED_MODULE_12__components_login_login_component__["a" /* LoginComponent */],
+                __WEBPACK_IMPORTED_MODULE_13__components_register_register_component__["a" /* RegisterComponent */],
+                __WEBPACK_IMPORTED_MODULE_14__components_home_home_component__["a" /* HomeComponent */],
+                __WEBPACK_IMPORTED_MODULE_15__components_dashboard_dashboard_component__["a" /* DashboardComponent */],
+                __WEBPACK_IMPORTED_MODULE_16__components_profile_profile_component__["a" /* ProfileComponent */],
+                __WEBPACK_IMPORTED_MODULE_17__components_settings_settings_component__["a" /* SettingsComponent */],
+                __WEBPACK_IMPORTED_MODULE_18__components_mailbox_mailbox_component__["a" /* MailboxComponent */],
+                __WEBPACK_IMPORTED_MODULE_20__components_users_users_component__["a" /* UsersComponent */],
+                __WEBPACK_IMPORTED_MODULE_19__components_mailbox_order_by_pipe__["a" /* OrderByPipe */]
             ],
             imports: [
                 __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
                 __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormsModule */],
                 __WEBPACK_IMPORTED_MODULE_3__angular_http__["HttpModule"],
                 __WEBPACK_IMPORTED_MODULE_4__angular_router__["b" /* RouterModule */].forRoot(appRoutes),
-                __WEBPACK_IMPORTED_MODULE_14_angular2_flash_messages__["FlashMessagesModule"].forRoot()
+                __WEBPACK_IMPORTED_MODULE_7_angular2_flash_messages__["FlashMessagesModule"].forRoot()
             ],
-            providers: [__WEBPACK_IMPORTED_MODULE_12__services_validate_service__["a" /* ValidateService */], __WEBPACK_IMPORTED_MODULE_13__services_auth_service__["a" /* AuthService */], __WEBPACK_IMPORTED_MODULE_15__guards_auth_guard__["a" /* AuthGuard */]],
-            bootstrap: [__WEBPACK_IMPORTED_MODULE_5__app_component__["a" /* AppComponent */]]
+            providers: [__WEBPACK_IMPORTED_MODULE_5__services_validate_service__["a" /* ValidateService */], __WEBPACK_IMPORTED_MODULE_6__services_auth_service__["a" /* AuthService */], __WEBPACK_IMPORTED_MODULE_8__guards_auth_guard__["a" /* AuthGuard */], __WEBPACK_IMPORTED_MODULE_9__services_size_detector_resize_service__["a" /* ResizeService */]],
+            bootstrap: [__WEBPACK_IMPORTED_MODULE_10__app_component__["a" /* AppComponent */]]
         })
     ], AppModule);
     return AppModule;
@@ -464,7 +469,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "body {\n  background-color: #3498db;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n  text-rendering: optimizeLegibility;\n}\n\n.container {\n  /* margin: 60px auto; */\n  background: #fff;\n  padding: 0;\n  border-radius: 7px;\n}\n\n.profile-image {\n  width: 50px;\n  height: 50px;\n  border-radius: 40px;\n}\n\n.settings-tray {\n  background: #eee;\n  padding: 10px 15px;\n  border-radius: 7px;\n}\n.settings-tray .no-gutters {\n  padding: 0;\n}\n.settings-tray--right {\n  float: right;\n}\n.settings-tray--right i {\n  margin-top: 10px;\n  font-size: 25px;\n  color: grey;\n  margin-left: 14px;\n  transition: .3s;\n}\n.settings-tray--right i:hover {\n  color: #74b9ff;\n  cursor: pointer;\n}\n\n.search-box {\n  background: #fafafa;\n  padding: 10px 13px;\n}\n.search-box .input-wrapper {\n  background: #fff;\n  border-radius: 40px;\n}\n.search-box .input-wrapper i {\n  color: grey;\n  margin-left: 7px;\n  vertical-align: middle;\n}\n\ninput {\n  border: none;\n  border-radius: 30px;\n  width: 80%;\n}\ninput:-ms-input-placeholder {\n  color: #e3e3e3;\n  font-weight: 300;\n  margin-left: 20px;\n}\ninput::placeholder {\n  color: #e3e3e3;\n  font-weight: 300;\n  margin-left: 20px;\n}\ninput:focus {\n  outline: none;\n}\n\n.friend-drawer {\n  padding: 10px 15px;\n  display: -ms-flexbox;\n  display: flex;\n  vertical-align: baseline;\n  background: #fff;\n  transition: .3s ease;\n}\n.friend-drawer--grey {\n  background: #eee;\n}\n.friend-drawer .text {\n  margin-left: 12px;\n  width: 70%;\n}\n.friend-drawer .text h6 {\n  margin-top: 6px;\n  margin-bottom: 0;\n}\n.friend-drawer .text p {\n  margin: 0;\n}\n.friend-drawer .time {\n  color: grey;\n}\n.friend-drawer--onhover:hover {\n  background: #74b9ff;\n  cursor: pointer;\n}\n.friend-drawer--onhover:hover p,\n.friend-drawer--onhover:hover h6,\n.friend-drawer--onhover:hover .time {\n  color: #fff !important;\n}\n\nhr {\n  margin: 5px auto;\n  width: 60%;\n}\n\n.chat-bubble {\n  padding: 10px 14px;\n  background: #eee;\n  margin: 10px 30px;\n  border-radius: 9px;\n  position: relative;\n  animation: fadeIn 1s ease-in;\n}\n.chat-bubble:after {\n  content: '';\n  position: absolute;\n  top: 50%;\n  width: 0;\n  height: 0;\n  border: 20px solid transparent;\n  border-bottom: 0;\n  margin-top: -10px;\n}\n.chat-bubble--left:after {\n  left: 0;\n  border-right-color: #eee;\n  border-left: 0;\n  margin-left: -20px;\n}\n.chat-bubble--right:after {\n  right: 0;\n  border-left-color: #74b9ff;\n  border-right: 0;\n  margin-right: -20px;\n}\n\n@keyframes fadeIn {\n  0% {\n    opacity: 0;\n  }\n  100% {\n    opacity: 1;\n  }\n}\n.offset-md-9 .chat-bubble {\n  background: #74b9ff;\n  color: #fff;\n}\n\n.chat-box-tray {\n  background: #eee;\n  display: -ms-flexbox;\n  display: flex;\n  -ms-flex-align: baseline;\n      align-items: baseline;\n  padding: 10px 15px;\n  -ms-flex-align: center;\n      align-items: center;\n  margin-top: 19px;\n  bottom: 0;\n}\n.chat-box-tray input {\n  margin: 0 10px;\n  padding: 6px 2px;\n}\n.chat-box-tray i {\n  color: grey;\n  font-size: 30px;\n  vertical-align: middle;\n}\n.chat-box-tray i:last-of-type {\n  margin-left: 25px;\n}\n#data-list-container {\n  height: 100%;\n  -ms-flex:1;\n      flex:1;\n  overflow-y: auto;\n  position: relative;\n}\n", ""]);
+exports.push([module.i, "body {\n  background-color: #3498db;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n  text-rendering: optimizeLegibility;\n}\n\n.container {\n  /* margin: 60px auto; */\n  background: #fff;\n  padding: 0;\n  border-radius: 7px;\n}\n\n.test {\n  margin: inherit;\n  margin-right: 10px;\n}\n\n.profile-image {\n  width: 50px;\n  height: 50px;\n  border-radius: 40px;\n}\n\n.settings-tray {\n  background: #eee;\n  padding: 10px 15px;\n  border-radius: 7px;\n}\n.settings-tray .no-gutters {\n  padding: 0;\n}\n.settings-tray--right {\n  float: right;\n}\n.settings-tray--right i {\n  margin-top: 10px;\n  font-size: 25px;\n  color: grey;\n  margin-left: 14px;\n  transition: .3s;\n}\n.settings-tray--right i:hover {\n  color: #74b9ff;\n  cursor: pointer;\n}\n\n.search-box {\n  background: #fafafa;\n  padding: 10px 13px;\n}\n.search-box .input-wrapper {\n  background: #fff;\n  border-radius: 40px;\n}\n.search-box .input-wrapper i {\n  color: grey;\n  margin-left: 7px;\n  vertical-align: middle;\n}\n\ninput {\n  border: none;\n  border-radius: 30px;\n  width: 80%;\n}\ninput:-ms-input-placeholder {\n  color: #e3e3e3;\n  font-weight: 300;\n  margin-left: 20px;\n}\ninput::placeholder {\n  color: #e3e3e3;\n  font-weight: 300;\n  margin-left: 20px;\n}\ninput:focus {\n  outline: none;\n}\n\n.friend-drawer {\n  padding: 10px 15px;\n  display: -ms-flexbox;\n  display: flex;\n  vertical-align: baseline;\n  background: #fff;\n  transition: .3s ease;\n}\n.friend-drawer--grey {\n  background: #eee;\n}\n\n@media screen and (max-width:768px){\n  .friend-drawer .text {\n    margin-left: 12px !important;\n    width: 40% !important;\n  }\n}\n\n.friend-drawer .text {\n  margin-left: 12px;\n  width: 80%;\n}\n.friend-drawer .text h6 {\n  margin-top: 6px;\n  margin-bottom: 0;\n}\n.friend-drawer .text p {\n  margin: 0;\n}\n.friend-drawer .time {\n  color: grey;\n}\n.friend-drawer--onhover:hover {\n  background: #74b9ff;\n  cursor: pointer;\n}\n.friend-drawer--onhover:hover p,\n.friend-drawer--onhover:hover h6,\n.friend-drawer--onhover:hover .time {\n  color: #fff !important;\n}\n\nhr {\n  margin: 5px auto;\n  width: 60%;\n}\n.chat-panel {\n  height: 100%;\n  -ms-flex:1;\n      flex:1;\n  overflow-y: auto;\n  overflow-x: hidden;\n  position: relative;\n}\n\n@media screen and (max-width:768px){\n  .chat-content {\n    max-height: 79vh !important;\n    height: 79vh !important;\n  }\n  .offset-md-9 .chat-bubble {\n    right: 0 !important;\n    background: #74b9ff;\n    color: #fff;\n    float: right;\n    max-width: 77% !important;\n\n  }\n  .chat-bubble--left:after {\n    left: 0;\n    border-right-color: #eee;\n    border-left: 0;\n  }\n  .max-left-msg {\n    max-width: 80% !important;\n  }\n  .chat-bubble--right:after {\n    right: 0 !important;\n    border-left-color: #74b9ff !important;\n    border-right: 0 !important;\n  }\n  .text-clock {\n    font-size: 10px !important;\n    float: right !important;\n    margin-top: 10px !important;\n    margin-left: 10px !important;\n  }\n}\n\n.chat-bubble {\n  padding: 10px 14px;\n  background: #82e03a;\n  margin: 10px 0px;\n  width: -webkit-max-content;\n  width: -moz-max-content;\n  width: max-content;\n  border-radius: 9px;\n  position: relative;\n  animation: fadeIn 1s ease-in;\n}\n.chat-bubble:after {\n  content: '';\n  position: absolute;\n  top: 50%;\n  width: 0;\n  height: 0;\n  border: 20px solid transparent;\n  border-bottom: 0;\n  margin-top: -10px;\n}\n.chat-bubble--left:after {\n  left: 0;\n  border-right-color: #eee;\n  border-left: 0;\n  margin-left: -20px;\n  max-width: 77% !important;\n}\n.max-left-msg {\n  max-width: 270% ;\n}\n.max-left-msg-right {\n  max-width:  270%;\n  float: right;\n  right: 0px;\n}\n.chat-bubble--right:after {\n  right: 0;\n  border-left-color: #74b9ff;\n  border-right: 0;\n  margin-right: -20px;\n}\n\n@keyframes fadeIn {\n  0% {\n    opacity: 0;\n  }\n  100% {\n    opacity: 1;\n  }\n}\n.offset-md-9 .chat-bubble {\n  background: #74b9ff;\n  color: #fff;\n}\n\n/* .body-content {\n  height: 74vh;\n} */\n\n#data-list-container{\n  max-height: 79vh;\n}\n\n.message-content {\n  max-height: 80vh;\n  height: 80vh;\n}\n\n.text-clock {\n  font-size: 10px;\n  float: right;\n  margin-top: 10px;\n  margin-left: 10px;\n}\n\n.chat-box-tray {\n  background: #eee;\n  display: -ms-flexbox;\n  display: flex;\n  -ms-flex-align: baseline;\n      align-items: baseline;\n  padding: 5px;\n  -ms-flex-align: center;\n      align-items: center;\n  bottom: 0;\n}\n.chat-box-tray input {\n  margin: 0 10px;\n  padding: 6px 2px;\n}\n.chat-box-tray i {\n  color: grey;\n  font-size: 30px;\n  vertical-align: middle;\n}\n.chat-box-tray i:last-of-type {\n  margin-left: 25px;\n}\n#data-list-container {\n  height: 100%;\n  -ms-flex:1;\n      flex:1;\n  overflow-y: auto;\n  position: relative;\n}\n", ""]);
 
 // exports
 
@@ -477,7 +482,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/mailbox/mailbox.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div *ngIf=\"user\" class=\"container\">\n  <div class=\"row no-gutters\">\n    <div class=\"col-md-4 border-right\">\n      <div class=\"settings-tray\">\n        <img class=\"profile-image\" [src]=\"user.photo\" alt=\"Profile img\">\n        <!-- <img [src]=\"user.photo\" class=\"avatar img-circle img-thumbnail\" alt=\"avatar\"> -->\n        <span class=\"settings-tray--right\">\n          <i class=\"material-icons\">cached</i>\n          <i class=\"material-icons\">message</i>\n          <i class=\"material-icons\">menu</i>\n        </span>\n      </div>\n      <div class=\"search-box\">\n        <div class=\"input-wrapper\">\n          <i class=\"material-icons\">search</i>\n          <input [(ngModel)]=\"searchTerm\" (ngModelChange)= \"search()\" placeholder=\"Search here\" type=\"text\">\n        </div>\n      </div>\n      <div style='height: 600px;' id='data-list-container'>\n        <div *ngFor=\"let value of allUsers\" class=\"friend-drawer friend-drawer--onhover\" (click)=\"test(value)\">\n          <img class=\"profile-image\" [src]=\"value.photo\" alt=\"\">\n          <div class=\"text\">\n            <h6>{{value.name}}</h6>\n            <p class=\"text-muted\">Hey, you're arrested!</p>\n          </div>\n          <span class=\"time text-muted small\">13:21</span>\n        </div>\n      </div>\n      <hr>\n    </div>\n    <div class=\"col-md-8\">\n      <div class=\"settings-tray\">\n        <div *ngFor=\"let test of itemUserSelected\" class=\"friend-drawer no-gutters friend-drawer--grey\">\n          <img class=\"profile-image\" [src]=\"test.photo\" alt=\"\">\n            <div class=\"text\">\n              <h6>{{test.name}}</h6>\n              <p class=\"text-muted\">Layin' down the law since like before Christ...</p>\n            </div>\n            <span class=\"settings-tray--right\">\n              <i class=\"material-icons\">cached</i>\n              <i class=\"material-icons\">message</i>\n              <i class=\"material-icons\">menu</i>\n            </span>\n        </div>\n      </div>\n      <div class=\"chat-panel\">\n        <div class=\"row no-gutters\">\n          <div class=\"col-md-3\">\n            <div class=\"chat-bubble chat-bubble--left\">\n              Hello dude!\n            </div>\n          </div>\n        </div>\n        <div class=\"row no-gutters\">\n          <div class=\"col-md-3 offset-md-9\">\n            <div class=\"chat-bubble chat-bubble--right\">\n              Hello dude!\n            </div>\n          </div>\n        </div>\n        <div class=\"row no-gutters\">\n          <div class=\"col-md-3 offset-md-9\">\n            <div class=\"chat-bubble chat-bubble--right\">\n              Hello dude!\n            </div>\n          </div>\n        </div>\n        <div class=\"row no-gutters\">\n          <div class=\"col-md-3\">\n            <div class=\"chat-bubble chat-bubble--left\">\n              Hello dude!\n            </div>\n          </div>\n        </div>\n        <div class=\"row no-gutters\">\n          <div class=\"col-md-3\">\n            <div class=\"chat-bubble chat-bubble--left\">\n              Hello dude!\n            </div>\n          </div>\n        </div>\n        <div class=\"row no-gutters\">\n          <div class=\"col-md-3\">\n            <div class=\"chat-bubble chat-bubble--left\">\n              Hello dude!\n            </div>\n          </div>\n        </div>\n        <div class=\"row no-gutters\">\n          <div class=\"col-md-3 offset-md-9\">\n            <div class=\"chat-bubble chat-bubble--right\">\n              Hello dude!\n            </div>\n          </div>\n        </div>\n        <div class=\"row\">\n          <div class=\"col-12\">\n            <div class=\"chat-box-tray\">\n              <i class=\"material-icons\">sentiment_very_satisfied</i>\n              <input type=\"text\" [(ngModel)]=\"message\" placeholder=\"Type your message here...\">\n              <i class=\"material-icons\">mic</i>\n              <i class=\"material-icons\"><a (click)=\"sendMessage(message)\" >send</a></i>\n            </div>\n          </div>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>"
+module.exports = "<div *ngFor=\"let s of sizes\" class=\"{{s.css + ' ' + (prefix + s.id) }}\">\n<div *ngIf=\"user\" class=\"container\">\n  <div class=\"row no-gutters\">\n    <div *ngIf=\"!sizeBoolean || showHeaderMsg && !showBodyMsg\" class=\"col-md-4 border-right\">\n      <div class=\"settings-tray\">\n        <img class=\"profile-image\" [src]=\"user.photo\" alt=\"Profile img\">\n        <span class=\"settings-tray--right\">\n          <!-- <h6>{{user.username}}</h6> -->\n          <i class=\"fa fa-refresh\" aria-hidden=\"true\"></i>\n          <i class=\"material-icons\">message</i>\n          <i class=\"material-icons\">menu</i>\n        </span>\n      </div>\n      <div class=\"search-box\">\n        <div class=\"input-wrapper\">\n          <i class=\"fa fa-search\" aria-hidden=\"true\"></i>\n          <input [(ngModel)]=\"searchTerm\" (ngModelChange)= \"search()\" placeholder=\"Search here\" type=\"text\">\n        </div>\n      </div>\n      <div id='data-list-container'>\n        <div *ngFor=\"let value of allUsers\" class=\"friend-drawer friend-drawer--onhover\" (click)=\"test(value, true)\">\n          <img class=\"profile-image\" [src]=\"value.photo\" alt=\"\">\n          <div class=\"text\">\n            <h6>{{value.username}}</h6>\n            <p class=\"text-muted\">Hey, you're arrested!</p>\n          </div>\n          <span class=\"time text-muted small\">13:21</span>\n        </div>\n      </div>\n      <hr>\n    </div>\n    <div *ngIf=\"showBodyMsg || size != 0\" class=\"col-md-8\">\n      <div  class=\"settings-tray\">\n        <div *ngFor=\"let test of itemUserSelected\" class=\"friend-drawer no-gutters friend-drawer--grey\">\n          <span *ngIf=\"size == 0\" (click)=\"goBackMail(true)\" class=\"settings-tray--right test\">\n            <i class=\"fa fa-arrow-left\" aria-hidden=\"true\"></i>\n          </span>\n          <img class=\"profile-image\" [src]=\"test.photo\" alt=\"\">\n          <div class=\"text\">\n            <h6>{{test.name}}</h6>\n          </div>\n          <span class=\"settings-tray--right\">\n            <i class=\"fa fa-refresh\" aria-hidden=\"true\"></i>\n            <i class=\"material-icons\">menu</i>\n          </span>\n        </div>\n      </div>\n      <div style=\"max-height: 74vh; height: 74vh;\" class=\"chat-content\">\n        <div class=\"chat-panel\">\n          <div *ngIf=\"this.getMessages.length > 0\" class=\"message-content\">\n            <div *ngFor=\"let msg of getMessages | orderBy:'timeNow'\" class=\"row no-gutters\">\n              <div [ngClass]=\"(msg.isUserSigned)?'col-md-3 offset-md-9':'col-md-3 '\">\n                <div [ngClass]=\"(msg.isUserSigned)?' chat-bubble chat-bubble--right max-left-msg-right':'chat-bubble chat-bubble--left max-left-msg'\">\n                  {{msg.message}}\n                  <span class=\"text-right text-clock\">{{msg.timeNow | date: 'hh:mm a'}}</span>\n                </div>\n              </div>\n            </div>\n          </div>\n          <div *ngIf=\"this.getMessages.length == 0\">\n            <h1>Please start a new message </h1>\n          </div>\n        </div>\n      </div>\n      <div class=\"row no-gutters\">\n          <div class=\"col-12\">\n            <div class=\"chat-box-tray\">\n              <i class=\"fa fa-smile-o\" aria-hidden=\"true\"></i>\n              <input type=\"text\" (keydown.enter)=\"sendMessage($event.target.value)\" [(ngModel)]=\"message\" placeholder=\"Type your message here...\">\n              <i class=\"fa fa-microphone\" aria-hidden=\"true\"></i>\n              <a class=\"btn\" (click)=\"sendMessage(message)\"><i class=\"fa fa-paper-plane\" aria-hidden=\"true\"></i></a>\n            </div>\n          </div>\n        </div>\n    </div>\n  </div>\n</div>\n</div>"
 
 /***/ }),
 
@@ -488,6 +493,13 @@ module.exports = "<div *ngIf=\"user\" class=\"container\">\n  <div class=\"row n
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MailboxComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_auth_service__ = __webpack_require__("../../../../../src/app/services/auth.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angular2_flash_messages__ = __webpack_require__("../../../../angular2-flash-messages/module/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angular2_flash_messages___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_angular2_flash_messages__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_size_detector_resize_service__ = __webpack_require__("../../../../../src/app/services/size-detector/resize-service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_size_detector_screen_size_enum__ = __webpack_require__("../../../../../src/app/services/size-detector/screen-size.enum.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_operators__ = __webpack_require__("../../../../rxjs/_esm5/operators.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_moment__ = __webpack_require__("../../../../moment/moment.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_moment___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_moment__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -499,14 +511,77 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
+
+
+
+
+
 var MailboxComponent = (function () {
-    function MailboxComponent(authService) {
+    function MailboxComponent(authService, resizeSvc, elementRef, flashMessage) {
+        var _this = this;
         this.authService = authService;
+        this.resizeSvc = resizeSvc;
+        this.elementRef = elementRef;
+        this.flashMessage = flashMessage;
         this.allUsers = [];
+        this.getMessages = [];
+        this.getMessageSent = [];
         this.items = this.itemsCopy;
         this.itemUserSelected = [];
         this.elementSigned = [];
+        this.prefix = 'is-';
+        this.sizes = [
+            {
+                id: __WEBPACK_IMPORTED_MODULE_4__services_size_detector_screen_size_enum__["a" /* SCREEN_SIZE */].XS, name: 'xs',
+                css: "d-block d-sm-none"
+            },
+            {
+                id: __WEBPACK_IMPORTED_MODULE_4__services_size_detector_screen_size_enum__["a" /* SCREEN_SIZE */].SM, name: 'sm',
+                css: "d-none d-sm-block d-md-none"
+            },
+            {
+                id: __WEBPACK_IMPORTED_MODULE_4__services_size_detector_screen_size_enum__["a" /* SCREEN_SIZE */].MD, name: 'md',
+                css: "d-none d-md-block d-lg-none"
+            },
+            {
+                id: __WEBPACK_IMPORTED_MODULE_4__services_size_detector_screen_size_enum__["a" /* SCREEN_SIZE */].LG, name: 'lg',
+                css: "d-none d-lg-block d-xl-none"
+            },
+            {
+                id: __WEBPACK_IMPORTED_MODULE_4__services_size_detector_screen_size_enum__["a" /* SCREEN_SIZE */].XL, name: 'xl',
+                css: "d-none d-xl-block"
+            },
+        ];
+        this.resizeSvc.onResize$
+            .pipe(Object(__WEBPACK_IMPORTED_MODULE_5_rxjs_operators__["a" /* delay */])(0))
+            .subscribe(function (x) {
+            _this.size = x;
+            _this.sizeBoolean = (x == 0) ? true : false;
+        });
+        if (!this.sizeBoolean || this.sizeBoolean == undefined) {
+            this.showBodyMsg = false;
+            this.showHeaderMsg = true;
+        }
+        else {
+            this.showHeaderMsg = true;
+            this.showBodyMsg = false;
+        }
     }
+    MailboxComponent.prototype.onResize = function () {
+        this.detectScreenSize();
+    };
+    MailboxComponent.prototype.ngAfterViewInit = function () {
+        this.detectScreenSize();
+    };
+    MailboxComponent.prototype.detectScreenSize = function () {
+        var _this = this;
+        var currentSize = this.sizes.find(function (x) {
+            var el = _this.elementRef.nativeElement.querySelector("." + _this.prefix + x.id);
+            var isVisible = window.getComputedStyle(el).display != 'none';
+            return isVisible;
+        });
+        this.resizeSvc.onResize(currentSize.id);
+    };
     MailboxComponent.prototype.ngOnInit = function () {
         var _this = this;
         var isLogged = this.authService.loggedIn();
@@ -514,7 +589,10 @@ var MailboxComponent = (function () {
             this.authService.getProfile().subscribe(function (profile) {
                 _this.user = profile.user;
                 _this.elementSigned.push(profile.user);
+                var isNotempty = (_this.itemUserSelected.length == 0) ? false : true;
+                _this.test(_this.itemUserSelected[0], isNotempty);
                 _this.email = profile.user.email;
+                _this.showHeaderMsg = true;
                 _this.getAllUsers();
             }, function (err) {
                 console.log(err);
@@ -525,13 +603,58 @@ var MailboxComponent = (function () {
     MailboxComponent.prototype.search = function () {
         var term = this.searchTerm;
         this.allUsers = this.itemsCopy.filter(function (tag) {
-            return tag.name.indexOf(term) >= 0;
+            return tag.name.toLowerCase().indexOf(term) >= 0;
         });
     };
-    MailboxComponent.prototype.test = function (val) {
-        this.itemUserSelected.push(val);
-        if (this.itemUserSelected.length > 1) {
-            this.itemUserSelected.shift();
+    MailboxComponent.prototype.getTimeNow = function (time) {
+        return __WEBPACK_IMPORTED_MODULE_6_moment__(time).format('hh:MM A');
+    };
+    MailboxComponent.prototype.test = function (val, isUserSelected) {
+        if (val != undefined && isUserSelected) {
+            this.itemUserSelected.push(val);
+            this.getUserMessages(val);
+            if (this.itemUserSelected.length > 1) {
+                this.itemUserSelected.shift();
+            }
+            if (isUserSelected && this.sizeBoolean) {
+                this.showBodyMsg = true;
+                this.showHeaderMsg = false;
+            }
+            else {
+                this.showHeaderMsg = true;
+            }
+        }
+    };
+    MailboxComponent.prototype.getUserMessages = function (val) {
+        var _this = this;
+        this.getMessages = [];
+        val.message.forEach(function (item) {
+            if (item.username == _this.user.username) {
+                item.isUserSigned = false;
+                _this.getMessages.push(item);
+            }
+        });
+        this.user.message.forEach(function (element) {
+            if (element.username == val.username) {
+                element.isUserSigned = true;
+                _this.getMessages.push(element);
+            }
+        });
+    };
+    // getUserMessages(val) { //this function bring al messages service by id
+    //   this.authService.getUserMessages(val).subscribe(data => {
+    //     this.getMessages = data;
+    //     this.isUserSigned = true;
+    //     this.message = '';
+    //   },
+    //   err => {
+    //     return false;
+    //   });
+    // }
+    MailboxComponent.prototype.goBackMail = function (val) {
+        if (val) {
+            this.showBodyMsg = false;
+            this.showHeaderMsg = true;
         }
     };
     MailboxComponent.prototype.getAllUsers = function () {
@@ -546,38 +669,100 @@ var MailboxComponent = (function () {
                         _this.allUsers.splice(i, 1); // Remove even numbers
                     }
                 }
-                _this.itemUserSelected.push(yesy[0]);
             }, function (err) {
                 return false;
             });
         }
     };
     MailboxComponent.prototype.sendMessage = function (val) {
-        var message = {
-            id: this.elementSigned[0]._id,
-            idUserSent: this.itemUserSelected[0]._id,
-            email: this.elementSigned[0].email,
-            name: this.elementSigned[0].name,
-            username: this.elementSigned[0].username,
+        var _this = this;
+        //var timeNow = moment().format('LT'); //8:07 pm
+        var timeNow = __WEBPACK_IMPORTED_MODULE_6_moment__().format(); // 2020-04-09T18:36:23-06:00
+        var day = __WEBPACK_IMPORTED_MODULE_6_moment__().format('LL'); // april 6, 2020
+        this.messageSent = {
+            idUserSent: this.elementSigned[0]._id,
+            username: this.itemUserSelected[0].username,
             message: val,
-            isNew: true
+            timeNow: timeNow,
+            day: day,
+            phone: this.elementSigned[0].phone,
+            isnew: true
         };
-        this.authService.sendMessage(message).subscribe(function (data) {
-            // console.log(data);
+        this.authService.sendMessage(this.messageSent).subscribe(function (data) {
+            if (data.success) {
+                _this.message = '';
+                //setTimeout(()=>{    //<<<---    using ()=> syntax
+                _this.message = '';
+                _this.ngOnInit();
+                //}, 3000);
+            }
+            else {
+                _this.flashMessage.show(data.msg, { cssClass: 'alert-danger', timeout: 5000 });
+            }
         }, function (err) {
             console.log(err);
             return false;
         });
     };
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["HostListener"])("window:resize", []),
+        __metadata("design:type", Function),
+        __metadata("design:paramtypes", []),
+        __metadata("design:returntype", void 0)
+    ], MailboxComponent.prototype, "onResize", null);
     MailboxComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'app-mailbox',
             template: __webpack_require__("../../../../../src/app/components/mailbox/mailbox.component.html"),
             styles: [__webpack_require__("../../../../../src/app/components/mailbox/mailbox.component.css")]
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__services_auth_service__["a" /* AuthService */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__services_auth_service__["a" /* AuthService */],
+            __WEBPACK_IMPORTED_MODULE_3__services_size_detector_resize_service__["a" /* ResizeService */],
+            __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"],
+            __WEBPACK_IMPORTED_MODULE_2_angular2_flash_messages__["FlashMessagesService"]])
     ], MailboxComponent);
     return MailboxComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/mailbox/order-by.pipe.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return OrderByPipe; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+var OrderByPipe = (function () {
+    function OrderByPipe() {
+    }
+    OrderByPipe.prototype.transform = function (array, args) {
+        if (typeof args[0] === "undefined") {
+            return array;
+        }
+        var direction = args[0][0];
+        var column = args.replace('-', '');
+        array.sort(function (a, b) {
+            var left = Number(new Date(a[column]));
+            var right = Number(new Date(b[column]));
+            return (direction === "-") ? right - left : left - right;
+        });
+        return array;
+    };
+    OrderByPipe = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Pipe"])({
+            name: 'orderBy',
+        })
+    ], OrderByPipe);
+    return OrderByPipe;
 }());
 
 
@@ -1153,7 +1338,19 @@ var AuthService = (function () {
             return this.http.get('http://localhost:8080/users/settings', { headers: headers }).map(function (res) { return res.json(); });
         }
         else {
-            return this.http.get('users/profile', { headers: headers }).map(function (res) { return res.json(); });
+            return this.http.get('users/settings', { headers: headers }).map(function (res) { return res.json(); });
+        }
+    };
+    AuthService.prototype.getUserMessages = function (id) {
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
+        this.loadToken();
+        headers.append('Authorization', this.authToken);
+        headers.append('Content-Type', 'application/json');
+        if (this.isDev) {
+            return this.http.get('http://localhost:8080/users/mailbox/getMessages/' + id, { headers: headers }).map(function (res) { return res.json(); });
+        }
+        else {
+            return this.http.get('users/mailbox/getMessages/' + id, { headers: headers }).map(function (res) { return res.json(); });
         }
     };
     //New message 
@@ -1161,11 +1358,10 @@ var AuthService = (function () {
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
         headers.append('Content-Type', 'application/json');
         if (this.isDev) {
-            debugger;
-            return this.http.post('http://localhost:8080/mailbox/sendMessage', message, { headers: headers }).map(function (res) { return res.json(); });
+            return this.http.post('http://localhost:8080/users/mailbox/sendMessage', message, { headers: headers }).map(function (res) { return res.json(); });
         }
         else {
-            return this.http.post('mailbox/sendMessage', message, { headers: headers }).map(function (res) { return res.json(); });
+            return this.http.post('users/mailbox/sendMessage', message, { headers: headers }).map(function (res) { return res.json(); });
         }
     };
     AuthService.prototype.storeUserData = function (token, user) {
@@ -1193,6 +1389,69 @@ var AuthService = (function () {
     return AuthService;
 }());
 
+
+
+/***/ }),
+
+/***/ "../../../../../src/app/services/size-detector/resize-service.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ResizeService; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs__ = __webpack_require__("../../../../rxjs/Rx.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_rxjs__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_operators__ = __webpack_require__("../../../../rxjs/_esm5/operators.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var ResizeService = (function () {
+    function ResizeService() {
+        this.resizeSubject = new __WEBPACK_IMPORTED_MODULE_1_rxjs__["Subject"]();
+    }
+    Object.defineProperty(ResizeService.prototype, "onResize$", {
+        get: function () {
+            return this.resizeSubject.asObservable().pipe(Object(__WEBPACK_IMPORTED_MODULE_2_rxjs_operators__["b" /* distinctUntilChanged */])());
+        },
+        enumerable: true,
+        configurable: true
+    });
+    ResizeService.prototype.onResize = function (size) {
+        this.resizeSubject.next(size);
+    };
+    ResizeService = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
+        __metadata("design:paramtypes", [])
+    ], ResizeService);
+    return ResizeService;
+}());
+
+
+
+/***/ }),
+
+/***/ "../../../../../src/app/services/size-detector/screen-size.enum.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SCREEN_SIZE; });
+var SCREEN_SIZE;
+(function (SCREEN_SIZE) {
+    SCREEN_SIZE[SCREEN_SIZE["XS"] = 0] = "XS";
+    SCREEN_SIZE[SCREEN_SIZE["SM"] = 1] = "SM";
+    SCREEN_SIZE[SCREEN_SIZE["MD"] = 2] = "MD";
+    SCREEN_SIZE[SCREEN_SIZE["LG"] = 3] = "LG";
+    SCREEN_SIZE[SCREEN_SIZE["XL"] = 4] = "XL";
+})(SCREEN_SIZE || (SCREEN_SIZE = {}));
 
 
 /***/ }),
@@ -1274,6 +1533,283 @@ if (__WEBPACK_IMPORTED_MODULE_3__environments_environment__["a" /* environment *
 Object(__WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dynamic__["a" /* platformBrowserDynamic */])().bootstrapModule(__WEBPACK_IMPORTED_MODULE_2__app_app_module__["a" /* AppModule */])
     .catch(function (err) { return console.log(err); });
 
+
+/***/ }),
+
+/***/ "../../../../moment/locale recursive ^\\.\\/.*$":
+/***/ (function(module, exports, __webpack_require__) {
+
+var map = {
+	"./af": "../../../../moment/locale/af.js",
+	"./af.js": "../../../../moment/locale/af.js",
+	"./ar": "../../../../moment/locale/ar.js",
+	"./ar-dz": "../../../../moment/locale/ar-dz.js",
+	"./ar-dz.js": "../../../../moment/locale/ar-dz.js",
+	"./ar-kw": "../../../../moment/locale/ar-kw.js",
+	"./ar-kw.js": "../../../../moment/locale/ar-kw.js",
+	"./ar-ly": "../../../../moment/locale/ar-ly.js",
+	"./ar-ly.js": "../../../../moment/locale/ar-ly.js",
+	"./ar-ma": "../../../../moment/locale/ar-ma.js",
+	"./ar-ma.js": "../../../../moment/locale/ar-ma.js",
+	"./ar-sa": "../../../../moment/locale/ar-sa.js",
+	"./ar-sa.js": "../../../../moment/locale/ar-sa.js",
+	"./ar-tn": "../../../../moment/locale/ar-tn.js",
+	"./ar-tn.js": "../../../../moment/locale/ar-tn.js",
+	"./ar.js": "../../../../moment/locale/ar.js",
+	"./az": "../../../../moment/locale/az.js",
+	"./az.js": "../../../../moment/locale/az.js",
+	"./be": "../../../../moment/locale/be.js",
+	"./be.js": "../../../../moment/locale/be.js",
+	"./bg": "../../../../moment/locale/bg.js",
+	"./bg.js": "../../../../moment/locale/bg.js",
+	"./bm": "../../../../moment/locale/bm.js",
+	"./bm.js": "../../../../moment/locale/bm.js",
+	"./bn": "../../../../moment/locale/bn.js",
+	"./bn.js": "../../../../moment/locale/bn.js",
+	"./bo": "../../../../moment/locale/bo.js",
+	"./bo.js": "../../../../moment/locale/bo.js",
+	"./br": "../../../../moment/locale/br.js",
+	"./br.js": "../../../../moment/locale/br.js",
+	"./bs": "../../../../moment/locale/bs.js",
+	"./bs.js": "../../../../moment/locale/bs.js",
+	"./ca": "../../../../moment/locale/ca.js",
+	"./ca.js": "../../../../moment/locale/ca.js",
+	"./cs": "../../../../moment/locale/cs.js",
+	"./cs.js": "../../../../moment/locale/cs.js",
+	"./cv": "../../../../moment/locale/cv.js",
+	"./cv.js": "../../../../moment/locale/cv.js",
+	"./cy": "../../../../moment/locale/cy.js",
+	"./cy.js": "../../../../moment/locale/cy.js",
+	"./da": "../../../../moment/locale/da.js",
+	"./da.js": "../../../../moment/locale/da.js",
+	"./de": "../../../../moment/locale/de.js",
+	"./de-at": "../../../../moment/locale/de-at.js",
+	"./de-at.js": "../../../../moment/locale/de-at.js",
+	"./de-ch": "../../../../moment/locale/de-ch.js",
+	"./de-ch.js": "../../../../moment/locale/de-ch.js",
+	"./de.js": "../../../../moment/locale/de.js",
+	"./dv": "../../../../moment/locale/dv.js",
+	"./dv.js": "../../../../moment/locale/dv.js",
+	"./el": "../../../../moment/locale/el.js",
+	"./el.js": "../../../../moment/locale/el.js",
+	"./en-SG": "../../../../moment/locale/en-SG.js",
+	"./en-SG.js": "../../../../moment/locale/en-SG.js",
+	"./en-au": "../../../../moment/locale/en-au.js",
+	"./en-au.js": "../../../../moment/locale/en-au.js",
+	"./en-ca": "../../../../moment/locale/en-ca.js",
+	"./en-ca.js": "../../../../moment/locale/en-ca.js",
+	"./en-gb": "../../../../moment/locale/en-gb.js",
+	"./en-gb.js": "../../../../moment/locale/en-gb.js",
+	"./en-ie": "../../../../moment/locale/en-ie.js",
+	"./en-ie.js": "../../../../moment/locale/en-ie.js",
+	"./en-il": "../../../../moment/locale/en-il.js",
+	"./en-il.js": "../../../../moment/locale/en-il.js",
+	"./en-nz": "../../../../moment/locale/en-nz.js",
+	"./en-nz.js": "../../../../moment/locale/en-nz.js",
+	"./eo": "../../../../moment/locale/eo.js",
+	"./eo.js": "../../../../moment/locale/eo.js",
+	"./es": "../../../../moment/locale/es.js",
+	"./es-do": "../../../../moment/locale/es-do.js",
+	"./es-do.js": "../../../../moment/locale/es-do.js",
+	"./es-us": "../../../../moment/locale/es-us.js",
+	"./es-us.js": "../../../../moment/locale/es-us.js",
+	"./es.js": "../../../../moment/locale/es.js",
+	"./et": "../../../../moment/locale/et.js",
+	"./et.js": "../../../../moment/locale/et.js",
+	"./eu": "../../../../moment/locale/eu.js",
+	"./eu.js": "../../../../moment/locale/eu.js",
+	"./fa": "../../../../moment/locale/fa.js",
+	"./fa.js": "../../../../moment/locale/fa.js",
+	"./fi": "../../../../moment/locale/fi.js",
+	"./fi.js": "../../../../moment/locale/fi.js",
+	"./fo": "../../../../moment/locale/fo.js",
+	"./fo.js": "../../../../moment/locale/fo.js",
+	"./fr": "../../../../moment/locale/fr.js",
+	"./fr-ca": "../../../../moment/locale/fr-ca.js",
+	"./fr-ca.js": "../../../../moment/locale/fr-ca.js",
+	"./fr-ch": "../../../../moment/locale/fr-ch.js",
+	"./fr-ch.js": "../../../../moment/locale/fr-ch.js",
+	"./fr.js": "../../../../moment/locale/fr.js",
+	"./fy": "../../../../moment/locale/fy.js",
+	"./fy.js": "../../../../moment/locale/fy.js",
+	"./ga": "../../../../moment/locale/ga.js",
+	"./ga.js": "../../../../moment/locale/ga.js",
+	"./gd": "../../../../moment/locale/gd.js",
+	"./gd.js": "../../../../moment/locale/gd.js",
+	"./gl": "../../../../moment/locale/gl.js",
+	"./gl.js": "../../../../moment/locale/gl.js",
+	"./gom-latn": "../../../../moment/locale/gom-latn.js",
+	"./gom-latn.js": "../../../../moment/locale/gom-latn.js",
+	"./gu": "../../../../moment/locale/gu.js",
+	"./gu.js": "../../../../moment/locale/gu.js",
+	"./he": "../../../../moment/locale/he.js",
+	"./he.js": "../../../../moment/locale/he.js",
+	"./hi": "../../../../moment/locale/hi.js",
+	"./hi.js": "../../../../moment/locale/hi.js",
+	"./hr": "../../../../moment/locale/hr.js",
+	"./hr.js": "../../../../moment/locale/hr.js",
+	"./hu": "../../../../moment/locale/hu.js",
+	"./hu.js": "../../../../moment/locale/hu.js",
+	"./hy-am": "../../../../moment/locale/hy-am.js",
+	"./hy-am.js": "../../../../moment/locale/hy-am.js",
+	"./id": "../../../../moment/locale/id.js",
+	"./id.js": "../../../../moment/locale/id.js",
+	"./is": "../../../../moment/locale/is.js",
+	"./is.js": "../../../../moment/locale/is.js",
+	"./it": "../../../../moment/locale/it.js",
+	"./it-ch": "../../../../moment/locale/it-ch.js",
+	"./it-ch.js": "../../../../moment/locale/it-ch.js",
+	"./it.js": "../../../../moment/locale/it.js",
+	"./ja": "../../../../moment/locale/ja.js",
+	"./ja.js": "../../../../moment/locale/ja.js",
+	"./jv": "../../../../moment/locale/jv.js",
+	"./jv.js": "../../../../moment/locale/jv.js",
+	"./ka": "../../../../moment/locale/ka.js",
+	"./ka.js": "../../../../moment/locale/ka.js",
+	"./kk": "../../../../moment/locale/kk.js",
+	"./kk.js": "../../../../moment/locale/kk.js",
+	"./km": "../../../../moment/locale/km.js",
+	"./km.js": "../../../../moment/locale/km.js",
+	"./kn": "../../../../moment/locale/kn.js",
+	"./kn.js": "../../../../moment/locale/kn.js",
+	"./ko": "../../../../moment/locale/ko.js",
+	"./ko.js": "../../../../moment/locale/ko.js",
+	"./ku": "../../../../moment/locale/ku.js",
+	"./ku.js": "../../../../moment/locale/ku.js",
+	"./ky": "../../../../moment/locale/ky.js",
+	"./ky.js": "../../../../moment/locale/ky.js",
+	"./lb": "../../../../moment/locale/lb.js",
+	"./lb.js": "../../../../moment/locale/lb.js",
+	"./lo": "../../../../moment/locale/lo.js",
+	"./lo.js": "../../../../moment/locale/lo.js",
+	"./lt": "../../../../moment/locale/lt.js",
+	"./lt.js": "../../../../moment/locale/lt.js",
+	"./lv": "../../../../moment/locale/lv.js",
+	"./lv.js": "../../../../moment/locale/lv.js",
+	"./me": "../../../../moment/locale/me.js",
+	"./me.js": "../../../../moment/locale/me.js",
+	"./mi": "../../../../moment/locale/mi.js",
+	"./mi.js": "../../../../moment/locale/mi.js",
+	"./mk": "../../../../moment/locale/mk.js",
+	"./mk.js": "../../../../moment/locale/mk.js",
+	"./ml": "../../../../moment/locale/ml.js",
+	"./ml.js": "../../../../moment/locale/ml.js",
+	"./mn": "../../../../moment/locale/mn.js",
+	"./mn.js": "../../../../moment/locale/mn.js",
+	"./mr": "../../../../moment/locale/mr.js",
+	"./mr.js": "../../../../moment/locale/mr.js",
+	"./ms": "../../../../moment/locale/ms.js",
+	"./ms-my": "../../../../moment/locale/ms-my.js",
+	"./ms-my.js": "../../../../moment/locale/ms-my.js",
+	"./ms.js": "../../../../moment/locale/ms.js",
+	"./mt": "../../../../moment/locale/mt.js",
+	"./mt.js": "../../../../moment/locale/mt.js",
+	"./my": "../../../../moment/locale/my.js",
+	"./my.js": "../../../../moment/locale/my.js",
+	"./nb": "../../../../moment/locale/nb.js",
+	"./nb.js": "../../../../moment/locale/nb.js",
+	"./ne": "../../../../moment/locale/ne.js",
+	"./ne.js": "../../../../moment/locale/ne.js",
+	"./nl": "../../../../moment/locale/nl.js",
+	"./nl-be": "../../../../moment/locale/nl-be.js",
+	"./nl-be.js": "../../../../moment/locale/nl-be.js",
+	"./nl.js": "../../../../moment/locale/nl.js",
+	"./nn": "../../../../moment/locale/nn.js",
+	"./nn.js": "../../../../moment/locale/nn.js",
+	"./pa-in": "../../../../moment/locale/pa-in.js",
+	"./pa-in.js": "../../../../moment/locale/pa-in.js",
+	"./pl": "../../../../moment/locale/pl.js",
+	"./pl.js": "../../../../moment/locale/pl.js",
+	"./pt": "../../../../moment/locale/pt.js",
+	"./pt-br": "../../../../moment/locale/pt-br.js",
+	"./pt-br.js": "../../../../moment/locale/pt-br.js",
+	"./pt.js": "../../../../moment/locale/pt.js",
+	"./ro": "../../../../moment/locale/ro.js",
+	"./ro.js": "../../../../moment/locale/ro.js",
+	"./ru": "../../../../moment/locale/ru.js",
+	"./ru.js": "../../../../moment/locale/ru.js",
+	"./sd": "../../../../moment/locale/sd.js",
+	"./sd.js": "../../../../moment/locale/sd.js",
+	"./se": "../../../../moment/locale/se.js",
+	"./se.js": "../../../../moment/locale/se.js",
+	"./si": "../../../../moment/locale/si.js",
+	"./si.js": "../../../../moment/locale/si.js",
+	"./sk": "../../../../moment/locale/sk.js",
+	"./sk.js": "../../../../moment/locale/sk.js",
+	"./sl": "../../../../moment/locale/sl.js",
+	"./sl.js": "../../../../moment/locale/sl.js",
+	"./sq": "../../../../moment/locale/sq.js",
+	"./sq.js": "../../../../moment/locale/sq.js",
+	"./sr": "../../../../moment/locale/sr.js",
+	"./sr-cyrl": "../../../../moment/locale/sr-cyrl.js",
+	"./sr-cyrl.js": "../../../../moment/locale/sr-cyrl.js",
+	"./sr.js": "../../../../moment/locale/sr.js",
+	"./ss": "../../../../moment/locale/ss.js",
+	"./ss.js": "../../../../moment/locale/ss.js",
+	"./sv": "../../../../moment/locale/sv.js",
+	"./sv.js": "../../../../moment/locale/sv.js",
+	"./sw": "../../../../moment/locale/sw.js",
+	"./sw.js": "../../../../moment/locale/sw.js",
+	"./ta": "../../../../moment/locale/ta.js",
+	"./ta.js": "../../../../moment/locale/ta.js",
+	"./te": "../../../../moment/locale/te.js",
+	"./te.js": "../../../../moment/locale/te.js",
+	"./tet": "../../../../moment/locale/tet.js",
+	"./tet.js": "../../../../moment/locale/tet.js",
+	"./tg": "../../../../moment/locale/tg.js",
+	"./tg.js": "../../../../moment/locale/tg.js",
+	"./th": "../../../../moment/locale/th.js",
+	"./th.js": "../../../../moment/locale/th.js",
+	"./tl-ph": "../../../../moment/locale/tl-ph.js",
+	"./tl-ph.js": "../../../../moment/locale/tl-ph.js",
+	"./tlh": "../../../../moment/locale/tlh.js",
+	"./tlh.js": "../../../../moment/locale/tlh.js",
+	"./tr": "../../../../moment/locale/tr.js",
+	"./tr.js": "../../../../moment/locale/tr.js",
+	"./tzl": "../../../../moment/locale/tzl.js",
+	"./tzl.js": "../../../../moment/locale/tzl.js",
+	"./tzm": "../../../../moment/locale/tzm.js",
+	"./tzm-latn": "../../../../moment/locale/tzm-latn.js",
+	"./tzm-latn.js": "../../../../moment/locale/tzm-latn.js",
+	"./tzm.js": "../../../../moment/locale/tzm.js",
+	"./ug-cn": "../../../../moment/locale/ug-cn.js",
+	"./ug-cn.js": "../../../../moment/locale/ug-cn.js",
+	"./uk": "../../../../moment/locale/uk.js",
+	"./uk.js": "../../../../moment/locale/uk.js",
+	"./ur": "../../../../moment/locale/ur.js",
+	"./ur.js": "../../../../moment/locale/ur.js",
+	"./uz": "../../../../moment/locale/uz.js",
+	"./uz-latn": "../../../../moment/locale/uz-latn.js",
+	"./uz-latn.js": "../../../../moment/locale/uz-latn.js",
+	"./uz.js": "../../../../moment/locale/uz.js",
+	"./vi": "../../../../moment/locale/vi.js",
+	"./vi.js": "../../../../moment/locale/vi.js",
+	"./x-pseudo": "../../../../moment/locale/x-pseudo.js",
+	"./x-pseudo.js": "../../../../moment/locale/x-pseudo.js",
+	"./yo": "../../../../moment/locale/yo.js",
+	"./yo.js": "../../../../moment/locale/yo.js",
+	"./zh-cn": "../../../../moment/locale/zh-cn.js",
+	"./zh-cn.js": "../../../../moment/locale/zh-cn.js",
+	"./zh-hk": "../../../../moment/locale/zh-hk.js",
+	"./zh-hk.js": "../../../../moment/locale/zh-hk.js",
+	"./zh-tw": "../../../../moment/locale/zh-tw.js",
+	"./zh-tw.js": "../../../../moment/locale/zh-tw.js"
+};
+function webpackContext(req) {
+	return __webpack_require__(webpackContextResolve(req));
+};
+function webpackContextResolve(req) {
+	var id = map[req];
+	if(!(id + 1)) // check for number or string
+		throw new Error("Cannot find module '" + req + "'.");
+	return id;
+};
+webpackContext.keys = function webpackContextKeys() {
+	return Object.keys(map);
+};
+webpackContext.resolve = webpackContextResolve;
+module.exports = webpackContext;
+webpackContext.id = "../../../../moment/locale recursive ^\\.\\/.*$";
 
 /***/ }),
 

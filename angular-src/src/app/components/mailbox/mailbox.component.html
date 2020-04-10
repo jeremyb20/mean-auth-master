@@ -1,26 +1,27 @@
+<div *ngFor="let s of sizes" class="{{s.css + ' ' + (prefix + s.id) }}">
 <div *ngIf="user" class="container">
   <div class="row no-gutters">
-    <div class="col-md-4 border-right">
+    <div *ngIf="!sizeBoolean || showHeaderMsg && !showBodyMsg" class="col-md-4 border-right">
       <div class="settings-tray">
         <img class="profile-image" [src]="user.photo" alt="Profile img">
-        <!-- <img [src]="user.photo" class="avatar img-circle img-thumbnail" alt="avatar"> -->
         <span class="settings-tray--right">
-          <i class="material-icons">cached</i>
+          <!-- <h6>{{user.username}}</h6> -->
+          <i class="fa fa-refresh" aria-hidden="true"></i>
           <i class="material-icons">message</i>
           <i class="material-icons">menu</i>
         </span>
       </div>
       <div class="search-box">
         <div class="input-wrapper">
-          <i class="material-icons">search</i>
+          <i class="fa fa-search" aria-hidden="true"></i>
           <input [(ngModel)]="searchTerm" (ngModelChange)= "search()" placeholder="Search here" type="text">
         </div>
       </div>
-      <div style='height: 600px;' id='data-list-container'>
-        <div *ngFor="let value of allUsers" class="friend-drawer friend-drawer--onhover" (click)="test(value)">
+      <div id='data-list-container'>
+        <div *ngFor="let value of allUsers" class="friend-drawer friend-drawer--onhover" (click)="test(value, true)">
           <img class="profile-image" [src]="value.photo" alt="">
           <div class="text">
-            <h6>{{value.name}}</h6>
+            <h6>{{value.username}}</h6>
             <p class="text-muted">Hey, you're arrested!</p>
           </div>
           <span class="time text-muted small">13:21</span>
@@ -28,82 +29,50 @@
       </div>
       <hr>
     </div>
-    <div class="col-md-8">
-      <div class="settings-tray">
+    <div *ngIf="showBodyMsg || size != 0" class="col-md-8">
+      <div  class="settings-tray">
         <div *ngFor="let test of itemUserSelected" class="friend-drawer no-gutters friend-drawer--grey">
+          <span *ngIf="size == 0" (click)="goBackMail(true)" class="settings-tray--right test">
+            <i class="fa fa-arrow-left" aria-hidden="true"></i>
+          </span>
           <img class="profile-image" [src]="test.photo" alt="">
-            <div class="text">
-              <h6>{{test.name}}</h6>
-              <p class="text-muted">Layin' down the law since like before Christ...</p>
-            </div>
-            <span class="settings-tray--right">
-              <i class="material-icons">cached</i>
-              <i class="material-icons">message</i>
-              <i class="material-icons">menu</i>
-            </span>
+          <div class="text">
+            <h6>{{test.name}}</h6>
+          </div>
+          <span class="settings-tray--right">
+            <i class="fa fa-refresh" aria-hidden="true"></i>
+            <i class="material-icons">menu</i>
+          </span>
         </div>
       </div>
-      <div class="chat-panel">
-        <div class="row no-gutters">
-          <div class="col-md-3">
-            <div class="chat-bubble chat-bubble--left">
-              Hello dude!
+      <div style="max-height: 74vh; height: 74vh;" class="chat-content">
+        <div class="chat-panel">
+          <div *ngIf="this.getMessages.length > 0" class="message-content">
+            <div *ngFor="let msg of getMessages | orderBy:'timeNow'" class="row no-gutters">
+              <div [ngClass]="(msg.isUserSigned)?'col-md-3 offset-md-9':'col-md-3 '">
+                <div [ngClass]="(msg.isUserSigned)?' chat-bubble chat-bubble--right max-left-msg-right':'chat-bubble chat-bubble--left max-left-msg'">
+                  {{msg.message}}
+                  <span class="text-right text-clock">{{msg.timeNow | date: 'hh:mm a'}}</span>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="row no-gutters">
-          <div class="col-md-3 offset-md-9">
-            <div class="chat-bubble chat-bubble--right">
-              Hello dude!
-            </div>
+          <div *ngIf="this.getMessages.length == 0">
+            <h1>Please start a new message </h1>
           </div>
         </div>
-        <div class="row no-gutters">
-          <div class="col-md-3 offset-md-9">
-            <div class="chat-bubble chat-bubble--right">
-              Hello dude!
-            </div>
-          </div>
-        </div>
-        <div class="row no-gutters">
-          <div class="col-md-3">
-            <div class="chat-bubble chat-bubble--left">
-              Hello dude!
-            </div>
-          </div>
-        </div>
-        <div class="row no-gutters">
-          <div class="col-md-3">
-            <div class="chat-bubble chat-bubble--left">
-              Hello dude!
-            </div>
-          </div>
-        </div>
-        <div class="row no-gutters">
-          <div class="col-md-3">
-            <div class="chat-bubble chat-bubble--left">
-              Hello dude!
-            </div>
-          </div>
-        </div>
-        <div class="row no-gutters">
-          <div class="col-md-3 offset-md-9">
-            <div class="chat-bubble chat-bubble--right">
-              Hello dude!
-            </div>
-          </div>
-        </div>
-        <div class="row">
+      </div>
+      <div class="row no-gutters">
           <div class="col-12">
             <div class="chat-box-tray">
-              <i class="material-icons">sentiment_very_satisfied</i>
-              <input type="text" [(ngModel)]="message" placeholder="Type your message here...">
-              <i class="material-icons">mic</i>
-              <i class="material-icons"><a (click)="sendMessage(message)" >send</a></i>
+              <i class="fa fa-smile-o" aria-hidden="true"></i>
+              <input type="text" (keydown.enter)="sendMessage($event.target.value)" [(ngModel)]="message" placeholder="Type your message here...">
+              <i class="fa fa-microphone" aria-hidden="true"></i>
+              <a class="btn" (click)="sendMessage(message)"><i class="fa fa-paper-plane" aria-hidden="true"></i></a>
             </div>
           </div>
         </div>
-      </div>
     </div>
   </div>
+</div>
 </div>

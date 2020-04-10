@@ -2,7 +2,12 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-import {RouterModule, Routes} from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
+import { ValidateService } from './services/validate.service';
+import { AuthService } from './services/auth.service';
+import { FlashMessagesModule } from 'angular2-flash-messages';
+import { AuthGuard } from './guards/auth.guard';
+import { ResizeService } from './services/size-detector/resize-service';
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
@@ -11,13 +16,9 @@ import { RegisterComponent } from './components/register/register.component';
 import { HomeComponent } from './components/home/home.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { ProfileComponent } from './components/profile/profile.component';
-
-import { ValidateService } from './services/validate.service';
-import { AuthService } from './services/auth.service';
-import { FlashMessagesModule } from 'angular2-flash-messages';
-import { AuthGuard } from './guards/auth.guard';
 import { SettingsComponent } from './components/settings/settings.component';
 import { MailboxComponent } from './components/mailbox/mailbox.component';
+import { OrderByPipe } from './components/mailbox/order-by.pipe';
 import { UsersComponent } from './components/users/users.component';
 
 const appRoutes: Routes =  [
@@ -43,7 +44,8 @@ const appRoutes: Routes =  [
     ProfileComponent,
     SettingsComponent,
     MailboxComponent,
-    UsersComponent
+    UsersComponent,
+    OrderByPipe
   ],
   imports: [
     BrowserModule,
@@ -52,7 +54,7 @@ const appRoutes: Routes =  [
     RouterModule.forRoot(appRoutes),
     FlashMessagesModule.forRoot()
   ],
-  providers: [ValidateService, AuthService, AuthGuard],
+  providers: [ValidateService, AuthService, AuthGuard, ResizeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

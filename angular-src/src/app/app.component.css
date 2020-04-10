@@ -34,7 +34,7 @@ a, a:hover, a:focus {
 }
 
 .navbar {
-    padding: 10px 5px;
+    padding: 1px;
     background: #fff;
     border: none;
     border-radius: 0;
@@ -68,6 +68,8 @@ a, a:hover, a:focus {
 
 
 #sidebar {
+    max-height: 100vh;
+    height: 100vh;
     min-width: 250px;
     max-width: 250px;
     background: #7386D5;
@@ -159,8 +161,8 @@ a.article, a.article:hover {
 ----------------------------------------------------- */
 #content {
     width: 100%;
-    padding: 20px;
-    min-height: 100vh;
+    padding: 5px;
+    /* max-height: 100vh; */
     transition: all 0.3s;
 }
 
