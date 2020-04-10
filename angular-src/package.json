@@ -2,6 +2,10 @@
   "name": "angular-src",
   "version": "0.0.0",
   "license": "MIT",
+  "engines": {
+    "node": "10.17.0",
+    "npm": "6.11.3"
+  },
   "scripts": {
     "ng": "ng",
     "start": "ng-serve",
