@@ -3,6 +3,7 @@ import { AuthService } from '../../services/auth.service';
 import { FlashMessagesService } from 'angular2-flash-messages';
 import { ResizeService } from '../../services/size-detector/resize-service';
 import { SCREEN_SIZE } from '../../services/size-detector/screen-size.enum';
+import { ChatService } from '../../services/chat.service';
 import { delay } from 'rxjs/operators';
 import * as moment from 'moment';
 
@@ -29,6 +30,7 @@ export class MailboxComponent implements OnInit {
   elementSigned = [];
   message: string;
   size: SCREEN_SIZE;
+  data = {};
 
   prefix = 'is-';
   sizes = [
@@ -55,6 +57,7 @@ export class MailboxComponent implements OnInit {
   ];
 
   constructor(
+    private chat: ChatService,
     private authService: AuthService,
     private resizeSvc: ResizeService,
     private elementRef: ElementRef,
@@ -157,6 +160,9 @@ export class MailboxComponent implements OnInit {
         this.getMessages.push(element);
       }
     });
+    this.chat.messages.subscribe(msg => {
+      this.getMessages.push(msg);
+    })
   }
 
   // getUserMessages(val) { //this function bring al messages service by id
@@ -209,6 +215,12 @@ export class MailboxComponent implements OnInit {
       phone: this.elementSigned[0].phone,
       isnew: true
     }
+
+    this.data = {
+      username: this.itemUserSelected[0].username,
+      message: val
+    }
+    this.chat.sendMsg(this.data);
 
     this.authService.sendMessage(this.messageSent).subscribe(data => {
       if(data.success) {

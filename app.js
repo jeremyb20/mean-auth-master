@@ -5,6 +5,7 @@ const cors = require('cors');
 const passport = require('passport');
 const mongoose = require('mongoose');
 const config = require('./back-end/config/database');
+const socket = require('socket.io')
 
 
 // Port Number
@@ -67,6 +68,30 @@ app.get('*', (req, res) => {
 });
 
 // Start Server
-app.listen(port, () => {
+var server = app.listen(port, () => {
   console.log('Server started on port '+port);
+});
+
+let io = socket(server)
+io.on('connection', function(socket){
+  console.log(`${socket.id} is connected`);
+
+  socket.on('disconnect', function(){
+    console.log('User discconected');
+  });
+
+  // socket.on('message', (message) => {
+  //   console.log("Message reveived:" + message);
+  //   io.emit('message', {type:'new-message', text:message});
+  // });
+
+  socket.on('message', (message) => {
+    // console.log("Message reveived:" + message);
+    io.emit('message', {username:message.username, message:message.message});
+  });
+
+  socket.on('typing', (data)=> {
+    socket.broadcast.emit('typing',data);
+  })
+
 });

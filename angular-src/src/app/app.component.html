@@ -67,7 +67,7 @@
       <!-- Page Content Holder -->
       <div id="content">
           <nav class="navbar navbar-expand-lg navbar-light bg-light">
-              <div class="container-fluid">
+              <div *ngIf="authService.loggedIn()" [routerLinkActive]="['active']" [routerLinkActiveOptions] = "{exact:true}" class="container-fluid">
 
                   <button type="button" id="sidebarCollapse" class="navbar-btn">
                       <span></span>
@@ -84,7 +84,7 @@
                               <a class="nav-link" [routerLink]="['/mailbox']">Mailbox</a>
                           </li>
                           <li class="nav-item" *ngIf="authService.loggedIn()" [routerLinkActive]="['active']" [routerLinkActiveOptions] = "{exact:true}">
-                              <a class="nav-link" [routerLink]="['/mailbox']">Notification</a>
+                              <a class="nav-link" [routerLink]="['/mailbox']">Chat</a>
                           </li>
                           <li class="nav-item" *ngIf="authService.loggedIn()" [routerLinkActive]="['active']" [routerLinkActiveOptions] = "{exact:true}">
                               <a class="nav-link" [routerLink]="['/settings']">Settings</a>

@@ -57,7 +57,7 @@
               </div>
             </div>
           </div>
-          <div *ngIf="this.getMessages.length == 0">
+          <div class="star_new_message" *ngIf="this.getMessages.length == 0">
             <h1>Please start a new message </h1>
           </div>
         </div>
@@ -76,3 +76,4 @@
   </div>
 </div>
 </div>
+<script src="/socket.io/socket.io.js"></script>
