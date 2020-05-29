@@ -1,2 +1,23 @@
-<h2 class="page-header">Settings</h2>
-<p>Welcome to your Settings</p>
+<!-- <h2 class="page-header">Settings</h2>
+<p>Welcome to your Settings</p> -->
+
+<h1>Our Socket.io app test</h1>
+
+<div id="chat-container">
+    <!-- <div id="chat-window">
+        <div id="output"></div>
+        <div id="actions"></div>
+    </div> -->
+    <div id="chat-window">
+        <div *ngFor="let item of msgReceived" id="output">
+          <b><span>{{item.username}}:</span></b>
+          <span>{{item.message}}</span>
+        </div>
+        <div id="actions"></div>
+    </div>
+    <input type="text" id="username" [(ngModel)]="username" placeholder="username">
+    <input type="text" id="message" (ngModelChange)="typing(message)" (keydown.enter)="sendMessage($event.target.value)" [(ngModel)]="message" onfocus="this.value=''" placeholder="message">
+    <button (click)="sendMessage()" id="send">Send</button>
+</div>
+
+<script src="/socket.io/socket.io.js"></script>

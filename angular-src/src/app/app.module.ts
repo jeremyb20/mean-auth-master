@@ -8,6 +8,8 @@ import { AuthService } from './services/auth.service';
 import { FlashMessagesModule } from 'angular2-flash-messages';
 import { AuthGuard } from './guards/auth.guard';
 import { ResizeService } from './services/size-detector/resize-service';
+import { ChatService } from './services/chat.service';
+import { WebsocketService } from './services/websocket.service';
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
@@ -54,7 +56,7 @@ const appRoutes: Routes =  [
     RouterModule.forRoot(appRoutes),
     FlashMessagesModule.forRoot()
   ],
-  providers: [ValidateService, AuthService, AuthGuard, ResizeService],
+  providers: [ValidateService, AuthService, AuthGuard, ResizeService, ChatService, WebsocketService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

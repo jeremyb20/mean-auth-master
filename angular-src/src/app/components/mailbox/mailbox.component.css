@@ -262,3 +262,9 @@ hr {
   overflow-y: auto;
   position: relative;
 }
+
+.star_new_message {
+  text-align: center;
+  vertical-align: middle;
+  margin-top: 90px;   
+}

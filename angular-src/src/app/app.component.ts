@@ -12,6 +12,7 @@ import { FlashMessagesService } from 'angular2-flash-messages';
 export class AppComponent implements OnInit {
   user:any;
   test = false;
+  isFoo:boolean = false;
 
   constructor(
     private authService: AuthService,
