@@ -218,7 +218,8 @@ export class MailboxComponent implements OnInit {
 
     this.data = {
       username: this.itemUserSelected[0].username,
-      message: val
+      message: val,
+      timeNow: timeNow
     }
     this.chat.sendMsg(this.data);
 

@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
-import { Http, Headers } from '@angular/http';
-import { HttpModule } from '@angular/http';
+import { Http, Headers, RequestOptions } from '@angular/http';
 import 'rxjs/add/operator/map';
 import { tokenNotExpired } from 'angular2-jwt';
+import { Observable } from 'rxjs';
 
 @Injectable()
 export class AuthService {
@@ -14,13 +14,23 @@ export class AuthService {
       this.isDev = false;  // Change to false when you're gonna deploy your app, true when is on develop 
   }
 
-  registerUser(user) {
+  registerUser(user,  photo:any) {
+    const fd = new FormData();
+    fd.append('username',user.username);
+    fd.append('email',user.email);
+    fd.append('name',user.name);
+    fd.append('password',user.password);
+    fd.append('image', photo);
+
     let headers = new Headers();
-    headers.append('Content-Type', 'application/json');
+    // headers.append('Content-Type', 'application/json');
+    //headers.append('Content-Type', 'multipart/form-data');
+    let options = new RequestOptions({ headers: headers });
+
     if(this.isDev) {
-      return this.http.post('http://localhost:8080/users/register', user, {headers: headers}).map(res => res.json());
+      return this.http.post('http://localhost:8080/users/register', fd, options).map(res => res.json());
     }else{
-      return this.http.post('users/register', user, {headers: headers}).map(res => res.json());
+      return this.http.post('users/register', fd, options).map(res => res.json());
     }
   }
 

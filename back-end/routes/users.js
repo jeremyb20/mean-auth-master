@@ -4,16 +4,33 @@ const passport = require('passport');
 const jwt = require('jsonwebtoken');
 const config = require('../config/database');
 const User = require('../models/user');
+const cloudinary = require('cloudinary').v2;
+const app = express();
+
+var fileupload = require('express-fileupload');
+
+app.use(fileupload({
+  useTempFiles:true
+}));
+
+cloudinary.config({
+  cloud_name:'ensamble',
+  api_key: '218419814373569',
+  api_secret: 'xBNx-qCyqTrcAahx8ZqGEAnNpwM'
+});
 
 // Register aqui hay ebviar la foto
-router.post('/register', (req, res, next) => {
+router.post('/register', async(req, res, next) => {
+  const obj = JSON.parse(JSON.stringify(req.body));
+
+  const result = await cloudinary.uploader.upload(req.file.path);
+
   let newUser = new User ({
-    name: req.body.name,
-    email: req.body.email,
-    username: req.body.username,
-    password: req.body.password,
-    address:req.body.address,
-    phone: req.body.phone
+    name: obj.name,
+    email: obj.email,
+    username: obj.username,
+    password: obj.password,
+    photo: result.url
   });
 
   User.addUser(newUser, (err, user) => {
@@ -59,7 +76,8 @@ router.post('/authenticate', (req, res, next) => {
             id: user._id,
             name: user.name,
             username: user.username,
-            email: user.email
+            email: user.email,
+            photo: user.photo
           }
         })
       } else {
