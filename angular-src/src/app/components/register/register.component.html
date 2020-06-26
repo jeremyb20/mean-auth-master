@@ -1,25 +1,52 @@
-<div>
-<h2 class="page-header">Register</h2>
-<form (submit)="onRegisterSubmit()" >
-  <div class="form-group">
-    <label for="name">Name</label>
-    <input type="text" [(ngModel)]="name" name="name" class="form-control" id="name" placeholder="Enter Name">
-  </div>
-  <div class="form-group">
-    <label for="username">Username</label>
-    <input type="text" [(ngModel)]="username" name="username" class="form-control" id="username" placeholder="Enter Username">
-  </div>
-  <div class="form-group">
-    <label for="email">Email</label>
-    <input type="email" [(ngModel)]="email" name="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter Email">
-    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-  </div>
-  <div class="form-group">
-    <label for="password">Password</label>
-    <input type="password" [(ngModel)]="password" name="password" class="form-control" id="password" placeholder=" Enter Password">
-  </div>
-  <input type="submit" class="btn btn-primary" value="Submit">
-    <a class="nav-link" [routerLink]="['/login']">Login </a>
-    <a class="nav-link" [routerLink]="['/']">Home </a>
-</form>
-</div>
+<div class="row no-gutters justify-content-center fadeInDown">
+  <div class="col-md-6">
+    <div class="card">
+      <header class="card-header fadeIn first">
+        <a [routerLink]="['/login']" class="nav-link float-right btn btn-outline-primary mt-1">Log in</a>
+        <h4 class="card-title mt-2">Sign up</h4>
+      </header>
+      <article class="card-body">
+        <form (submit)="onRegisterSubmit()" enctype="multipart/form-data">
+          <div class="form-row">
+            <div class="col form-group">
+              <label>Name </label>
+              <input type="text" [(ngModel)]="name" name="name" class="form-control fadeIn second" id="name" placeholder="Enter Name">
+            </div> <!-- form-group end.// -->
+            <div class="col form-group">
+              <label for="username">Username</label>
+              <input type="text" [(ngModel)]="username" name="username" class="form-control fadeIn second" id="username"
+                placeholder="Enter Username">
+            </div> <!-- form-group end.// -->
+          </div> <!-- form-row end.// -->
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" [(ngModel)]="email" name="email" class="form-control fadeIn third" id="email"
+              aria-describedby="emailHelp" placeholder="Enter Email">
+            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+          </div> <!-- form-group end.// -->
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" [(ngModel)]="password" name="password" class="form-control fadeIn third" id="password"
+              placeholder=" Enter Password">
+          </div> <!-- form-group end.// -->
+          <div class="form-group text-center">
+            <label class="image-upload-container btn btn-bwm">
+              <input #photoinput type="file" name="image" accept="image/*" class="d-none"
+                (change)="processFile($event)">
+              <img [src]="photoSelected || '../../../assets/upload.png'" alt="" style="width: 200px; height: 200px;"
+                class="img-fluid" (click)="photoinput.click()" srcset="">
+            </label>
+          </div> <!-- form-group end.// -->
+
+          <div class="form-group">
+            <button type="submit" class="btn btn-primary btn-block"> Register </button>
+          </div> <!-- form-group// -->
+          <small class="text-muted">By clicking the 'Sign Up' button, you confirm that you accept our <br> Terms of use
+            and Privacy Policy.</small>
+        </form>
+      </article> <!-- card-body end .// -->
+      <div class="border-top card-body text-center">Have an account? <a [routerLink]="['/login']">Log In</a></div>
+    </div> <!-- card.// -->
+  </div> <!-- col.//-->
+
+</div> <!-- row.//-->

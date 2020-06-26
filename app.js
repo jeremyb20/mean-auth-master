@@ -5,7 +5,8 @@ const cors = require('cors');
 const passport = require('passport');
 const mongoose = require('mongoose');
 const config = require('./back-end/config/database');
-const socket = require('socket.io')
+const socket = require('socket.io');
+const multer = require('multer');
 
 
 // Port Number
@@ -40,9 +41,30 @@ const app = express();
 
 const users = require('./back-end/routes/users');
 
+app.use(bodyParser.urlencoded({
+  extended: false
+}));
+
+app.use(express.json());
+app.use(express.urlencoded({ extended:false}));
+const storage = multer.diskStorage({
+  destination: path.join(__dirname, 'public/uploads'),
+  filename: (req, file, cd) => {
+    cd(null, new Date().getTime() + path.extname(file.originalname));
+  }
+});
+app.use(multer({storage}).single('image'));
 
 // CORS Middleware
 app.use(cors());
+
+app.use(function (req, res, next) {
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
+  res.setHeader('Access-Control-Allow-Headers', 'Origin, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version, X-Response-Time, X-PINGOTHER, X-CSRF-Token,Authorization');
+  res.setHeader('Access-Control-Allow-Credentials', true);
+  next();
+});
 
 // Set Static Folder
 app.use(express.static(path.join(__dirname, 'public')));
@@ -86,8 +108,8 @@ io.on('connection', function(socket){
   // });
 
   socket.on('message', (message) => {
-    // console.log("Message reveived:" + message);
-    io.emit('message', {username:message.username, message:message.message});
+    console.log("Message reveived:" + message);
+    io.emit('message', {username:message.username, message:message.message, timeNow: message.timeNow});
   });
 
   socket.on('typing', (data)=> {
