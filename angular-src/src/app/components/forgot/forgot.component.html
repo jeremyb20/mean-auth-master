@@ -1,0 +1,26 @@
+<div class="row no-gutters justify-content-center fadeInDown">
+  <div class="col-md-6">
+    <div class="card">
+      <header class="card-header fadeIn first">
+        <a [routerLink]="['/login']" class="nav-link float-right btn btn-outline-primary mt-1">Log in</a>
+        <h4 class="card-title mt-2">Forgot Password</h4>
+      </header>
+      <article class="card-body">
+        <form (submit)="onEmailSubmit()">
+          
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" [(ngModel)]="email" name="email" class="form-control fadeIn third" id="email"
+              aria-describedby="emailHelp" placeholder="Enter Email">
+            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+          </div> <!-- form-group end.// -->
+          <div class="form-group">
+            <button type="submit" class="btn btn-primary btn-block"> Forgot Password </button>
+          </div> <!-- form-group// -->
+        </form>
+      </article> <!-- card-body end .// -->
+      <div class="border-top card-body text-center">Have an account? <a [routerLink]="['/login']">Log In</a></div>
+    </div> <!-- card.// -->
+  </div> <!-- col.//-->
+
+</div> <!-- row.//-->

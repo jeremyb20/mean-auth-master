@@ -2,11 +2,15 @@ const express = require('express');
 const path = require('path');
 const bodyParser = require('body-parser');
 const cors = require('cors');
+const logger = require('morgan');
 const passport = require('passport');
 const mongoose = require('mongoose');
+const cookieParser = require('cookie-parser');
 const config = require('./back-end/config/database');
 const socket = require('socket.io');
 const multer = require('multer');
+const session = require('express-session');
+const flash = require('express-flash');
 
 
 // Port Number
@@ -45,6 +49,8 @@ app.use(bodyParser.urlencoded({
   extended: false
 }));
 
+app.use(cookieParser());
+
 app.use(express.json());
 app.use(express.urlencoded({ extended:false}));
 const storage = multer.diskStorage({
@@ -65,6 +71,11 @@ app.use(function (req, res, next) {
   res.setHeader('Access-Control-Allow-Credentials', true);
   next();
 });
+app.use(session({      secret: 'session secret key',     resave: false,     saveUninitialized: false }));
+app.set('views', path.join(__dirname, 'public'));
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'ejs');
+app.use(logger('dev'));
 
 // Set Static Folder
 app.use(express.static(path.join(__dirname, 'public')));
@@ -76,8 +87,13 @@ app.use(bodyParser.json());
 app.use(passport.initialize());
 app.use(passport.session());
 
-require('./back-end/config/passport')(passport);
+app.use(session({ cookie: { maxAge: 60000 }, 
+  secret: 'woot',
+  resave: false, 
+  saveUninitialized: false}));
 
+require('./back-end/config/passport')(passport);
+app.use(flash());
 app.use('/users', users);
 
 // Index Route

@@ -22,17 +22,20 @@ import { SettingsComponent } from './components/settings/settings.component';
 import { MailboxComponent } from './components/mailbox/mailbox.component';
 import { OrderByPipe } from './components/mailbox/order-by.pipe';
 import { UsersComponent } from './components/users/users.component';
+import { ForgotComponent } from './components/forgot/forgot.component';
+import { ResetComponent } from './components/reset/reset.component';
 
 const appRoutes: Routes =  [
   {path:'', component: HomeComponent},
   {path:'register', component: RegisterComponent},
   {path:'login', component: LoginComponent},
+  {path:'forgot', component: ForgotComponent },
+  {path:'reset/:token', component: ResetComponent, pathMatch: 'full' },
   {path:'dashboard', component: DashboardComponent, canActivate:[AuthGuard]},
   {path:'profile', component: ProfileComponent, canActivate:[AuthGuard]},
   {path:'settings', component: SettingsComponent, canActivate:[AuthGuard]},
   {path:'mailbox', component: MailboxComponent, canActivate:[AuthGuard]},
   {path:'users', component: UsersComponent, canActivate:[AuthGuard]}
-
 ]
 
 @NgModule({
@@ -47,7 +50,9 @@ const appRoutes: Routes =  [
     SettingsComponent,
     MailboxComponent,
     UsersComponent,
-    OrderByPipe
+    OrderByPipe,
+    ForgotComponent,
+    ResetComponent
   ],
   imports: [
     BrowserModule,

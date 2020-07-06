@@ -118,6 +118,26 @@ export class AuthService {
     }
   }
 
+  forgotPassword(email) {
+    let headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    if(this.isDev) {
+      return this.http.post('http://localhost:8080/users/forgot', email, {headers: headers}).map(res => res.json());
+    }else{
+      return this.http.post('users/forgot', email, {headers: headers}).map(res => res.json());
+    }
+  }
+
+  resetPassword(reset) {
+    let headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    if(this.isDev) {
+      return this.http.post('http://localhost:8080/users/reset/:token', reset,  {headers: headers}).map(res => res.json());
+    }else{
+      return this.http.post('users/reset', reset, {headers: headers}).map(res => res.json());
+    }
+  }
+
   storeUserData(token, user) {
     localStorage.setItem('id_token', token);
     localStorage.setItem('user', JSON.stringify(user));
