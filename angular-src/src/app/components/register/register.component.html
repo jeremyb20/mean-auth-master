@@ -30,12 +30,10 @@
               placeholder=" Enter Password">
           </div> <!-- form-group end.// -->
           <div class="form-group text-center">
-            <label class="image-upload-container btn btn-bwm">
               <input #photoinput type="file" name="image" accept="image/*" class="d-none"
                 (change)="processFile($event)">
               <img [src]="photoSelected || '../../../assets/upload.png'" alt="" style="width: 200px; height: 200px;"
                 class="img-fluid" (click)="photoinput.click()" srcset="">
-            </label>
           </div> <!-- form-group end.// -->
 
           <div class="form-group">

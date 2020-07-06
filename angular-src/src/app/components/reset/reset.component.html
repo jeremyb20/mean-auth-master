@@ -1,0 +1,24 @@
+<div class="row no-gutters justify-content-center fadeInDown">
+  <div class="col-md-6">
+    <div class="card">
+      <header class="card-header fadeIn first">
+        <a [routerLink]="['/login']" class="nav-link float-right btn btn-outline-primary mt-1">Login</a>
+        <h4 class="card-title mt-2">Log In</h4>
+      </header>
+      <article class="card-body">
+        <form class="form-signin" (submit)="onResetSubmit()">
+          <div class="form-group">
+            <label for="password">New Password</label>
+            <input type="password" name="password" [(ngModel)]="password" placeholder="New password" autofocus="autofocus" class="form-control"/>
+          </div>
+          <div class="form-group">
+            <label for="confirm">Confirm Password</label>
+            <input type="password" name="confirm" [(ngModel)]="confirm" placeholder="Confirm password" class="form-control"/>
+          </div>
+          <input class="btn btn-primary btn-block" type="submit" value="Reset password">
+        </form>
+      </article> <!-- card-body end .// -->
+    </div> <!-- card.// -->
+  </div> <!-- col.//-->
+
+</div> <!-- row.//-->

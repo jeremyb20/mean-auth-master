@@ -115,7 +115,7 @@ var AppComponent = (function () {
             styles: [__webpack_require__("../../../../../src/app/app.component.css")]
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__services_auth_service__["a" /* AuthService */],
-            __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* Router */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */],
             __WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages__["FlashMessagesService"]])
     ], AppComponent);
     return AppComponent;
@@ -154,6 +154,8 @@ var AppComponent = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__components_mailbox_mailbox_component__ = __webpack_require__("../../../../../src/app/components/mailbox/mailbox.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__components_mailbox_order_by_pipe__ = __webpack_require__("../../../../../src/app/components/mailbox/order-by.pipe.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__components_users_users_component__ = __webpack_require__("../../../../../src/app/components/users/users.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__components_forgot_forgot_component__ = __webpack_require__("../../../../../src/app/components/forgot/forgot.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__components_reset_reset_component__ = __webpack_require__("../../../../../src/app/components/reset/reset.component.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -183,10 +185,14 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
+
+
 var appRoutes = [
     { path: '', component: __WEBPACK_IMPORTED_MODULE_16__components_home_home_component__["a" /* HomeComponent */] },
     { path: 'register', component: __WEBPACK_IMPORTED_MODULE_15__components_register_register_component__["a" /* RegisterComponent */] },
     { path: 'login', component: __WEBPACK_IMPORTED_MODULE_14__components_login_login_component__["a" /* LoginComponent */] },
+    { path: 'forgot', component: __WEBPACK_IMPORTED_MODULE_23__components_forgot_forgot_component__["a" /* ForgotComponent */] },
+    { path: 'reset/:token', component: __WEBPACK_IMPORTED_MODULE_24__components_reset_reset_component__["a" /* ResetComponent */], pathMatch: 'full' },
     { path: 'dashboard', component: __WEBPACK_IMPORTED_MODULE_17__components_dashboard_dashboard_component__["a" /* DashboardComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_8__guards_auth_guard__["a" /* AuthGuard */]] },
     { path: 'profile', component: __WEBPACK_IMPORTED_MODULE_18__components_profile_profile_component__["a" /* ProfileComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_8__guards_auth_guard__["a" /* AuthGuard */]] },
     { path: 'settings', component: __WEBPACK_IMPORTED_MODULE_19__components_settings_settings_component__["a" /* SettingsComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_8__guards_auth_guard__["a" /* AuthGuard */]] },
@@ -209,13 +215,15 @@ var AppModule = (function () {
                 __WEBPACK_IMPORTED_MODULE_19__components_settings_settings_component__["a" /* SettingsComponent */],
                 __WEBPACK_IMPORTED_MODULE_20__components_mailbox_mailbox_component__["a" /* MailboxComponent */],
                 __WEBPACK_IMPORTED_MODULE_22__components_users_users_component__["a" /* UsersComponent */],
-                __WEBPACK_IMPORTED_MODULE_21__components_mailbox_order_by_pipe__["a" /* OrderByPipe */]
+                __WEBPACK_IMPORTED_MODULE_21__components_mailbox_order_by_pipe__["a" /* OrderByPipe */],
+                __WEBPACK_IMPORTED_MODULE_23__components_forgot_forgot_component__["a" /* ForgotComponent */],
+                __WEBPACK_IMPORTED_MODULE_24__components_reset_reset_component__["a" /* ResetComponent */]
             ],
             imports: [
                 __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
                 __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormsModule */],
                 __WEBPACK_IMPORTED_MODULE_3__angular_http__["HttpModule"],
-                __WEBPACK_IMPORTED_MODULE_4__angular_router__["b" /* RouterModule */].forRoot(appRoutes),
+                __WEBPACK_IMPORTED_MODULE_4__angular_router__["c" /* RouterModule */].forRoot(appRoutes),
                 __WEBPACK_IMPORTED_MODULE_7_angular2_flash_messages__["FlashMessagesModule"].forRoot()
             ],
             providers: [__WEBPACK_IMPORTED_MODULE_5__services_validate_service__["a" /* ValidateService */], __WEBPACK_IMPORTED_MODULE_6__services_auth_service__["a" /* AuthService */], __WEBPACK_IMPORTED_MODULE_8__guards_auth_guard__["a" /* AuthGuard */], __WEBPACK_IMPORTED_MODULE_9__services_size_detector_resize_service__["a" /* ResizeService */], __WEBPACK_IMPORTED_MODULE_10__services_chat_service__["a" /* ChatService */], __WEBPACK_IMPORTED_MODULE_11__services_websocket_service__["a" /* WebsocketService */]],
@@ -303,10 +311,114 @@ var DashboardComponent = (function () {
             styles: [__webpack_require__("../../../../../src/app/components/dashboard/dashboard.component.css")]
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__services_auth_service__["a" /* AuthService */],
-            __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* Router */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */],
             __WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages__["FlashMessagesService"]])
     ], DashboardComponent);
     return DashboardComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/forgot/forgot.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/forgot/forgot.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"row no-gutters justify-content-center fadeInDown\">\n  <div class=\"col-md-6\">\n    <div class=\"card\">\n      <header class=\"card-header fadeIn first\">\n        <a [routerLink]=\"['/login']\" class=\"nav-link float-right btn btn-outline-primary mt-1\">Log in</a>\n        <h4 class=\"card-title mt-2\">Forgot Password</h4>\n      </header>\n      <article class=\"card-body\">\n        <form (submit)=\"onEmailSubmit()\">\n          \n          <div class=\"form-group\">\n            <label for=\"email\">Email</label>\n            <input type=\"email\" [(ngModel)]=\"email\" name=\"email\" class=\"form-control fadeIn third\" id=\"email\"\n              aria-describedby=\"emailHelp\" placeholder=\"Enter Email\">\n            <small id=\"emailHelp\" class=\"form-text text-muted\">We'll never share your email with anyone else.</small>\n          </div> <!-- form-group end.// -->\n          <div class=\"form-group\">\n            <button type=\"submit\" class=\"btn btn-primary btn-block\"> Forgot Password </button>\n          </div> <!-- form-group// -->\n        </form>\n      </article> <!-- card-body end .// -->\n      <div class=\"border-top card-body text-center\">Have an account? <a [routerLink]=\"['/login']\">Log In</a></div>\n    </div> <!-- card.// -->\n  </div> <!-- col.//-->\n\n</div> <!-- row.//-->"
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/forgot/forgot.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ForgotComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_validate_service__ = __webpack_require__("../../../../../src/app/services/validate.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_auth_service__ = __webpack_require__("../../../../../src/app/services/auth.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages__ = __webpack_require__("../../../../angular2-flash-messages/module/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_router__ = __webpack_require__("../../../router/esm5/router.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+var ForgotComponent = (function () {
+    function ForgotComponent(validateService, authService, router, flashMessage) {
+        this.validateService = validateService;
+        this.authService = authService;
+        this.router = router;
+        this.flashMessage = flashMessage;
+    }
+    ForgotComponent.prototype.ngOnInit = function () {
+    };
+    ForgotComponent.prototype.onEmailSubmit = function () {
+        var _this = this;
+        var user = {
+            email: this.email,
+        };
+        // Required Fields
+        if (!this.validateService.validateEmailEmpty(user)) {
+            this.flashMessage.show('Please fill in all fields', { cssClass: 'alert-danger', timeout: 3000 });
+            return false;
+        }
+        // Validate Email
+        if (!this.validateService.validateEmail(user.email)) {
+            this.flashMessage.show('Please use a valid email', { cssClass: 'alert-danger', timeout: 3000 });
+            return false;
+        }
+        //Register user
+        this.authService.forgotPassword(user).subscribe(function (data) {
+            if (data.success) {
+                _this.flashMessage.show(data.msg, { cssClass: 'alert-success', timeout: 3000 });
+                // this.router.navigate(['/login']);
+            }
+            else {
+                _this.flashMessage.show(data.msg, { cssClass: 'alert-danger', timeout: 3000 });
+                _this.router.navigate(['/forgot']);
+            }
+        });
+    };
+    ForgotComponent = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+            selector: 'app-forgot',
+            template: __webpack_require__("../../../../../src/app/components/forgot/forgot.component.html"),
+            styles: [__webpack_require__("../../../../../src/app/components/forgot/forgot.component.css")]
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__services_validate_service__["a" /* ValidateService */],
+            __WEBPACK_IMPORTED_MODULE_2__services_auth_service__["a" /* AuthService */],
+            __WEBPACK_IMPORTED_MODULE_4__angular_router__["b" /* Router */],
+            __WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages__["FlashMessagesService"]])
+    ], ForgotComponent);
+    return ForgotComponent;
 }());
 
 
@@ -395,7 +507,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/login/login.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"row no-gutters justify-content-center fadeInDown\">\n  <div class=\"col-md-6\">\n    <div class=\"card\">\n      <header class=\"card-header fadeIn first\">\n        <a [routerLink]=\"['/register']\" class=\"nav-link float-right btn btn-outline-primary mt-1\">Register</a>\n        <h4 class=\"card-title mt-2\">Log In</h4>\n      </header>\n      <article class=\"card-body\">\n        <form class=\"form-signin\" (submit)=\"onLoginSubmit()\">\n          <div class=\"form-group\">\n            <label for=\"Username\">Username</label>\n            <input type=\"text\" class=\"form-control fadeIn second\" placeholder=\"Enter Username\" [(ngModel)]=\"username\" name=\"username\">\n          </div>\n          <div class=\"form-group\">\n          <label for=\"Password\">Password</label>\n          <input type=\"password\" class=\"form-control fadeIn third\" autocomplete=\"on\" placeholder=\" Enter Password\" [(ngModel)]=\"password\" name=\"password\">\n          </div>\n          <div class=\"checkbox\">\n            <label>\n              <input type=\"checkbox\" value=\"remember-me\"> Remember me\n            </label>\n          </div>\n          <input class=\"btn btn-primary btn-block\" type=\"submit\" value=\"Login\">\n        </form>\n      </article> <!-- card-body end .// -->\n      <div class=\"border-top card-body text-center\">Go home? <a [routerLink]=\"['/']\">Home</a></div>\n    </div> <!-- card.// -->\n  </div> <!-- col.//-->\n\n</div> <!-- row.//-->\n"
+module.exports = "<div class=\"row no-gutters justify-content-center fadeInDown\">\n  <div class=\"col-md-6\">\n    <div class=\"card\">\n      <header class=\"card-header fadeIn first\">\n        <a [routerLink]=\"['/register']\" class=\"nav-link float-right btn btn-outline-primary mt-1\">Register</a>\n        <h4 class=\"card-title mt-2\">Log In</h4>\n      </header>\n      <article class=\"card-body\">\n        <form class=\"form-signin\" (submit)=\"onLoginSubmit()\">\n          <div class=\"form-group\">\n            <label for=\"Username\">Username</label>\n            <input type=\"text\" class=\"form-control fadeIn second\" placeholder=\"Enter Username\" [(ngModel)]=\"username\" name=\"username\">\n          </div>\n          <div class=\"form-group\">\n          <label for=\"Password\">Password</label>\n          <input type=\"password\" class=\"form-control fadeIn third\" autocomplete=\"on\" placeholder=\" Enter Password\" [(ngModel)]=\"password\" name=\"password\">\n          </div>\n          <div class=\"checkbox\">\n            <label>\n              <input type=\"checkbox\" value=\"remember-me\"> Remember me\n            </label>\n          </div>\n          <input class=\"btn btn-primary btn-block\" type=\"submit\" value=\"Login\">\n        </form>\n      </article> <!-- card-body end .// -->\n      <div class=\"border-top card-body text-center\">Go home? <a [routerLink]=\"['/']\">Home</a></div>\n      <div class=\"border-top card-body text-center\">Forgot password? <a [routerLink]=\"['/forgot']\" >Forgot</a></div>\n    </div> <!-- card.// -->\n  </div> <!-- col.//-->\n\n</div> <!-- row.//-->\n"
 
 /***/ }),
 
@@ -456,7 +568,7 @@ var LoginComponent = (function () {
             styles: [__webpack_require__("../../../../../src/app/components/login/login.component.css")]
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__services_auth_service__["a" /* AuthService */],
-            __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* Router */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */],
             __WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages__["FlashMessagesService"]])
     ], LoginComponent);
     return LoginComponent;
@@ -874,7 +986,7 @@ var NavbarComponent = (function () {
             styles: [__webpack_require__("../../../../../src/app/components/navbar/navbar.component.css")]
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__services_auth_service__["a" /* AuthService */],
-            __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* Router */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */],
             __WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages__["FlashMessagesService"]])
     ], NavbarComponent);
     return NavbarComponent;
@@ -979,7 +1091,7 @@ var ProfileComponent = (function () {
             template: __webpack_require__("../../../../../src/app/components/profile/profile.component.html"),
             styles: [__webpack_require__("../../../../../src/app/components/profile/profile.component.css")]
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__services_auth_service__["a" /* AuthService */], __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* Router */], __WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages__["FlashMessagesService"]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__services_auth_service__["a" /* AuthService */], __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */], __WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages__["FlashMessagesService"]])
     ], ProfileComponent);
     return ProfileComponent;
 }());
@@ -1009,7 +1121,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/register/register.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"row no-gutters justify-content-center fadeInDown\">\n  <div class=\"col-md-6\">\n    <div class=\"card\">\n      <header class=\"card-header fadeIn first\">\n        <a [routerLink]=\"['/login']\" class=\"nav-link float-right btn btn-outline-primary mt-1\">Log in</a>\n        <h4 class=\"card-title mt-2\">Sign up</h4>\n      </header>\n      <article class=\"card-body\">\n        <form (submit)=\"onRegisterSubmit()\" enctype=\"multipart/form-data\">\n          <div class=\"form-row\">\n            <div class=\"col form-group\">\n              <label>Name </label>\n              <input type=\"text\" [(ngModel)]=\"name\" name=\"name\" class=\"form-control fadeIn second\" id=\"name\" placeholder=\"Enter Name\">\n            </div> <!-- form-group end.// -->\n            <div class=\"col form-group\">\n              <label for=\"username\">Username</label>\n              <input type=\"text\" [(ngModel)]=\"username\" name=\"username\" class=\"form-control fadeIn second\" id=\"username\"\n                placeholder=\"Enter Username\">\n            </div> <!-- form-group end.// -->\n          </div> <!-- form-row end.// -->\n          <div class=\"form-group\">\n            <label for=\"email\">Email</label>\n            <input type=\"email\" [(ngModel)]=\"email\" name=\"email\" class=\"form-control fadeIn third\" id=\"email\"\n              aria-describedby=\"emailHelp\" placeholder=\"Enter Email\">\n            <small id=\"emailHelp\" class=\"form-text text-muted\">We'll never share your email with anyone else.</small>\n          </div> <!-- form-group end.// -->\n          <div class=\"form-group\">\n            <label for=\"password\">Password</label>\n            <input type=\"password\" [(ngModel)]=\"password\" name=\"password\" class=\"form-control fadeIn third\" id=\"password\"\n              placeholder=\" Enter Password\">\n          </div> <!-- form-group end.// -->\n          <div class=\"form-group text-center\">\n            <label class=\"image-upload-container btn btn-bwm\">\n              <input #photoinput type=\"file\" name=\"image\" accept=\"image/*\" class=\"d-none\"\n                (change)=\"processFile($event)\">\n              <img [src]=\"photoSelected || '../../../assets/upload.png'\" alt=\"\" style=\"width: 200px; height: 200px;\"\n                class=\"img-fluid\" (click)=\"photoinput.click()\" srcset=\"\">\n            </label>\n          </div> <!-- form-group end.// -->\n\n          <div class=\"form-group\">\n            <button type=\"submit\" class=\"btn btn-primary btn-block\"> Register </button>\n          </div> <!-- form-group// -->\n          <small class=\"text-muted\">By clicking the 'Sign Up' button, you confirm that you accept our <br> Terms of use\n            and Privacy Policy.</small>\n        </form>\n      </article> <!-- card-body end .// -->\n      <div class=\"border-top card-body text-center\">Have an account? <a [routerLink]=\"['/login']\">Log In</a></div>\n    </div> <!-- card.// -->\n  </div> <!-- col.//-->\n\n</div> <!-- row.//-->"
+module.exports = "<div class=\"row no-gutters justify-content-center fadeInDown\">\n  <div class=\"col-md-6\">\n    <div class=\"card\">\n      <header class=\"card-header fadeIn first\">\n        <a [routerLink]=\"['/login']\" class=\"nav-link float-right btn btn-outline-primary mt-1\">Log in</a>\n        <h4 class=\"card-title mt-2\">Sign up</h4>\n      </header>\n      <article class=\"card-body\">\n        <form (submit)=\"onRegisterSubmit()\" enctype=\"multipart/form-data\">\n          <div class=\"form-row\">\n            <div class=\"col form-group\">\n              <label>Name </label>\n              <input type=\"text\" [(ngModel)]=\"name\" name=\"name\" class=\"form-control fadeIn second\" id=\"name\" placeholder=\"Enter Name\">\n            </div> <!-- form-group end.// -->\n            <div class=\"col form-group\">\n              <label for=\"username\">Username</label>\n              <input type=\"text\" [(ngModel)]=\"username\" name=\"username\" class=\"form-control fadeIn second\" id=\"username\"\n                placeholder=\"Enter Username\">\n            </div> <!-- form-group end.// -->\n          </div> <!-- form-row end.// -->\n          <div class=\"form-group\">\n            <label for=\"email\">Email</label>\n            <input type=\"email\" [(ngModel)]=\"email\" name=\"email\" class=\"form-control fadeIn third\" id=\"email\"\n              aria-describedby=\"emailHelp\" placeholder=\"Enter Email\">\n            <small id=\"emailHelp\" class=\"form-text text-muted\">We'll never share your email with anyone else.</small>\n          </div> <!-- form-group end.// -->\n          <div class=\"form-group\">\n            <label for=\"password\">Password</label>\n            <input type=\"password\" [(ngModel)]=\"password\" name=\"password\" class=\"form-control fadeIn third\" id=\"password\"\n              placeholder=\" Enter Password\">\n          </div> <!-- form-group end.// -->\n          <div class=\"form-group text-center\">\n              <input #photoinput type=\"file\" name=\"image\" accept=\"image/*\" class=\"d-none\"\n                (change)=\"processFile($event)\">\n              <img [src]=\"photoSelected || '../../../assets/upload.png'\" alt=\"\" style=\"width: 200px; height: 200px;\"\n                class=\"img-fluid\" (click)=\"photoinput.click()\" srcset=\"\">\n          </div> <!-- form-group end.// -->\n\n          <div class=\"form-group\">\n            <button type=\"submit\" class=\"btn btn-primary btn-block\"> Register </button>\n          </div> <!-- form-group// -->\n          <small class=\"text-muted\">By clicking the 'Sign Up' button, you confirm that you accept our <br> Terms of use\n            and Privacy Policy.</small>\n        </form>\n      </article> <!-- card-body end .// -->\n      <div class=\"border-top card-body text-center\">Have an account? <a [routerLink]=\"['/login']\">Log In</a></div>\n    </div> <!-- card.// -->\n  </div> <!-- col.//-->\n\n</div> <!-- row.//-->"
 
 /***/ }),
 
@@ -1094,10 +1206,116 @@ var RegisterComponent = (function () {
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__services_validate_service__["a" /* ValidateService */],
             __WEBPACK_IMPORTED_MODULE_2__services_auth_service__["a" /* AuthService */],
-            __WEBPACK_IMPORTED_MODULE_4__angular_router__["a" /* Router */],
+            __WEBPACK_IMPORTED_MODULE_4__angular_router__["b" /* Router */],
             __WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages__["FlashMessagesService"]])
     ], RegisterComponent);
     return RegisterComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/reset/reset.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/reset/reset.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"row no-gutters justify-content-center fadeInDown\">\n  <div class=\"col-md-6\">\n    <div class=\"card\">\n      <header class=\"card-header fadeIn first\">\n        <a [routerLink]=\"['/login']\" class=\"nav-link float-right btn btn-outline-primary mt-1\">Login</a>\n        <h4 class=\"card-title mt-2\">Log In</h4>\n      </header>\n      <article class=\"card-body\">\n        <form class=\"form-signin\" (submit)=\"onResetSubmit()\">\n          <div class=\"form-group\">\n            <label for=\"password\">New Password</label>\n            <input type=\"password\" name=\"password\" [(ngModel)]=\"password\" placeholder=\"New password\" autofocus=\"autofocus\" class=\"form-control\"/>\n          </div>\n          <div class=\"form-group\">\n            <label for=\"confirm\">Confirm Password</label>\n            <input type=\"password\" name=\"confirm\" [(ngModel)]=\"confirm\" placeholder=\"Confirm password\" class=\"form-control\"/>\n          </div>\n          <input class=\"btn btn-primary btn-block\" type=\"submit\" value=\"Reset password\">\n        </form>\n      </article> <!-- card-body end .// -->\n    </div> <!-- card.// -->\n  </div> <!-- col.//-->\n\n</div> <!-- row.//-->\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/reset/reset.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ResetComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_validate_service__ = __webpack_require__("../../../../../src/app/services/validate.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_auth_service__ = __webpack_require__("../../../../../src/app/services/auth.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages__ = __webpack_require__("../../../../angular2-flash-messages/module/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_router__ = __webpack_require__("../../../router/esm5/router.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+var ResetComponent = (function () {
+    function ResetComponent(validateService, authService, router, route, flashMessage) {
+        var _this = this;
+        this.validateService = validateService;
+        this.authService = authService;
+        this.router = router;
+        this.route = route;
+        this.flashMessage = flashMessage;
+        this.route.params.subscribe(function (params) {
+            _this.resetToken = params.token;
+        });
+    }
+    ResetComponent.prototype.ngOnInit = function () {
+    };
+    ResetComponent.prototype.onResetSubmit = function () {
+        var _this = this;
+        var reset = {
+            password: this.password,
+            confirm: this.confirm,
+            token: this.resetToken
+        };
+        // Required Fields
+        if (!this.validateService.validatePasswordEmpty(reset)) {
+            this.flashMessage.show('Please fill in all fields', { cssClass: 'alert-danger', timeout: 3000 });
+            return false;
+        }
+        //login user
+        this.authService.resetPassword(reset).subscribe(function (data) {
+            if (data.success) {
+                _this.flashMessage.show(data.msg, { cssClass: 'alert-success', timeout: 5000 });
+                _this.router.navigate(['/login']);
+            }
+            else {
+                _this.flashMessage.show(data.msg, { cssClass: 'alert-danger', timeout: 3000 });
+            }
+        });
+    };
+    ResetComponent = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+            selector: 'app-reset',
+            template: __webpack_require__("../../../../../src/app/components/reset/reset.component.html"),
+            styles: [__webpack_require__("../../../../../src/app/components/reset/reset.component.css")]
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__services_validate_service__["a" /* ValidateService */],
+            __WEBPACK_IMPORTED_MODULE_2__services_auth_service__["a" /* AuthService */],
+            __WEBPACK_IMPORTED_MODULE_4__angular_router__["b" /* Router */],
+            __WEBPACK_IMPORTED_MODULE_4__angular_router__["a" /* ActivatedRoute */],
+            __WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages__["FlashMessagesService"]])
+    ], ResetComponent);
+    return ResetComponent;
 }());
 
 
@@ -1293,7 +1511,7 @@ var AuthGuard = (function () {
     };
     AuthGuard = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2__services_auth_service__["a" /* AuthService */], __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* Router */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2__services_auth_service__["a" /* AuthService */], __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */]])
     ], AuthGuard);
     return AuthGuard;
 }());
@@ -1429,6 +1647,26 @@ var AuthService = (function () {
         }
         else {
             return this.http.post('users/mailbox/sendMessage', message, { headers: headers }).map(function (res) { return res.json(); });
+        }
+    };
+    AuthService.prototype.forgotPassword = function (email) {
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
+        headers.append('Content-Type', 'application/json');
+        if (this.isDev) {
+            return this.http.post('http://localhost:8080/users/forgot', email, { headers: headers }).map(function (res) { return res.json(); });
+        }
+        else {
+            return this.http.post('users/forgot', email, { headers: headers }).map(function (res) { return res.json(); });
+        }
+    };
+    AuthService.prototype.resetPassword = function (reset) {
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
+        headers.append('Content-Type', 'application/json');
+        if (this.isDev) {
+            return this.http.post('http://localhost:8080/users/reset/:token', reset, { headers: headers }).map(function (res) { return res.json(); });
+        }
+        else {
+            return this.http.post('users/reset', reset, { headers: headers }).map(function (res) { return res.json(); });
         }
     };
     AuthService.prototype.storeUserData = function (token, user) {
@@ -1585,6 +1823,22 @@ var ValidateService = (function () {
     }
     ValidateService.prototype.validateRegister = function (user) {
         if (user.name == undefined || user.email == undefined || user.username == undefined || user.password == undefined) {
+            return false;
+        }
+        else {
+            return true;
+        }
+    };
+    ValidateService.prototype.validateEmailEmpty = function (user) {
+        if (user.email == undefined) {
+            return false;
+        }
+        else {
+            return true;
+        }
+    };
+    ValidateService.prototype.validatePasswordEmpty = function (reset) {
+        if (reset.password == undefined || reset.confirm == undefined) {
             return false;
         }
         else {

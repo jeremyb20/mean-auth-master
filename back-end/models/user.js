@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const bcrypt = require('bcryptjs');
+const passportLocalMongoose = require('passport-local-mongoose');
 const config = require('../config/database');
 
 // User Schema
@@ -9,7 +10,8 @@ const UserSchema = mongoose.Schema ({
   },
   email: {
     type: String,
-    required: true
+    required: true,
+    unique: true
   },
   username: {
     type: String,
@@ -31,6 +33,12 @@ const UserSchema = mongoose.Schema ({
   address: {
     type: String,
     require: false
+  },
+  resetPasswordToken: {
+    type: String
+  },
+  resetPasswordExpires: {
+    type: Date
   },
   message: [{
     idUserSent: {
@@ -65,6 +73,8 @@ const UserSchema = mongoose.Schema ({
     }
   }]
 });
+
+UserSchema.plugin(passportLocalMongoose);
 
 const User = module.exports = mongoose.model('User', UserSchema);
 
