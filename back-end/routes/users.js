@@ -5,12 +5,10 @@ const jwt = require('jsonwebtoken');
 const config = require('../config/database');
 const User = require('../models/user');
 const cloudinary = require('cloudinary').v2;
-const email = require('emailjs/email');
 const async = require('async');
 const crypto = require('crypto');
 const bcrypt = require('bcryptjs');
 const nodemailer = require('nodemailer');
-const flash = require('express-flash');
 const app = express();
 
 var fileupload = require('express-fileupload');
@@ -44,21 +42,29 @@ router.post('/register', async(req, res, next) => {
       res.json({success: false, msg: 'Failed to register user'});
     } else {
       res.json({success: true, msg: 'User registered'});
-
-      var server 	= email.server.connect({
-        user:    "ensamblecostarica@gmail.com",
-        password: "ensamblecr2020",
-        host:    "smtp.gmail.com",
-        ssl:     true,
-        port: 465
-     });
-       // send the message and get a callback with an error or details of the message that was sent
-       server.send({
-          text:    "Hi " + obj.name + "! Welcome to namelescastle. To enter, please use the following credentials: " + obj.email + " password: " + obj.password ,
-          from:    "ensamblecostarica@gmail.com",
-          to:      obj.email,
-          subject: "Welcome to Nameless castle"
-       }, function(err, message) { console.log(err || message); });
+    var smtpTransport = nodemailer.createTransport({
+        host: 'smtp.sendgrid.net',
+        port: 465,
+        secure: true,
+        auth: {
+          user: 'apikey',
+          pass: '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'
+        },
+        tls: {
+          // do not fail on invalid certs
+          rejectUnauthorized: false
+        }
+      });
+      var mailOptions = {
+        to: user.email,
+        from: 'jerebac@hotmail.com',
+        subject: 'Welcome to EnsambleCR',
+        text: "Hi " + obj.name + "! Welcome to EnsambleCR. To enter, please use the following credential: " + obj.email + " \n\n"
+      };
+      smtpTransport.sendMail(mailOptions, function(err) {
+        res.json({success:true,msg: 'An e-mail has been sent to ' + user.email + ' with further instructions.'});
+        done(err, 'done');
+      });
 
     }
   });
@@ -168,13 +174,12 @@ router.post('/forgot', (req, res, next) => {
     },
     function(token, user, done) {
       var smtpTransport = nodemailer.createTransport({
-        service: 'Gmail', 
-        host: 'smtp.gmail.com',
+        host: 'smtp.sendgrid.net',
         port: 465,
         secure: true,
         auth: {
-          user: 'ensamblecostarica@gmail.com',
-          pass: 'ensamblecr2020'
+          user: 'apikey',
+          pass: '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'
         },
         tls: {
           // do not fail on invalid certs
@@ -183,7 +188,7 @@ router.post('/forgot', (req, res, next) => {
       });
       var mailOptions = {
         to: user.email,
-        from: 'ensamblecostarica@gmail.com',
+        from: 'jerebac@hotmail.com',
         subject: 'Node.js Password Reset',
         text: 'You are receiving this because you (or someone else) have requested the reset of the password for your account.\n\n' +
           'Please click on the following link, or paste this into your browser to complete the process:\n\n' +
