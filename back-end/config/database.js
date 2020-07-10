@@ -1,6 +1,5 @@
-require('dotenv').config();
 module.exports = {
   // configure the code below with your username, password and mlab database information 
-  database: process.env.SECRET_URL_DATABASE,   //prod
+  database: 'mongodb://admin:admin123@ds135421.mlab.com:35421/mean_auth_mongo',   //prod
   secret: 'yoursecret'
 }

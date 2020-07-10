@@ -10,7 +10,6 @@ const crypto = require('crypto');
 const bcrypt = require('bcryptjs');
 const nodemailer = require('nodemailer');
 const app = express();
-require('dotenv').config();
 
 var fileupload = require('express-fileupload');
 
@@ -19,9 +18,9 @@ app.use(fileupload({
 }));
 
 cloudinary.config({
-  cloud_name:process.env.CLOUDNAME,
-  api_key: process.env.API_KEY_CLOUDINARY,
-  api_secret: process.env.API_SECRET_CLOUDINARY
+  cloud_name:'ensamble',
+  api_key: '218419814373569',
+  api_secret: 'xBNx-qCyqTrcAahx8ZqGEAnNpwM'
 });
 
 // Register aqui hay ebviar la foto
@@ -43,13 +42,12 @@ router.post('/register', async(req, res, next) => {
         res.json({success: false, msg: 'That Email or Username already exisits.!'});
     } else {
       var smtpTransport = nodemailer.createTransport({
-        service: 'Gmail', 
-        host: process.env.NODEMAILER_HOST,
+        host: 'mail.ticowebmail.com',
         port: 587,
         secure: false,
         auth: {
-          user: process.env.NODEMAILER_EMAIL,
-          pass: process.env.NODEMAILER_PASSWORD
+          user: 'marco@ticowebmail.com',
+          pass: 'NTRNTxplr12'
         },
         tls: {
           // do not fail on invalid certs
@@ -58,7 +56,7 @@ router.post('/register', async(req, res, next) => {
       });
       var mailOptions = {
         to: user.email,
-        from: process.env.NODEMAILER_EMAIL,
+        from: 'marco@ticowebmail.com',
         subject: 'Node.js Register User',
         text: 'Hi ' + obj.name + '! Welcome to namelescastle. To enter, please use the following credential, username: ' + obj.username +''
       };
@@ -174,12 +172,15 @@ router.post('/forgot', (req, res, next) => {
     },
     function(token, user, done) {
       var smtpTransport = nodemailer.createTransport({
-        host: process.env.NODEMAILER_HOST,
-        port: 465,
-        secure: true,
+        host: 'mail.ticowebmail.com',
+        port: 25,
+        secure: false,
+        logger: true,
+        debug: true,
+        ignoreTLS: true,
         auth: {
-          user: process.env.NODEMAILER_EMAIL,
-          pass: process.env.NODEMAILER_PASSWORD
+          user: 'marco@ticowebmail.com',
+          pass: 'NTRNTxplr12'
         },
         tls: {
           // do not fail on invalid certs
@@ -195,12 +196,12 @@ router.post('/forgot', (req, res, next) => {
       });
       var mailOptions = {
         to: user.email,
-        from: process.env.NODEMAILER_EMAIL,
+        from: 'marco@ticowebmail.com',
         subject: 'Node.js Password Reset',
         text: 'You are receiving this because you (or someone else) have requested the reset of the password for your account.\n\n' +
           'Please click on the following link, or paste this into your browser to complete the process:\n\n' +
           //'http://localhost:4200/reset/' + token + '\n\n' +
-          'https://' + req.headers.host + '/reset/' + token + '\n\n' +
+          'http://' + req.headers.host + '/reset/' + token + '\n\n' +
           'If you did not request this, please ignore this email and your password will remain unchanged.\n'
       };
       smtpTransport.sendMail(mailOptions, function(err) {
@@ -257,13 +258,12 @@ router.post('/reset/:token', function(req, res) {
     },
     function(user, done) {
       var smtpTransport = nodemailer.createTransport({
-        service: 'Gmail', 
-        host: process.env.NODEMAILER_HOST,
+        host: 'mail.ticowebmail.com',
         port: 993,
         secure: true,
         auth: {
-          user: process.env.NODEMAILER_EMAIL,
-          pass: process.env.NODEMAILER_PASSWORD
+          user: 'marco@ticowebmail.com',
+          pass: 'NTRNTxplr12'
         }
         // tls: {
         //   // do not fail on invalid certs
