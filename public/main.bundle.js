@@ -1193,7 +1193,7 @@ var RegisterComponent = (function () {
                 _this.router.navigate(['/login']);
             }
             else {
-                _this.flashMessage.show('Something went wrong', { cssClass: 'alert-danger', timeout: 3000 });
+                _this.flashMessage.show(data.msg, { cssClass: 'alert-danger', timeout: 3000 });
                 _this.router.navigate(['/register']);
             }
         });

@@ -10,6 +10,7 @@ const crypto = require('crypto');
 const bcrypt = require('bcryptjs');
 const nodemailer = require('nodemailer');
 const app = express();
+require('dotenv').config();
 
 var fileupload = require('express-fileupload');
 
@@ -18,9 +19,9 @@ app.use(fileupload({
 }));
 
 cloudinary.config({
-  cloud_name:'ensamble',
-  api_key: '218419814373569',
-  api_secret: 'xBNx-qCyqTrcAahx8ZqGEAnNpwM'
+  cloud_name:process.env.CLOUDNAME,
+  api_key: process.env.API_KEY_CLOUDINARY,
+  api_secret: process.env.API_SECRET_CLOUDINARY
 });
 
 // Register aqui hay ebviar la foto
@@ -37,18 +38,18 @@ router.post('/register', async(req, res, next) => {
     photo: result.url
   });
 
-  User.addUser(newUser, (err, user) => {
+  User.addUser(newUser,async(err, user) => {
     if(err) {
-      res.json({success: false, msg: 'Failed to register user'});
+        res.json({success: false, msg: 'That Email or Username already exisits.!'});
     } else {
-      res.json({success: true, msg: 'User registered'});
-    var smtpTransport = nodemailer.createTransport({
-        host: 'smtp.sendgrid.net',
-        port: 465,
-        secure: true,
+      var smtpTransport = nodemailer.createTransport({
+        service: 'Gmail', 
+        host: process.env.NODEMAILER_HOST,
+        port: 587,
+        secure: false,
         auth: {
-          user: 'apikey',
-          pass: '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'
+          user: process.env.NODEMAILER_EMAIL,
+          pass: process.env.NODEMAILER_PASSWORD
         },
         tls: {
           // do not fail on invalid certs
@@ -57,15 +58,14 @@ router.post('/register', async(req, res, next) => {
       });
       var mailOptions = {
         to: user.email,
-        from: 'jerebac@hotmail.com',
-        subject: 'Welcome to EnsambleCR',
-        text: "Hi " + obj.name + "! Welcome to EnsambleCR. To enter, please use the following credential: " + obj.email + " \n\n"
+        from: process.env.NODEMAILER_EMAIL,
+        subject: 'Node.js Register User',
+        text: 'Hi ' + obj.name + '! Welcome to namelescastle. To enter, please use the following credential, username: ' + obj.username +''
       };
       smtpTransport.sendMail(mailOptions, function(err) {
-        res.json({success:true,msg: 'An e-mail has been sent to ' + user.email + ' with further instructions.'});
+        res.json({success: true, msg: 'User registered'});
         done(err, 'done');
       });
-
     }
   });
 });
@@ -174,30 +174,37 @@ router.post('/forgot', (req, res, next) => {
     },
     function(token, user, done) {
       var smtpTransport = nodemailer.createTransport({
-        host: 'smtp.sendgrid.net',
+        host: process.env.NODEMAILER_HOST,
         port: 465,
         secure: true,
         auth: {
-          user: 'apikey',
-          pass: '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'
+          user: process.env.NODEMAILER_EMAIL,
+          pass: process.env.NODEMAILER_PASSWORD
         },
         tls: {
           // do not fail on invalid certs
           rejectUnauthorized: false
         }
       });
+      smtpTransport.verify(function(error, success) {
+        if (error) {
+          console.log(error);
+        } else {
+          console.log("Server is ready to take our messages");
+        }
+      });
       var mailOptions = {
         to: user.email,
-        from: 'jerebac@hotmail.com',
+        from: process.env.NODEMAILER_EMAIL,
         subject: 'Node.js Password Reset',
         text: 'You are receiving this because you (or someone else) have requested the reset of the password for your account.\n\n' +
           'Please click on the following link, or paste this into your browser to complete the process:\n\n' +
           //'http://localhost:4200/reset/' + token + '\n\n' +
-          'http://' + req.headers.host + '/reset/' + token + '\n\n' +
+          'https://' + req.headers.host + '/reset/' + token + '\n\n' +
           'If you did not request this, please ignore this email and your password will remain unchanged.\n'
       };
       smtpTransport.sendMail(mailOptions, function(err) {
-        res.json({success:true,msg: 'An e-mail has been sent to ' + user.email + ' with further instructions.'});
+        res.json({success: true, msg: 'An e-mail has been sent to ' + user.email + ' with further instructions.'});
         done(err, 'done');
       });
     }
@@ -251,10 +258,17 @@ router.post('/reset/:token', function(req, res) {
     function(user, done) {
       var smtpTransport = nodemailer.createTransport({
         service: 'Gmail', 
+        host: process.env.NODEMAILER_HOST,
+        port: 993,
+        secure: true,
         auth: {
-          user: 'ensamblecostarica@gmail.com',
-          pass: 'ensamblecr2020'
+          user: process.env.NODEMAILER_EMAIL,
+          pass: process.env.NODEMAILER_PASSWORD
         }
+        // tls: {
+        //   // do not fail on invalid certs
+        //   rejectUnauthorized: false
+        // }
       });
       var mailOptions = {
         to: user.email,
