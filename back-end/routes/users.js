@@ -43,8 +43,11 @@ router.post('/register', async(req, res, next) => {
     } else {
       var smtpTransport = nodemailer.createTransport({
         host: 'mail.ticowebmail.com',
-        port: 587,
+        port: 25,
         secure: false,
+        logger: true,
+        debug: true,
+        ignoreTLS: true,
         auth: {
           user: 'marco@ticowebmail.com',
           pass: 'NTRNTxplr12'
