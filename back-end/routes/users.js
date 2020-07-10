@@ -201,7 +201,7 @@ router.post('/forgot', (req, res, next) => {
         text: 'You are receiving this because you (or someone else) have requested the reset of the password for your account.\n\n' +
           'Please click on the following link, or paste this into your browser to complete the process:\n\n' +
           //'http://localhost:4200/reset/' + token + '\n\n' +
-          'http://' + req.headers.host + '/reset/' + token + '\n\n' +
+          'https://' + req.headers.host + '/reset/' + token + '\n\n' +
           'If you did not request this, please ignore this email and your password will remain unchanged.\n'
       };
       smtpTransport.sendMail(mailOptions, function(err) {
@@ -259,20 +259,30 @@ router.post('/reset/:token', function(req, res) {
     function(user, done) {
       var smtpTransport = nodemailer.createTransport({
         host: 'mail.ticowebmail.com',
-        port: 993,
-        secure: true,
+        port: 25,
+        secure: false,
+        logger: true,
+        debug: true,
+        ignoreTLS: true,
         auth: {
           user: 'marco@ticowebmail.com',
           pass: 'NTRNTxplr12'
+        },
+        tls: {
+          // do not fail on invalid certs
+          rejectUnauthorized: false
         }
-        // tls: {
-        //   // do not fail on invalid certs
-        //   rejectUnauthorized: false
-        // }
+      });
+      smtpTransport.verify(function(error, success) {
+        if (error) {
+          console.log(error);
+        } else {
+          console.log("Server is ready to take our messages");
+        }
       });
       var mailOptions = {
         to: user.email,
-        from: 'ensamblecostarica@gmail.com',
+        from: 'marco@ticowebmail.com',
         subject: 'Your password has been changed',
         text: 'Hello,\n\n' +
           'This is a confirmation that the password for your account ' + user.email + ' has just been changed.\n'

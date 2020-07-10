@@ -1276,6 +1276,7 @@ var ResetComponent = (function () {
         this.flashMessage = flashMessage;
         this.route.params.subscribe(function (params) {
             _this.resetToken = params.token;
+            console.log(_this.resetToken);
         });
     }
     ResetComponent.prototype.ngOnInit = function () {

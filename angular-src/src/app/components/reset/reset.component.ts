@@ -24,6 +24,7 @@ export class ResetComponent implements OnInit {
     private flashMessage: FlashMessagesService) {
       this.route.params.subscribe(params => {
         this.resetToken = params.token;
+        console.log(this.resetToken);
       });
     }
 
