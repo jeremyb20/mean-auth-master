@@ -11,10 +11,11 @@ const socket = require('socket.io');
 const multer = require('multer');
 const session = require('express-session');
 const flash = require('express-flash');
+require('dotenv').config();
 
 
 // Port Number
-const port = process.env.PORT || 8080;
+const port = process.env.PORT;
  
 // Connect To Database (OLD CODE)
 // mongoose.connect(config.database, { useMongoClient: true});
