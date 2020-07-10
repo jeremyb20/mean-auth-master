@@ -228,7 +228,7 @@ router.get('/reset/:token', (req, res) => {
 });
 
 
-router.post('/reset/:token', function(req, res) {
+router.post('/reset/', function(req, res) {
   req.params.token = req.body.token;
   async.waterfall([
     function(done) {
