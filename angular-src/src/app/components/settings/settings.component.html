@@ -1,13 +1,8 @@
-<!-- <h2 class="page-header">Settings</h2>
-<p>Welcome to your Settings</p> -->
+
 
 <h1>Our Socket.io app test</h1>
 
-<div id="chat-container">
-    <!-- <div id="chat-window">
-        <div id="output"></div>
-        <div id="actions"></div>
-    </div> -->
+<!-- <div id="chat-container">
     <div id="chat-window">
         <div *ngFor="let item of msgReceived" id="output">
           <b><span>{{item.username}}:</span></b>
@@ -18,6 +13,52 @@
     <input type="text" id="username" [(ngModel)]="username" placeholder="username">
     <input type="text" id="message" (ngModelChange)="typing(message)" (keydown.enter)="sendMessage($event.target.value)" [(ngModel)]="message" onfocus="this.value=''" placeholder="message">
     <button (click)="sendMessage()" id="send">Send</button>
+</div> -->
+
+<div class="container">
+    <div class="row chat-window col-xs-5 col-md-8">
+        <div class="col-xs-12 col-md-12">
+            <div class="panel">
+                <div class="panel-heading chat-top-bar">
+                    <div class="col-md-8 col-xs-8">
+                        <h3 class="panel-title">Chat Box</h3>
+                    </div>
+
+                </div>
+                <div class="panel-body" style="max-height: 74vh; height: 74vh;">
+                    <div class="msg-container-base">
+                        <div class="row msg-container" *ngFor="let message of messages">
+                            <div class="col-md-12 col-xs-12">
+                                <div class="chat-msg" [ngClass]="{'chat-msg-sent': selfAuthored, 'chat-msg-receive': !selfAuthored}">
+                                    <img *ngIf="message.imageUrl" class="profile" [ngClass]="{'pull-right': selfAuthored, 'pull-left': !selfAuthored}" [src]="message.imageUrl" alt="">
+                                    <p>{{message.text}}</p>
+                                    <div class="chat-msg-author">
+                                        <strong>{{message.username}}</strong>&nbsp;
+                                        <span class="time">Sent at: {{message.date | date:'shortTime'}}</span>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="chat-bottom-bar">
+                        <form style="display: inherit;" (ngSubmit)="sendMessage()" action="">
+                            <div class="input-group">
+                                <input type="text" class="form-control input-sm chat-input" placeholder="Enter message" [(ngModel)]="messageText" name="messageText">
+                                <span class="input-group-btn"></span>
+                                <input type="submit" class="btn btn-sm chat-submit-button" value="Send">
+
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
 </div>
 
 <script src="/socket.io/socket.io.js"></script>

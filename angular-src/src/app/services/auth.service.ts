@@ -132,7 +132,7 @@ export class AuthService {
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
     if(this.isDev) {
-      return this.http.post('http://localhost:8080/users/reset/:token', reset,  {headers: headers}).map(res => res.json());
+      return this.http.post('http://localhost:8080/users/reset/', reset,  {headers: headers}).map(res => res.json());
     }else{
       return this.http.post('users/reset', reset, {headers: headers}).map(res => res.json());
     }

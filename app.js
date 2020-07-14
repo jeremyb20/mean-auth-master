@@ -16,16 +16,6 @@ const flash = require('express-flash');
 // Port Number
 const port = process.env.PORT || 8080;
  
-// Connect To Database (OLD CODE)
-// mongoose.connect(config.database, { useMongoClient: true});
-// // On Connection
-// mongoose.connection.on('connected', () => {
-//   console.log('Connected to Database '+config.database);
-// });
-// // On Error
-// mongoose.connection.on('error', (err) => {
-//   console.log('Database error '+err);
-// });
 mongoose.set('useCreateIndex', true);
 mongoose.set('useNewUrlParser', true);
 mongoose.set('useFindAndModify', false);
@@ -111,25 +101,46 @@ var server = app.listen(port, () => {
 });
 
 let io = socket(server)
-io.on('connection', function(socket){
+io.on('connection', (socket) =>{
   console.log(`${socket.id} is connected`);
 
-  socket.on('disconnect', function(){
-    console.log('User discconected');
+  // socket.on('disconnect', function(socket){
+  //   console.log('User'+socket+'discconected');
+  // });
+
+  socket.on('send-message', (data) => {
+    io.emit('message-received', data);
   });
+
+
+
+  
 
   // socket.on('message', (message) => {
   //   console.log("Message reveived:" + message);
-  //   io.emit('message', {type:'new-message', text:message});
+  //   io.emit('message', {username:message.username, message:message.message, timeNow: message.timeNow});
   // });
 
-  socket.on('message', (message) => {
-    console.log("Message reveived:" + message);
-    io.emit('message', {username:message.username, message:message.message, timeNow: message.timeNow});
-  });
+  // socket.on('typing', (data)=> {
+  //   socket.broadcast.emit('typing',data);
+  // })
 
-  socket.on('typing', (data)=> {
-    socket.broadcast.emit('typing',data);
-  })
+
+
+  // socket.on('event1', (data)=> {
+  //   console.log(data.msg);
+  // });
+
+  // socket.emit('event2', {
+  //   msg:' Server to client, do you read me?'
+  // });
+
+
+  // socket.on('event3', (data) => {
+  //   console.log("Message reveived:" + data.msg);
+  //   socket.emit('evet4', {
+  //     msg: 'Loud and clear'
+  //   });
+  // });
 
 });
