@@ -586,7 +586,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "body {\n  background-color: #3498db;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n  text-rendering: optimizeLegibility;\n}\n\n.container {\n  /* margin: 60px auto; */\n  background: #fff;\n  padding: 0;\n  border-radius: 7px;\n}\n\n.test {\n  margin: inherit;\n  margin-right: 10px;\n}\n\n.profile-image {\n  width: 50px;\n  height: 50px;\n  border-radius: 40px;\n}\n\n.settings-tray {\n  background: #eee;\n  padding: 10px 15px;\n  border-radius: 7px;\n}\n.settings-tray .no-gutters {\n  padding: 0;\n}\n.settings-tray--right {\n  float: right;\n}\n.settings-tray--right i {\n  margin-top: 10px;\n  font-size: 25px;\n  color: grey;\n  margin-left: 14px;\n  transition: .3s;\n}\n.settings-tray--right i:hover {\n  color: #74b9ff;\n  cursor: pointer;\n}\n\n.search-box {\n  background: #fafafa;\n  padding: 10px 13px;\n}\n.search-box .input-wrapper {\n  background: #fff;\n  border-radius: 40px;\n}\n.search-box .input-wrapper i {\n  color: grey;\n  margin-left: 7px;\n  vertical-align: middle;\n}\n\ninput {\n  border: none;\n  border-radius: 30px;\n  width: 80%;\n}\ninput:-ms-input-placeholder {\n  color: #e3e3e3;\n  font-weight: 300;\n  margin-left: 20px;\n}\ninput::placeholder {\n  color: #e3e3e3;\n  font-weight: 300;\n  margin-left: 20px;\n}\ninput:focus {\n  outline: none;\n}\n\n.friend-drawer {\n  padding: 10px 15px;\n  display: -ms-flexbox;\n  display: flex;\n  vertical-align: baseline;\n  background: #fff;\n  transition: .3s ease;\n}\n.friend-drawer--grey {\n  background: #eee;\n}\n\n@media screen and (max-width:768px){\n  .friend-drawer .text {\n    margin-left: 12px !important;\n    width: 40% !important;\n  }\n}\n\n.friend-drawer .text {\n  margin-left: 12px;\n  width: 80%;\n}\n.friend-drawer .text h6 {\n  margin-top: 6px;\n  margin-bottom: 0;\n}\n.friend-drawer .text p {\n  margin: 0;\n}\n.friend-drawer .time {\n  color: grey;\n}\n.friend-drawer--onhover:hover {\n  background: #74b9ff;\n  cursor: pointer;\n}\n.friend-drawer--onhover:hover p,\n.friend-drawer--onhover:hover h6,\n.friend-drawer--onhover:hover .time {\n  color: #fff !important;\n}\n\nhr {\n  margin: 5px auto;\n  width: 60%;\n}\n.chat-panel {\n  height: 100%;\n  -ms-flex:1;\n      flex:1;\n  overflow-y: auto;\n  overflow-x: hidden;\n  position: relative;\n}\n\n@media screen and (max-width:768px){\n  .chat-content {\n    max-height: 79vh !important;\n    height: 79vh !important;\n  }\n  .offset-md-9 .chat-bubble {\n    right: 0 !important;\n    background: #74b9ff;\n    color: #fff;\n    float: right;\n    max-width: 77% !important;\n\n  }\n  .chat-bubble--left:after {\n    left: 0;\n    border-right-color: #eee;\n    border-left: 0;\n  }\n  .max-left-msg {\n    max-width: 80% !important;\n  }\n  .chat-bubble--right:after {\n    right: 0 !important;\n    border-left-color: #74b9ff !important;\n    border-right: 0 !important;\n  }\n  .text-clock {\n    font-size: 10px !important;\n    float: right !important;\n    margin-top: 10px !important;\n    margin-left: 10px !important;\n  }\n}\n\n.chat-bubble {\n  padding: 10px 14px;\n  background: #82e03a;\n  margin: 10px 0px;\n  width: -webkit-max-content;\n  width: -moz-max-content;\n  width: max-content;\n  border-radius: 9px;\n  position: relative;\n  animation: fadeIn 1s ease-in;\n}\n.chat-bubble:after {\n  content: '';\n  position: absolute;\n  top: 50%;\n  width: 0;\n  height: 0;\n  border: 20px solid transparent;\n  border-bottom: 0;\n  margin-top: -10px;\n}\n.chat-bubble--left:after {\n  left: 0;\n  border-right-color: #eee;\n  border-left: 0;\n  margin-left: -20px;\n  max-width: 77% !important;\n}\n.max-left-msg {\n  max-width: 270% ;\n}\n.max-left-msg-right {\n  max-width:  270%;\n  float: right;\n  right: 0px;\n}\n.chat-bubble--right:after {\n  right: 0;\n  border-left-color: #74b9ff;\n  border-right: 0;\n  margin-right: -20px;\n}\n\n@keyframes fadeIn {\n  0% {\n    opacity: 0;\n  }\n  100% {\n    opacity: 1;\n  }\n}\n.offset-md-9 .chat-bubble {\n  background: #74b9ff;\n  color: #fff;\n}\n\n/* .body-content {\n  height: 74vh;\n} */\n\n#data-list-container{\n  max-height: 79vh;\n}\n\n.message-content {\n  max-height: 80vh;\n  height: 80vh;\n}\n\n.text-clock {\n  font-size: 10px;\n  float: right;\n  margin-top: 10px;\n  margin-left: 10px;\n}\n\n.chat-box-tray {\n  background: #eee;\n  display: -ms-flexbox;\n  display: flex;\n  -ms-flex-align: baseline;\n      align-items: baseline;\n  padding: 5px;\n  -ms-flex-align: center;\n      align-items: center;\n  bottom: 0;\n}\n.chat-box-tray input {\n  margin: 0 10px;\n  padding: 6px 2px;\n}\n.chat-box-tray i {\n  color: grey;\n  font-size: 30px;\n  vertical-align: middle;\n}\n.chat-box-tray i:last-of-type {\n  margin-left: 25px;\n}\n#data-list-container {\n  height: 100%;\n  -ms-flex:1;\n      flex:1;\n  overflow-y: auto;\n  position: relative;\n}\n\n.star_new_message {\n  text-align: center;\n  vertical-align: middle;\n  margin-top: 90px;   \n}", ""]);
+exports.push([module.i, "body {\n  background-color: #3498db;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n  text-rendering: optimizeLegibility;\n}\n\n.container {\n  /* margin: 60px auto; */\n  background: #fff;\n  padding: 0;\n  border-radius: 7px;\n}\n\n.test {\n  margin: inherit;\n  margin-right: 10px;\n}\n\n.profile-image {\n  width: 50px;\n  height: 50px;\n  border-radius: 40px;\n}\n\n.settings-tray {\n  background: #eee;\n  padding: 10px 15px;\n  border-radius: 7px;\n}\n.settings-tray .no-gutters {\n  padding: 0;\n}\n.settings-tray--right {\n  float: right;\n}\n.settings-tray--right i {\n  margin-top: 10px;\n  font-size: 25px;\n  color: grey;\n  margin-left: 14px;\n  transition: .3s;\n}\n.settings-tray--right i:hover {\n  color: #74b9ff;\n  cursor: pointer;\n}\n\n.search-box {\n  background: #fafafa;\n  padding: 10px 13px;\n}\n.search-box .input-wrapper {\n  background: #fff;\n  border-radius: 40px;\n}\n.search-box .input-wrapper i {\n  color: grey;\n  margin-left: 7px;\n  vertical-align: middle;\n}\n\ninput {\n  border: none;\n  border-radius: 30px;\n  width: 80%;\n}\ninput:-ms-input-placeholder {\n  color: #e3e3e3;\n  font-weight: 300;\n  margin-left: 20px;\n}\ninput::placeholder {\n  color: #e3e3e3;\n  font-weight: 300;\n  margin-left: 20px;\n}\ninput:focus {\n  outline: none;\n}\n\n.friend-drawer {\n  padding: 10px 15px;\n  display: -ms-flexbox;\n  display: flex;\n  vertical-align: baseline;\n  background: #fff;\n  transition: .3s ease;\n}\n.friend-drawer--grey {\n  background: #eee;\n}\n\n@media screen and (max-width:768px){\n  .friend-drawer .text {\n    margin-left: 12px !important;\n    width: 40% !important;\n  }\n}\n\n.friend-drawer .text {\n  margin-left: 12px;\n  width: 80%;\n}\n.friend-drawer .text h6 {\n  margin-top: 6px;\n  margin-bottom: 0;\n}\n.friend-drawer .text p {\n  margin: 0;\n}\n.friend-drawer .time {\n  color: grey;\n}\n.friend-drawer--onhover:hover {\n  background: #74b9ff;\n  cursor: pointer;\n}\n.friend-drawer--onhover:hover p,\n.friend-drawer--onhover:hover h6,\n.friend-drawer--onhover:hover .time {\n  color: #fff !important;\n}\n\nhr {\n  margin: 5px auto;\n  width: 60%;\n}\n.chat-panel {\n  height: 100%;\n  -ms-flex:1;\n      flex:1;\n  overflow-y: auto;\n  overflow-x: hidden;\n  position: relative;\n  display: -ms-flexbox;\n  display: flex;\n  -ms-flex-direction: column-reverse;\n      flex-direction: column-reverse;\n}\n\n@media screen and (max-width:768px){\n  .chat-content {\n    max-height: 79vh !important;\n    height: 79vh !important;\n  }\n  .offset-md-9 .chat-bubble {\n    right: 0 !important;\n    background: #74b9ff;\n    color: #fff;\n    float: right;\n    max-width: 77% !important;\n\n  }\n  .chat-bubble--left:after {\n    left: 0;\n    border-right-color: #eee;\n    border-left: 0;\n  }\n  .max-left-msg {\n    max-width: 80% !important;\n  }\n  .chat-bubble--right:after {\n    right: 0 !important;\n    border-left-color: #74b9ff !important;\n    border-right: 0 !important;\n  }\n  .text-clock {\n    font-size: 10px !important;\n    float: right !important;\n    margin-top: 10px !important;\n    margin-left: 10px !important;\n  }\n}\n\n.chat-bubble {\n  padding: 10px 14px;\n  background: #82e03a;\n  margin: 10px 0px;\n  width: -webkit-max-content;\n  width: -moz-max-content;\n  width: max-content;\n  border-radius: 9px;\n  position: relative;\n  animation: fadeIn 1s ease-in;\n}\n.chat-bubble:after {\n  content: '';\n  position: absolute;\n  top: 50%;\n  width: 0;\n  height: 0;\n  border: 20px solid transparent;\n  border-bottom: 0;\n  margin-top: -10px;\n}\n.chat-bubble--left:after {\n  left: 0;\n  border-right-color: #eee;\n  border-left: 0;\n  margin-left: -20px;\n  max-width: 77% !important;\n}\n.max-left-msg {\n  max-width: 270% ;\n}\n.max-left-msg-right {\n  max-width:  270%;\n  float: right;\n  right: 0px;\n}\n.chat-bubble--right:after {\n  right: 0;\n  border-left-color: #74b9ff;\n  border-right: 0;\n  margin-right: -20px;\n}\n\n@keyframes fadeIn {\n  0% {\n    opacity: 0;\n  }\n  100% {\n    opacity: 1;\n  }\n}\n.offset-md-9 .chat-bubble {\n  background: #74b9ff;\n  color: #fff;\n}\n\n/* .body-content {\n  height: 74vh;\n} */\n\n#data-list-container{\n  max-height: 79vh;\n}\n\n.message-content {\n  max-height: 80vh;\n  height: 80vh;\n}\n\n.text-clock {\n  font-size: 10px;\n  float: right;\n  margin-top: 10px;\n  margin-left: 10px;\n}\n\n.chat-box-tray {\n  background: #eee;\n  display: -ms-flexbox;\n  display: flex;\n  -ms-flex-align: baseline;\n      align-items: baseline;\n  padding: 5px;\n  -ms-flex-align: center;\n      align-items: center;\n  bottom: 0;\n}\n.chat-box-tray input {\n  margin: 0 10px;\n  padding: 6px 2px;\n}\n.chat-box-tray i {\n  color: grey;\n  font-size: 30px;\n  vertical-align: middle;\n}\n.chat-box-tray i:last-of-type {\n  margin-left: 25px;\n}\n#data-list-container {\n  height: 100%;\n  -ms-flex:1;\n      flex:1;\n  overflow-y: auto;\n  position: relative;\n}\n\n.star_new_message {\n  text-align: center;\n  vertical-align: middle;\n  margin-top: 90px;   \n}", ""]);
 
 // exports
 
@@ -1017,7 +1017,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/profile/profile.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div *ngIf=\"user\" class=\"container bootstrap snippet\">\n  <div class=\"row\">\n    <div class=\"col-sm-3\"><!--left col-->\n      <div class=\"text-center\">\n        <img [src]=\"user.photo\" class=\"avatar img-circle img-thumbnail\" alt=\"avatar\">\n        <h6>Upload a different photo...</h6>\n        <!-- <input type=\"file\" class=\"text-center center-block file-upload\"> -->\n      </div>\n        <ul class=\"list-group\">\n          <li class=\"list-group-item text-muted\">Activity <i class=\"fa fa-dashboard fa-1x\"></i></li>\n          <li class=\"list-group-item text-right\"><span class=\"pull-left\"><strong>Shares</strong></span> 125</li>\n          <li class=\"list-group-item text-right\"><span class=\"pull-left\"><strong>Likes</strong></span> 13</li>\n          <li class=\"list-group-item text-right\"><span class=\"pull-left\"><strong>Posts</strong></span> 37</li>\n          <li class=\"list-group-item text-right\"><span class=\"pull-left\"><strong>Followers</strong></span> 78</li>\n        </ul> \n    </div><!--/col-3-->\n    <div class=\"col-sm-9\">\n        <div class=\"tab-content\">\n          <div class=\"tab-pane active\">\n              <form class=\"form\" (ngSubmit)=\"updateUserDetails(user)\">\n                    <div class=\"form-group\">\n                        <div class=\"col-xs-6\">\n                            <label for=\"first_name\"><h4>Name</h4></label>\n                            <input type=\"text\" class=\"form-control\" name=\"first_name\" [(ngModel)]=\"user.name\" placeholder=\"first name\" title=\"enter your first name if any.\">\n                        </div>\n                    </div>\n                    <div class=\"form-group\">\n                        \n                        <div class=\"col-xs-6\">\n                          <label for=\"username\"><h4>Username </h4></label>\n                            <input type=\"text\" class=\"form-control\" name=\"username\" [(ngModel)]=\"user.username\" placeholder=\"last name\" title=\"enter your last name if any.\">\n                        </div>\n                    </div>\n        \n                    <div class=\"form-group\">\n                        \n                        <div class=\"col-xs-6\">\n                            <label for=\"phone\"><h4>Phone</h4></label>\n                            <input type=\"text\" class=\"form-control\" name=\"phone\" [(ngModel)]=\"user.phone\" [ngModelOptions]=\"{standalone: true}\" placeholder=\"enter phone\" title=\"enter your phone number if any.\">\n                        </div>\n                    </div>\n                    <div class=\"form-group\">\n                        \n                        <div class=\"col-xs-6\">\n                            <label for=\"email\"><h4>Email</h4></label>\n                            <input type=\"email\" class=\"form-control\" name=\"email\" [(ngModel)]=\"user.email\" placeholder=\"you@email.com\" title=\"enter your email.\">\n                        </div>\n                    </div>\n                    <div class=\"form-group\">\n                        \n                        <div class=\"col-xs-6\">\n                            <label for=\"address\"><h4>Address</h4></label>\n                            <input type=\"email\" class=\"form-control\" [(ngModel)]=\"user.address\" [ngModelOptions]=\"{standalone: true}\" placeholder=\"somewhere\" title=\"enter a location\">\n                        </div>\n                    </div>\n                   \n                    <div class=\"form-group\">\n                         <div class=\"col-xs-12\">\n                              <br>\n                              <button class=\"btn btn-lg btn-success\"  type=\"submit\"><i class=\"glyphicon glyphicon-ok-sign\"></i> Save</button>\n                               <button class=\"btn btn-lg\" type=\"reset\"><i class=\"glyphicon glyphicon-repeat\"></i> Reset</button>\n                          </div>\n                    </div>\n              </form>\n           </div><!--/tab-pane-->\n             \n        </div><!--/tab-pane-->\n    </div><!--/tab-content-->\n  </div>\n</div><!--/row-->\n                    "
+module.exports = "<div *ngIf=\"user\" class=\"container bootstrap snippet\">\n  <div class=\"row\">\n    <div class=\"col-sm-3\"><!--left col-->\n      <div class=\"text-center\">\n        <img [src]=\"user.photo\" class=\"avatar img-circle img-thumbnail\" alt=\"avatar\">\n        <!-- <input type=\"file\" class=\"text-center center-block file-upload\"> -->\n      </div>\n    </div><!--/col-3-->\n    <div class=\"col-sm-9\">\n        <div class=\"tab-content\">\n          <div class=\"tab-pane active\">\n              <form class=\"form\" (ngSubmit)=\"updateUserDetails(user)\">\n                    <div class=\"form-group\">\n                        <div class=\"col-xs-6\">\n                            <label for=\"first_name\"><h4>Name</h4></label>\n                            <input type=\"text\" class=\"form-control\" name=\"first_name\" [(ngModel)]=\"user.name\" placeholder=\"first name\" title=\"enter your first name if any.\">\n                        </div>\n                    </div>\n                    <div class=\"form-group\">\n                        \n                        <div class=\"col-xs-6\">\n                          <label for=\"username\"><h4>Username </h4></label>\n                            <input type=\"text\" class=\"form-control\" name=\"username\" [(ngModel)]=\"user.username\" placeholder=\"last name\" title=\"enter your last name if any.\">\n                        </div>\n                    </div>\n        \n                    <div class=\"form-group\">\n                        \n                        <div class=\"col-xs-6\">\n                            <label for=\"phone\"><h4>Phone</h4></label>\n                            <input type=\"text\" class=\"form-control\" name=\"phone\" [(ngModel)]=\"user.phone\" [ngModelOptions]=\"{standalone: true}\" placeholder=\"enter phone\" title=\"enter your phone number if any.\">\n                        </div>\n                    </div>\n                    <div class=\"form-group\">\n                        \n                        <div class=\"col-xs-6\">\n                            <label for=\"email\"><h4>Email</h4></label>\n                            <input type=\"email\" class=\"form-control\" name=\"email\" [(ngModel)]=\"user.email\" placeholder=\"you@email.com\" title=\"enter your email.\">\n                        </div>\n                    </div>\n                    <div class=\"form-group\">\n                        \n                        <div class=\"col-xs-6\">\n                            <label for=\"address\"><h4>Address</h4></label>\n                            <input type=\"email\" class=\"form-control\" [(ngModel)]=\"user.address\" [ngModelOptions]=\"{standalone: true}\" placeholder=\"somewhere\" title=\"enter a location\">\n                        </div>\n                    </div>\n                   \n                    <div class=\"form-group\">\n                         <div class=\"col-xs-12\">\n                              <br>\n                              <button class=\"btn btn-lg btn-success\"  type=\"submit\"><i class=\"glyphicon glyphicon-ok-sign\"></i> Save</button>\n                               <button class=\"btn btn-lg\" type=\"reset\"><i class=\"glyphicon glyphicon-repeat\"></i> Reset</button>\n                          </div>\n                    </div>\n              </form>\n           </div><!--/tab-pane-->\n             \n        </div><!--/tab-pane-->\n    </div><!--/tab-content-->\n  </div>\n</div><!--/row-->\n                    "
 
 /***/ }),
 
@@ -1330,7 +1330,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "/* .page-header{\n    background-color: black;\n}\n\nbody {\n    font-family: Arial, Helvetica, sans-serif;\n}\n\n#chat-container {\n    max-width: 600px;\n    margin: 30px auto;\n    border: 1px solid #ddd;\n    box-shadow: 1px 3px 5px rgba(0,0,0,0.5);\n}\n\n#chat-window {\n    padding: 14px 0;\n    margin:  0 20px;\n    border-bottom:  1px solid #e9e9e9;\n    color: #555;\n}\n\n#output p {\n    color: #aaa;\n    padding: 14px 0;\n    margin: 0 20px;\n}\n\n#actions p {\n    padding: 14px 0;\n    margin: 0 20px;\n    border-bottom: 1px solid #e9e9e9;\n    color: #555;\n}\n\ninput {\n    padding: 10px 20px ;\n    box-sizing: border-box;\n    border: 0;\n    background-color: #eee;\n    display: block;\n    width: 100%;\n}\n\nbutton {\n    background-color: #575ed8;\n    color: #fff;\n    font-size: 18px;\n    border: 0;\n    padding: 12px 0;\n    width: 100%;\n    border-radius: 5px;\n} */\n\n/* line 3, ../sass/components/chat-window.scss */\n.chat-window {\n    margin: 0;\n    padding: 0;\n    width: 100%;\n    height: 100%;\n}\n  /* line 9, ../sass/components/chat-window.scss */\n  .chat-window .col-xs-12.col-md-12 {\n    padding: 0;\n    height: 100%;\n  }\n  /* line 13, ../sass/components/chat-window.scss */\n  .chat-window .panel {\n    border: 0;\n    border-radius: 5px 5px 0 0;\n    margin-bottom: 0;\n    height: 100%;\n  }\n  \n  /* line 3, ../sass/components/chat-top-bar.scss */\n  .chat-top-bar {\n    background: #666;\n    color: #fff;\n    overflow: hidden;\n    padding: 10px;\n    position: relative;\n    height: 70px;\n    max-height: 70px;\n    border-radius: 0;\n  }\n  /* line 13, ../sass/components/chat-top-bar.scss */\n  .chat-top-bar .icon-minim {\n    padding: 2px 10px;\n  }\n  \n  /* line 3, ../sass/components/chat-bottom-bar.scss */\n  .chat-bottom-bar {\n    overflow: hidden;\n    padding: 10px;\n    position: relative;\n    height: 70px;\n    max-height: 70px;\n  }\n  /* line 10, ../sass/components/chat-bottom-bar.scss */\n  .chat-bottom-bar .icon-minim {\n    padding: 2px 10px;\n  }\n  /* line 14, ../sass/components/chat-bottom-bar.scss */\n  .chat-bottom-bar input {\n    height: calc(70px - 30px);\n  }\n  \n  /* line 4, ../sass/components/chat-msg-container.scss */\n  .msg-container-base {\n    background: #e5e5e5;\n    margin: 0;\n    height: calc(100% - 140px);\n    overflow-x: hidden;\n    padding: 0 10px 10px;\n  }\n  /* line 11, ../sass/components/chat-msg-container.scss */\n  .msg-container-base::-webkit-scrollbar-track {\n    background-color: #f5f5f5;\n    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);\n  }\n  /* line 16, ../sass/components/chat-msg-container.scss */\n  .msg-container-base::-webkit-scrollbar {\n    background-color: #f5f5f5;\n    width: 12px;\n  }\n  /* line 21, ../sass/components/chat-msg-container.scss */\n  .msg-container-base::-webkit-scrollbar-thumb {\n    background-color: #555;\n    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);\n  }\n  /* line 26, ../sass/components/chat-msg-container.scss */\n  .msg-container-base .msg-container {\n    display: -ms-flexbox;\n    display: flex;\n    overflow: hidden;\n    padding: 10px;\n  }\n  \n  /* line 2, ../sass/components/chat-msg.scss */\n  .chat-msg {\n    background: #fff;\n    border-radius: 2px;\n    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);\n    max-width: 100%;\n    padding: 10px;\n  }\n  /* line 9, ../sass/components/chat-msg.scss */\n  .chat-msg p {\n    font-size: 13px;\n    margin: 0 0 .2rem;\n  }\n  /* line 14, ../sass/components/chat-msg.scss */\n  .chat-msg time {\n    color: #ccc;\n    font-size: 11px;\n  }\n  /* line 19, ../sass/components/chat-msg.scss */\n  .chat-msg .chat-msg-author {\n    display: block;\n  }\n  /* line 23, ../sass/components/chat-msg.scss */\n  .chat-msg.chat-msg-receive {\n    margin-right: 0;\n    padding-bottom: 20px;\n  }\n  /* line 28, ../sass/components/chat-msg.scss */\n  .chat-msg.chat-msg-sent {\n    margin-right: 0;\n    padding-bottom: 20px;\n  }\n  /* line 32, ../sass/components/chat-msg.scss */\n  .chat-msg.chat-msg-sent .chat-msg-author {\n    text-align: right;\n  }\n  /* line 36, ../sass/components/chat-msg.scss */\n  .chat-msg.chat-msg-sent time {\n    float: right;\n  }", ""]);
+exports.push([module.i, "/* .page-header{\n    background-color: black;\n}\n\nbody {\n    font-family: Arial, Helvetica, sans-serif;\n}\n\n#chat-container {\n    max-width: 600px;\n    margin: 30px auto;\n    border: 1px solid #ddd;\n    box-shadow: 1px 3px 5px rgba(0,0,0,0.5);\n}\n\n#chat-window {\n    padding: 14px 0;\n    margin:  0 20px;\n    border-bottom:  1px solid #e9e9e9;\n    color: #555;\n}\n\n#output p {\n    color: #aaa;\n    padding: 14px 0;\n    margin: 0 20px;\n}\n\n#actions p {\n    padding: 14px 0;\n    margin: 0 20px;\n    border-bottom: 1px solid #e9e9e9;\n    color: #555;\n}\n\ninput {\n    padding: 10px 20px ;\n    box-sizing: border-box;\n    border: 0;\n    background-color: #eee;\n    display: block;\n    width: 100%;\n}\n\nbutton {\n    background-color: #575ed8;\n    color: #fff;\n    font-size: 18px;\n    border: 0;\n    padding: 12px 0;\n    width: 100%;\n    border-radius: 5px;\n} */\n\n/* line 3, ../sass/components/chat-window.scss */\n.chat-window {\n    margin: 0;\n    padding: 0;\n    width: 100%;\n    height: 100%;\n}\n  /* line 9, ../sass/components/chat-window.scss */\n  .chat-window .col-xs-12.col-md-12 {\n    padding: 0;\n    height: 100%;\n  }\n  /* line 13, ../sass/components/chat-window.scss */\n  .chat-window .panel {\n    border: 0;\n    border-radius: 5px 5px 0 0;\n    margin-bottom: 0;\n    height: 100%;\n  }\n  \n  /* line 3, ../sass/components/chat-top-bar.scss */\n  .chat-top-bar {\n    background: #666;\n    color: #fff;\n    overflow: hidden;\n    padding: 10px;\n    position: relative;\n    height: 70px;\n    max-height: 70px;\n    border-radius: 0;\n  }\n  /* line 13, ../sass/components/chat-top-bar.scss */\n  .chat-top-bar .icon-minim {\n    padding: 2px 10px;\n  }\n  \n  /* line 3, ../sass/components/chat-bottom-bar.scss */\n  .chat-bottom-bar {\n    overflow: hidden;\n    padding: 10px;\n    position: relative;\n    height: 70px;\n    max-height: 70px;\n  }\n  /* line 10, ../sass/components/chat-bottom-bar.scss */\n  .chat-bottom-bar .icon-minim {\n    padding: 2px 10px;\n  }\n  /* line 14, ../sass/components/chat-bottom-bar.scss */\n  .chat-bottom-bar input {\n    height: calc(70px - 30px);\n  }\n  \n  /* line 4, ../sass/components/chat-msg-container.scss */\n  .msg-container-base {\n    background: #e5e5e5;\n    margin: 0;\n    height: calc(100% - 140px);\n    overflow: scroll;\n    overflow-x: hidden;\n    padding: 0 10px 10px;\n  }\n  /* line 11, ../sass/components/chat-msg-container.scss */\n  .msg-container-base::-webkit-scrollbar-track {\n    background-color: #f5f5f5;\n    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);\n  }\n  /* line 16, ../sass/components/chat-msg-container.scss */\n  .msg-container-base::-webkit-scrollbar {\n    background-color: #f5f5f5;\n    width: 12px;\n  }\n  /* line 21, ../sass/components/chat-msg-container.scss */\n  .msg-container-base::-webkit-scrollbar-thumb {\n    background-color: #555;\n    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);\n  }\n  /* line 26, ../sass/components/chat-msg-container.scss */\n  .msg-container-base .msg-container {\n    display: -ms-flexbox;\n    display: flex;\n    overflow: hidden;\n    padding: 10px;\n  }\n  \n  /* line 2, ../sass/components/chat-msg.scss */\n  .chat-msg {\n    background: #fff;\n    border-radius: 2px;\n    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);\n    max-width: 100%;\n    padding: 10px;\n  }\n  /* line 9, ../sass/components/chat-msg.scss */\n  .chat-msg p {\n    font-size: 13px;\n    margin: 0 0 .2rem;\n    float: initial;\n  }\n  /* line 14, ../sass/components/chat-msg.scss */\n  .chat-msg time {\n    color: #ccc;\n    font-size: 11px;\n  }\n  /* line 19, ../sass/components/chat-msg.scss */\n  .chat-msg .chat-msg-author {\n    display: block;\n  }\n  /* line 23, ../sass/components/chat-msg.scss */\n  .chat-msg.chat-msg-receive {\n    margin-right: 0;\n    padding-bottom: 20px;\n  }\n  /* line 28, ../sass/components/chat-msg.scss */\n  .chat-msg.chat-msg-sent {\n    margin-right: 0;\n    padding-bottom: 20px;\n  }\n  /* line 32, ../sass/components/chat-msg.scss */\n  .chat-msg.chat-msg-sent .chat-msg-author {\n    text-align: right;\n  }\n  /* line 36, ../sass/components/chat-msg.scss */\n  .chat-msg.chat-msg-sent time {\n    float: right;\n  }\n  .time {\n    display: block;\n  }\n\n\n\n\n  body {\n  background-color: #3498db;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n  text-rendering: optimizeLegibility;\n}\n\n.container {\n  /* margin: 60px auto; */\n  background: #fff;\n  padding: 0;\n  border-radius: 7px;\n}\n\n.test {\n  margin: inherit;\n  margin-right: 10px;\n}\n\n.profile-image {\n  width: 50px;\n  height: 50px;\n  border-radius: 40px;\n}\n\n.settings-tray {\n  background: #eee;\n  padding: 10px 15px;\n  border-radius: 7px;\n}\n.settings-tray .no-gutters {\n  padding: 0;\n}\n.settings-tray--right {\n  float: right;\n}\n.settings-tray--right i {\n  margin-top: 10px;\n  font-size: 25px;\n  color: grey;\n  margin-left: 14px;\n  transition: .3s;\n}\n.settings-tray--right i:hover {\n  color: #74b9ff;\n  cursor: pointer;\n}\n\n.search-box {\n  background: #fafafa;\n  padding: 10px 13px;\n}\n.search-box .input-wrapper {\n  background: #fff;\n  border-radius: 40px;\n}\n.search-box .input-wrapper i {\n  color: grey;\n  margin-left: 7px;\n  vertical-align: middle;\n}\n\n.search {\n  border: none;\n  border-radius: 30px;\n  width: 80%;\n}\ninput:-ms-input-placeholder {\n  color: #e3e3e3;\n  font-weight: 300;\n  margin-left: 20px;\n}\ninput::placeholder {\n  color: #e3e3e3;\n  font-weight: 300;\n  margin-left: 20px;\n}\ninput:focus {\n  outline: none;\n}\n\n.friend-drawer {\n  padding: 10px 15px;\n  display: -ms-flexbox;\n  display: flex;\n  vertical-align: baseline;\n  transition: .3s ease;\n}\n\n@media screen and (max-width:768px){\n  .friend-drawer .text {\n    margin-left: 12px !important;\n    width: 40% !important;\n  }\n}\n\n.friend-drawer .text {\n  margin-left: 12px;\n  width: 80%;\n}\n.friend-drawer .text h6 {\n  margin-top: 6px;\n  margin-bottom: 0;\n}\n.friend-drawer .text p {\n  margin: 0;\n}\n.friend-drawer .time {\n  color: grey;\n}\n.friend-drawer--onhover:hover {\n  background: #74b9ff;\n  cursor: pointer;\n}\n.friend-drawer--onhover:hover p,\n.friend-drawer--onhover:hover h6,\n.friend-drawer--onhover:hover .time {\n  color: #fff !important;\n}\n\nhr {\n  margin: 5px auto;\n  width: 60%;\n}\n.chat-panel {\n  height: 100%;\n  -ms-flex:1;\n      flex:1;\n  overflow-y: auto;\n  overflow-x: hidden;\n  position: relative;\n  display: -ms-flexbox;\n  display: flex;\n  -ms-flex-direction: column-reverse;\n      flex-direction: column-reverse;\n}\n\n@media screen and (max-width:768px){\n  .chat-content {\n    max-height: 79vh !important;\n    height: 79vh !important;\n  }\n  .offset-md-9 .chat-bubble {\n    right: 0 !important;\n    background: #74b9ff;\n    color: #fff;\n    float: right;\n    max-width: 77% !important;\n\n  }\n  .chat-bubble--left:after {\n    left: 0;\n    border-right-color: #eee;\n    border-left: 0;\n  }\n  .max-left-msg {\n    max-width: 80% !important;\n  }\n  .chat-bubble--right:after {\n    right: 0 !important;\n    border-left-color: #74b9ff !important;\n    border-right: 0 !important;\n  }\n  .text-clock {\n    font-size: 10px !important;\n    float: right !important;\n    margin-top: 10px !important;\n    margin-left: 10px !important;\n  }\n}\n\n.chat-bubble {\n  padding: 10px 14px;\n  background: #82e03a;\n  margin: 10px 0px;\n  width: -webkit-max-content;\n  width: -moz-max-content;\n  width: max-content;\n  border-radius: 9px;\n  position: relative;\n  animation: fadeIn 1s ease-in;\n}\n.chat-bubble:after {\n  content: '';\n  position: absolute;\n  top: 50%;\n  width: 0;\n  height: 0;\n  border: 20px solid transparent;\n  border-bottom: 0;\n  margin-top: -10px;\n}\n.chat-bubble--left:after {\n  left: 0;\n  border-right-color: #eee;\n  border-left: 0;\n  margin-left: -20px;\n  max-width: 77% !important;\n}\n.max-left-msg {\n  max-width: 270% ;\n}\n.max-left-msg-right {\n  max-width:  270%;\n  float: right;\n  right: 0px;\n}\n.chat-bubble--right:after {\n  right: 0;\n  border-left-color: #74b9ff;\n  border-right: 0;\n  margin-right: -20px;\n}\n\n@keyframes fadeIn {\n  0% {\n    opacity: 0;\n  }\n  100% {\n    opacity: 1;\n  }\n}\n.offset-md-9 .chat-bubble {\n  background: #74b9ff;\n  color: #fff;\n}\n\n/* .body-content {\n  height: 74vh;\n} */\n\n#data-list-container{\n  max-height: 79vh;\n}\n\n.message-content {\n  max-height: 80vh;\n  height: 80vh;\n}\n\n.text-clock {\n  font-size: 10px;\n  float: right;\n  margin-top: 10px;\n  margin-left: 10px;\n}\n\n.chat-box-tray {\n  background: #eee;\n  display: -ms-flexbox;\n  display: flex;\n  -ms-flex-align: baseline;\n      align-items: baseline;\n  padding: 5px;\n  -ms-flex-align: center;\n      align-items: center;\n  bottom: 0;\n}\n/* .chat-box-tray input {\n  margin: 0 10px;\n  padding: 6px 2px;\n} */\n.chat-box-tray i {\n  color: grey;\n  font-size: 30px;\n  vertical-align: middle;\n}\n.chat-box-tray i:last-of-type {\n  margin-left: 25px;\n}\n#data-list-container {\n  height: 100%;\n  -ms-flex:1;\n      flex:1;\n  overflow-y: auto;\n  position: relative;\n}\n\n.start_new_message {\n  text-align: center;\n  vertical-align: middle;\n  padding-top: 300px;\n  padding-bottom: 300px;   \n}\n\n.pull-right {\n  float: right !important;\n}", ""]);
 
 // exports
 
@@ -1343,7 +1343,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/settings/settings.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "\n\n<h1>Our Socket.io app test</h1>\n\n<!-- <div id=\"chat-container\">\n    <div id=\"chat-window\">\n        <div *ngFor=\"let item of msgReceived\" id=\"output\">\n          <b><span>{{item.username}}:</span></b>\n          <span>{{item.message}}</span>\n        </div>\n        <div id=\"actions\"></div>\n    </div>\n    <input type=\"text\" id=\"username\" [(ngModel)]=\"username\" placeholder=\"username\">\n    <input type=\"text\" id=\"message\" (ngModelChange)=\"typing(message)\" (keydown.enter)=\"sendMessage($event.target.value)\" [(ngModel)]=\"message\" onfocus=\"this.value=''\" placeholder=\"message\">\n    <button (click)=\"sendMessage()\" id=\"send\">Send</button>\n</div> -->\n\n<div class=\"container\">\n    <div class=\"row chat-window col-xs-5 col-md-8\">\n        <div class=\"col-xs-12 col-md-12\">\n            <div class=\"panel\">\n                <div class=\"panel-heading chat-top-bar\">\n                    <div class=\"col-md-8 col-xs-8\">\n                        <h3 class=\"panel-title\">Chat Box</h3>\n                    </div>\n\n                </div>\n                <div class=\"panel-body\" style=\"max-height: 74vh; height: 74vh;\">\n                    <div class=\"msg-container-base\">\n                        <div class=\"row msg-container\" *ngFor=\"let message of messages\">\n                            <div class=\"col-md-12 col-xs-12\">\n                                <div class=\"chat-msg\" [ngClass]=\"{'chat-msg-sent': selfAuthored, 'chat-msg-receive': !selfAuthored}\">\n                                    <img *ngIf=\"message.imageUrl\" class=\"profile\" [ngClass]=\"{'pull-right': selfAuthored, 'pull-left': !selfAuthored}\" [src]=\"message.imageUrl\" alt=\"\">\n                                    <p>{{message.text}}</p>\n                                    <div class=\"chat-msg-author\">\n                                        <strong>{{message.username}}</strong>&nbsp;\n                                        <span class=\"time\">Sent at: {{message.date | date:'shortTime'}}</span>\n\n                                    </div>\n                                </div>\n                            </div>\n                        </div>\n                    </div>\n                    <div class=\"chat-bottom-bar\">\n                        <form style=\"display: inherit;\" (ngSubmit)=\"sendMessage()\" action=\"\">\n                            <div class=\"input-group\">\n                                <input type=\"text\" class=\"form-control input-sm chat-input\" placeholder=\"Enter message\" [(ngModel)]=\"messageText\" name=\"messageText\">\n                                <span class=\"input-group-btn\"></span>\n                                <input type=\"submit\" class=\"btn btn-sm chat-submit-button\" value=\"Send\">\n\n                            </div>\n                        </form>\n                    </div>\n\n                </div>\n\n            </div>\n\n        </div>\n\n    </div>\n</div>\n\n<script src=\"/socket.io/socket.io.js\"></script>"
+module.exports = "<div *ngFor=\"let s of sizes\" class=\"{{s.css + ' ' + (prefix + s.id) }}\"></div>\n<div *ngIf=\"user\" class=\"container\">\n    <div class=\"row no-gutters\">\n        <div *ngIf=\"!sizeBoolean || showHeaderMsg && !showBodyMsg\" class=\"col-md-4 border-right\">\n            <div class=\"settings-tray\">\n              <img class=\"profile-image\" [src]=\"user.photo\" alt=\"Profile img\">\n              <span class=\"settings-tray--right\">\n                <!-- <h6>{{user.username}}</h6> -->\n                <i class=\"fa fa-refresh\" aria-hidden=\"true\"></i>\n                <i class=\"material-icons\">message</i>\n                <i class=\"material-icons\">menu</i>\n              </span>\n            </div>\n            <div class=\"search-box\">\n              <div class=\"input-wrapper\">\n                <i class=\"fa fa-search\" aria-hidden=\"true\"></i>\n                <input class=\"search\" [(ngModel)]=\"searchTerm\" (ngModelChange)= \"search()\" placeholder=\"Search here\" type=\"text\">\n              </div>\n            </div>\n            <div id='data-list-container'>\n              <div *ngFor=\"let value of allUsers\" class=\"friend-drawer friend-drawer--onhover\" (click)=\"selectUserClick(value, true)\">\n                <img class=\"profile-image\" [src]=\"value.photo\" alt=\"\">\n                <div class=\"text\">\n                  <h6>{{value.username}}</h6>\n                  <p class=\"text-muted\">Hey, you're arrested!</p>\n                </div>\n                <span class=\"time text-muted small\">13:21</span>\n              </div>\n            </div>\n            <hr>\n          </div>\n          <div *ngIf=\"showBodyMsg || size != 0\" class=\"chat-window col-xs-5 col-md-8\">\n            <div class=\"col-xs-12 col-md-12\">\n                <div class=\"panel\">\n                    <!-- <div *ngFor=\"let item of itemUserSelected\" class=\"panel-heading chat-top-bar\">\n                        <div class=\"col-md-8 col-xs-8\">\n                            <h3 class=\"panel-title\">{{item.username}}</h3>\n                        </div>\n                    </div> -->\n                    <div *ngFor=\"let item of itemUserSelected\" class=\"friend-drawer no-gutters panel-heading chat-top-bar\">\n                        <span *ngIf=\"size == 0\" (click)=\"goBackMail(true)\" class=\"settings-tray--right test\">\n                          <i class=\"fa fa-arrow-left\" aria-hidden=\"true\"></i>\n                        </span>\n                        <img class=\"profile-image\" [src]=\"item.photo\" alt=\"\">\n                        <div class=\"text\">\n                          <h6>{{item.username}}</h6>\n                        </div>\n                        <span class=\"settings-tray--right\">\n                          <i class=\"fa fa-refresh\" aria-hidden=\"true\"></i>\n                          <i class=\"material-icons\">menu</i>\n                        </span>\n                      </div>\n                    <div class=\"panel-body\" style=\"max-height: 74vh; height: 74vh;\">\n                        <div class=\"msg-container-base\" *ngIf=\"messages.length > 0\">\n                            <div class=\"row msg-container\" *ngFor=\"let usermessage of messages | orderBy:'date'\">\n                                <div class=\"col-md-12 col-xs-12\">\n                                    <div class=\"chat-msg\" [ngClass]=\"{'chat-msg-sent': usermessage.selfAuthored, 'chat-msg-receive': !usermessage.selfAuthored}\">\n                                        <img *ngIf=\"usermessage.imageUrl\" class=\"profile\" [ngClass]=\"{'pull-right': usermessage.selfAuthored, 'pull-left': !usermessage.selfAuthored}\" [src]=\"usermessage.imageUrl\" alt=\"\">\n                                        <p [ngClass]=\"{'pull-right': usermessage.selfAuthored, 'pull-left': !usermessage.selfAuthored}\">{{usermessage.message}}</p>\n                                        <div class=\"chat-msg-author\">\n                                            <strong>{{usermessage.username}}</strong>&nbsp;\n                                            <span class=\"time\">Sent at: {{usermessage.date | date:'shortTime'}}</span>\n                                        </div>\n                                    </div>\n                                </div>\n                            </div>\n                        </div>\n                        <div class=\"start_new_message\" *ngIf=\"messages.length == 0\">\n                            <h1>Please start a new message </h1>\n                        </div>\n                        <p>{{actions}}</p>\n                        <div class=\"chat-bottom-bar\">\n                            <form style=\"display: inherit;\" (ngSubmit)=\"sendMessage()\" action=\"\">\n                                <div class=\"input-group\">\n                                    <input id=\"messageText\" type=\"text\" class=\"form-control input-sm chat-input\" (keyup.enter)=\"onEnter($event)\" (ngModelChange)=\"typing(messageText)\" placeholder=\"Enter message\" [(ngModel)]=\"messageText\" name=\"messageText\">\n                                    <span class=\"input-group-btn\"></span>\n                                    <input type=\"submit\" class=\"btn btn-sm chat-submit-button\" value=\"Send\">\n    \n                                </div>\n                            </form>\n                        </div>\n    \n                    </div>\n    \n                </div>\n    \n            </div>\n    \n        </div>\n    </div>\n</div>\n\n<script src=\"/socket.io/socket.io.js\"></script>"
 
 /***/ }),
 
@@ -1354,6 +1354,10 @@ module.exports = "\n\n<h1>Our Socket.io app test</h1>\n\n<!-- <div id=\"chat-con
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SettingsComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_chat_service__ = __webpack_require__("../../../../../src/app/services/chat.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_auth_service__ = __webpack_require__("../../../../../src/app/services/auth.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_operators__ = __webpack_require__("../../../../rxjs/_esm5/operators.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_size_detector_resize_service__ = __webpack_require__("../../../../../src/app/services/size-detector/resize-service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__services_size_detector_screen_size_enum__ = __webpack_require__("../../../../../src/app/services/size-detector/screen-size.enum.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1365,67 +1369,230 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
+
+
+
+
 var SettingsComponent = (function () {
     //private socket: any;
-    function SettingsComponent(chat) {
+    function SettingsComponent(chat, resizeSvc, elementRef, authService) {
+        var _this = this;
         this.chat = chat;
+        this.resizeSvc = resizeSvc;
+        this.elementRef = elementRef;
+        this.authService = authService;
         this.msgReceived = [];
         this.avatar = 'https://api.adorable.io/avatars/40/abott@adorable.png';
         this.selfAuthored = false;
-    }
-    SettingsComponent.prototype.ngOnInit = function () {
-        // this.socket = io(environment.ws_url);
-        // this.chat.messages.subscribe(msg => {
-        //   this.msgReceived.push(msg);
-        //   this.username = msg.username
-        // })
-        var _this = this;
-        this.messages = new Array();
-        this.chat.on('message-received', function (msg) {
-            _this.messages.push(msg);
+        this.items = this.itemsCopy;
+        this.itemUserSelected = [];
+        this.allUsers = [];
+        this.prefix = 'is-';
+        this.sizes = [
+            {
+                id: __WEBPACK_IMPORTED_MODULE_5__services_size_detector_screen_size_enum__["a" /* SCREEN_SIZE */].XS, name: 'xs',
+                css: "d-block d-sm-none"
+            },
+            {
+                id: __WEBPACK_IMPORTED_MODULE_5__services_size_detector_screen_size_enum__["a" /* SCREEN_SIZE */].SM, name: 'sm',
+                css: "d-none d-sm-block d-md-none"
+            },
+            {
+                id: __WEBPACK_IMPORTED_MODULE_5__services_size_detector_screen_size_enum__["a" /* SCREEN_SIZE */].MD, name: 'md',
+                css: "d-none d-md-block d-lg-none"
+            },
+            {
+                id: __WEBPACK_IMPORTED_MODULE_5__services_size_detector_screen_size_enum__["a" /* SCREEN_SIZE */].LG, name: 'lg',
+                css: "d-none d-lg-block d-xl-none"
+            },
+            {
+                id: __WEBPACK_IMPORTED_MODULE_5__services_size_detector_screen_size_enum__["a" /* SCREEN_SIZE */].XL, name: 'xl',
+                css: "d-none d-xl-block"
+            },
+        ];
+        this.resizeSvc.onResize$
+            .pipe(Object(__WEBPACK_IMPORTED_MODULE_3_rxjs_operators__["delay"])(0))
+            .subscribe(function (x) {
+            _this.size = x;
+            _this.sizeBoolean = (x == 0) ? true : false;
         });
-        // this.chat.emit('event1', {
-        //   msg:'Client to the server, can you fuck me?'
-        // });
-        // this.chat.on('event2',(data:any)=> {
-        //   console.log(data.msg)
-        //   this.chat.emit('event3', {
-        //     msg: 'Yes its working for me'
-        //   });
-        // });
-        //   this.chat.on('evet4', (data:any)=> {
-        //     console.log(data.msg);
-        //   });
+        if (!this.sizeBoolean || this.sizeBoolean == undefined) {
+            this.showBodyMsg = false;
+            this.showHeaderMsg = true;
+        }
+        else {
+            this.showHeaderMsg = true;
+            this.showBodyMsg = false;
+        }
+    }
+    ;
+    SettingsComponent.prototype.onResize = function () {
+        this.detectScreenSize();
     };
-    // typing(val) {
-    //   console.log(val);
-    //   console.log(this.username);
-    //   this.chat.emit('typing',this.username);
-    //   this.chat.on('chat:typing',function(data){
-    //     this.actions.innerHTML = `<p><em>${data} is typing a message</em></p>`;
-    //   })
-    // }
+    SettingsComponent.prototype.ngAfterViewInit = function () {
+        this.detectScreenSize();
+    };
+    SettingsComponent.prototype.detectScreenSize = function () {
+        var _this = this;
+        var currentSize = this.sizes.find(function (x) {
+            var el = _this.elementRef.nativeElement.querySelector("." + _this.prefix + x.id);
+            var isVisible = window.getComputedStyle(el).display != 'none';
+            return isVisible;
+        });
+        this.resizeSvc.onResize(currentSize.id);
+    };
+    SettingsComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        var isLogged = this.authService.loggedIn();
+        if (isLogged) {
+            this.authService.getProfile().subscribe(function (profile) {
+                _this.user = profile.user;
+                _this.email = profile.user.email;
+            }, function (err) {
+                console.log(err);
+                return false;
+            });
+            this.authService.getUsers().subscribe(function (users) {
+                _this.allUsers = users;
+                _this.itemsCopy = users;
+                for (var i = 0; i < _this.allUsers.length; ++i) {
+                    if (_this.allUsers[i].email === _this.email) {
+                        _this.allUsers.splice(i, 1); // Remove even numbers
+                        // this.selectUserClick(this.allUsers[0],true);
+                    }
+                }
+            }, function (err) {
+                return false;
+            });
+            this.messages = new Array();
+            this.chat.on('message-received', function (msg) {
+                if (_this.user.username == msg.username) {
+                    msg.selfAuthored = false;
+                }
+                else {
+                    msg.selfAuthored = true;
+                }
+                //this.getUserMessages(msg, msg.selfAuthored);
+                _this.messages.push(msg);
+                _this.actions = '';
+            });
+            this.chat.on('typing', function (data) {
+                if (data == 13) {
+                    _this.actions = '';
+                }
+                if (data.text == '') {
+                    _this.actions = '';
+                }
+                if (data.text == null) {
+                    _this.actions = '';
+                }
+                if (data.text != undefined) {
+                    _this.actions = data.username + ' is typing a message';
+                }
+                else {
+                    _this.actions = '';
+                }
+            });
+        }
+    };
+    SettingsComponent.prototype.selectUserClick = function (val, isUserSelected) {
+        if (val != undefined && isUserSelected) {
+            this.messages = [];
+            this.itemUserSelected.push(val);
+            this.getUserMessages(val.message, isUserSelected);
+            if (this.itemUserSelected.length > 1) {
+                this.itemUserSelected.shift();
+            }
+            if (isUserSelected && this.sizeBoolean) {
+                this.showBodyMsg = true;
+                this.showHeaderMsg = false;
+            }
+            else {
+                this.showHeaderMsg = true;
+            }
+        }
+    };
+    SettingsComponent.prototype.getUserMessages = function (data, isMsgSent) {
+        var _this = this;
+        if (data.length != undefined) {
+            if (data.length > 0) {
+                data.forEach(function (item) {
+                    if (item.username == _this.user.username) {
+                        _this.messages.push(item);
+                    }
+                });
+                this.user.message.forEach(function (element) {
+                    element.selfAuthored = true;
+                    _this.messages.push(element);
+                });
+            }
+        }
+    };
+    SettingsComponent.prototype.goBackMail = function (val) {
+        if (val) {
+            this.showBodyMsg = false;
+            this.showHeaderMsg = true;
+        }
+    };
+    SettingsComponent.prototype.search = function () {
+        var term = this.searchTerm;
+        this.allUsers = this.itemsCopy.filter(function (tag) {
+            return tag.name.toLowerCase().indexOf(term) >= 0;
+        });
+    };
+    SettingsComponent.prototype.typing = function (val) {
+        this.actions = '';
+        if (val != undefined) {
+            if (val.length == 1) {
+                var data = {
+                    username: this.user.username,
+                    text: null
+                };
+                this.chat.emit('typing', data);
+            }
+            else {
+                var data = {
+                    username: this.user.username,
+                    text: val
+                };
+                this.chat.emit('typing', data);
+            }
+        }
+    };
+    SettingsComponent.prototype.onEnter = function (e) {
+        this.chat.emit('typing', e.keyCode);
+    };
     SettingsComponent.prototype.sendMessage = function () {
-        // this.data = {
-        //   username: this.username,
-        //   message: this.message
-        // }
-        // this.chat.sendMsg(this.data);
-        var message = {
-            text: this.messageText,
+        var sendMessage = {
+            idUserSent: this.user._id,
+            username: this.itemUserSelected[0].username,
+            message: this.messageText,
             date: new Date(),
             imageUrl: this.avatar
         };
-        this.chat.emit('send-message', message);
-        this.messageText = '';
+        if (sendMessage.message != undefined) {
+            if (sendMessage.message != '') {
+                this.chat.emit('send-message', sendMessage);
+                this.messageText = '';
+            }
+        }
     };
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["HostListener"])("window:resize", []),
+        __metadata("design:type", Function),
+        __metadata("design:paramtypes", []),
+        __metadata("design:returntype", void 0)
+    ], SettingsComponent.prototype, "onResize", null);
     SettingsComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'app-settings',
             template: __webpack_require__("../../../../../src/app/components/settings/settings.component.html"),
             styles: [__webpack_require__("../../../../../src/app/components/settings/settings.component.css")]
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__services_chat_service__["a" /* ChatService */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__services_chat_service__["a" /* ChatService */],
+            __WEBPACK_IMPORTED_MODULE_4__services_size_detector_resize_service__["a" /* ResizeService */],
+            __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"],
+            __WEBPACK_IMPORTED_MODULE_2__services_auth_service__["a" /* AuthService */]])
     ], SettingsComponent);
     return SettingsComponent;
 }());
@@ -1741,12 +1908,12 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 var ChatService = (function () {
     function ChatService(wsService) {
-        // this.messages = <Subject<any>>wsService
-        // .connect()
-        // .map((response:any):any => {
-        //   return response;
-        // })
         this.wsService = wsService;
+        this.messages = wsService
+            .connect()
+            .map(function (response) {
+            return response;
+        });
         this.socket = __WEBPACK_IMPORTED_MODULE_2_socket_io_client__["connect"]();
     }
     ChatService.prototype.on = function (eventName, callback) {

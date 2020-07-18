@@ -55,22 +55,59 @@ const UserSchema = mongoose.Schema ({
       type: String,
       require: true
     },
-    timeNow: {
-      type: String,
-      require : true
-    },
-    day: {
+    date: {
       type: String,
       require: true
     },
-    phone: {
-      type: Number,
+    imageUrl: {
+      type: String,
       require: false
-    },
-    isnew : {
-      type: String,
-      require: true
     }
+    // selfAuthored: {
+    //   type: Boolean,
+    //   require: true
+    // }
+    
+    // text: {
+    //   type: String,
+    //   require: true
+    // },
+    // date: {
+    //   type: String,
+    //   require: true
+    // },
+    // image: {
+    //   type: String,
+    //   require: false
+    // } 
+
+
+
+    // username: {
+    //   type: String,
+    //   required: true,
+    //   unique: true
+    // },
+    // message: {
+    //   type: String,
+    //   require: true
+    // },
+    // timeNow: {
+    //   type: String,
+    //   require : true
+    // },
+    // day: {
+    //   type: String,
+    //   require: true
+    // },
+    // phone: {
+    //   type: Number,
+    //   require: false
+    // },
+    // isnew : {
+    //   type: String,
+    //   require: true
+    // }
   }]
 });
 

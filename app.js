@@ -11,6 +11,8 @@ const socket = require('socket.io');
 const multer = require('multer');
 const session = require('express-session');
 const flash = require('express-flash');
+const router = express.Router();
+const User = require('./back-end/models/user');
 
 
 // Port Number
@@ -104,14 +106,26 @@ let io = socket(server)
 io.on('connection', (socket) =>{
   console.log(`${socket.id} is connected`);
 
-  // socket.on('disconnect', function(socket){
-  //   console.log('User'+socket+'discconected');
-  // });
-
-  socket.on('send-message', (data) => {
-    io.emit('message-received', data);
+  socket.on('disconnect', () => {
+    console.log('user disconnected');
   });
 
+  socket.on('send-message', (data) => {
+    // router.post('/mailbox/sendMessage', (req, res, next) => {
+    //   User.findOneAndUpdate({ _id: req.body.idUserSent }, { $push: { message: req.body  } }).then(function(data){
+    //     res.json({success:true,msg: 'Message sent'});
+    //   });
+    // });
+    const sendMessage = data;
+      User.findOneAndUpdate({ _id: data.idUserSent }, { $push: { message: sendMessage } }).then(function(data){
+        io.emit('message-received', sendMessage);
+      });
+
+  });
+
+  socket.on('typing', (data)=> {
+    socket.broadcast.emit('typing',data);
+  })
 
 
   
