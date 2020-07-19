@@ -11,7 +11,6 @@ const socket = require('socket.io');
 const multer = require('multer');
 const session = require('express-session');
 const flash = require('express-flash');
-const router = express.Router();
 const User = require('./back-end/models/user');
 
 
@@ -111,11 +110,6 @@ io.on('connection', (socket) =>{
   });
 
   socket.on('send-message', (data) => {
-    // router.post('/mailbox/sendMessage', (req, res, next) => {
-    //   User.findOneAndUpdate({ _id: req.body.idUserSent }, { $push: { message: req.body  } }).then(function(data){
-    //     res.json({success:true,msg: 'Message sent'});
-    //   });
-    // });
     const sendMessage = data;
       User.findOneAndUpdate({ _id: data.idUserSent }, { $push: { message: sendMessage } }).then(function(data){
         io.emit('message-received', sendMessage);
@@ -126,35 +120,4 @@ io.on('connection', (socket) =>{
   socket.on('typing', (data)=> {
     socket.broadcast.emit('typing',data);
   })
-
-
-  
-
-  // socket.on('message', (message) => {
-  //   console.log("Message reveived:" + message);
-  //   io.emit('message', {username:message.username, message:message.message, timeNow: message.timeNow});
-  // });
-
-  // socket.on('typing', (data)=> {
-  //   socket.broadcast.emit('typing',data);
-  // })
-
-
-
-  // socket.on('event1', (data)=> {
-  //   console.log(data.msg);
-  // });
-
-  // socket.emit('event2', {
-  //   msg:' Server to client, do you read me?'
-  // });
-
-
-  // socket.on('event3', (data) => {
-  //   console.log("Message reveived:" + data.msg);
-  //   socket.emit('evet4', {
-  //     msg: 'Loud and clear'
-  //   });
-  // });
-
 });

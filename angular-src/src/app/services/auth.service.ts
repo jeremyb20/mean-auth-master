@@ -34,7 +34,7 @@ export class AuthService {
     }
   }
 
-  authenticateUser(user) {
+  authenticateUser(user:any) {
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
     if(this.isDev){
