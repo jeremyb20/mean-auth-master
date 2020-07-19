@@ -1,63 +1,98 @@
-
-
-<h1>Our Socket.io app test</h1>
-
-<!-- <div id="chat-container">
-    <div id="chat-window">
-        <div *ngFor="let item of msgReceived" id="output">
-          <b><span>{{item.username}}:</span></b>
-          <span>{{item.message}}</span>
-        </div>
-        <div id="actions"></div>
-    </div>
-    <input type="text" id="username" [(ngModel)]="username" placeholder="username">
-    <input type="text" id="message" (ngModelChange)="typing(message)" (keydown.enter)="sendMessage($event.target.value)" [(ngModel)]="message" onfocus="this.value=''" placeholder="message">
-    <button (click)="sendMessage()" id="send">Send</button>
-</div> -->
-
-<div class="container">
-    <div class="row chat-window col-xs-5 col-md-8">
-        <div class="col-xs-12 col-md-12">
-            <div class="panel">
-                <div class="panel-heading chat-top-bar">
-                    <div class="col-md-8 col-xs-8">
-                        <h3 class="panel-title">Chat Box</h3>
-                    </div>
-
+<div *ngFor="let s of sizes" class="{{s.css + ' ' + (prefix + s.id) }}"></div>
+<div *ngIf="user" class="container">
+    <div class="row no-gutters">
+        <div *ngIf="!sizeBoolean || showHeaderMsg && !showBodyMsg" class="col-md-4 border-right">
+            <div class="settings-tray">
+              <img class="profile-image" [src]="user.photo" alt="Profile img">
+              <span class="settings-tray--right">
+                <!-- <h6>{{user.username}}</h6> -->
+                <i class="fa fa-refresh" aria-hidden="true"></i>
+                <i class="material-icons">message</i>
+                <i class="material-icons">menu</i>
+              </span>
+            </div>
+            <div class="search-box">
+              <div class="input-wrapper">
+                <i class="fa fa-search" aria-hidden="true"></i>
+                <input class="search" [(ngModel)]="searchTerm" (ngModelChange)= "search()" placeholder="Search here" type="text">
+              </div>
+            </div>
+            <div id='data-list-container'>
+              <div *ngFor="let value of allUsers" class="friend-drawer friend-drawer--onhover" (click)="selectUserClick(value, true)">
+                <img class="profile-image" [src]="value.photo" alt="">
+                <div class="text">
+                  <h6>{{value.username}}</h6>
+                  <p class="text-muted">Hey, you're arrested!</p>
                 </div>
-                <div class="panel-body" style="max-height: 74vh; height: 74vh;">
-                    <div class="msg-container-base">
-                        <div class="row msg-container" *ngFor="let message of messages">
-                            <div class="col-md-12 col-xs-12">
-                                <div class="chat-msg" [ngClass]="{'chat-msg-sent': selfAuthored, 'chat-msg-receive': !selfAuthored}">
-                                    <img *ngIf="message.imageUrl" class="profile" [ngClass]="{'pull-right': selfAuthored, 'pull-left': !selfAuthored}" [src]="message.imageUrl" alt="">
-                                    <p>{{message.text}}</p>
-                                    <div class="chat-msg-author">
-                                        <strong>{{message.username}}</strong>&nbsp;
-                                        <span class="time">Sent at: {{message.date | date:'shortTime'}}</span>
-
+                <span class="time text-muted small">13:21</span>
+              </div>
+            </div>
+            <hr>
+          </div>
+          <div *ngIf="showBodyMsg || size != 0" class="chat-window col-xs-5 col-md-8">
+            <div class="col-xs-12 col-md-12">
+                <div class="panel">
+                    <!-- <div *ngFor="let item of itemUserSelected" class="panel-heading chat-top-bar">
+                        <div class="col-md-8 col-xs-8">
+                            <h3 class="panel-title">{{item.username}}</h3>
+                        </div>
+                    </div> -->
+                    <div *ngFor="let item of itemUserSelected" class="friend-drawer no-gutters panel-heading chat-top-bar">
+                        <span *ngIf="size == 0" (click)="goBackMail(true)" class="settings-tray--right test">
+                          <i class="fa fa-arrow-left" aria-hidden="true"></i>
+                        </span>
+                        <img class="profile-image" [src]="item.photo" alt="">
+                        <div class="text">
+                          <h6>{{item.username}}</h6>
+                        </div>
+                        <span class="settings-tray--right">
+                          <i class="fa fa-refresh" aria-hidden="true"></i>
+                          <i class="material-icons">menu</i>
+                        </span>
+                      </div>
+                    <div class="panel-body" style="max-height: 74vh; height: 74vh;">
+                        <div class="msg-container-base" *ngIf="messages.length > 0" #scrollMe [scrollTop]="scrollMe.scrollHeight">
+                            <div class="row no-gutters msg-container" *ngFor="let usermessage of messages | orderBy:'date'">
+                                <!-- <div class="col-md-12 col-xs-12">
+                                    <div class="chat-msg" [ngClass]="{'chat-msg-sent': usermessage.selfAuthored, 'chat-msg-receive': !usermessage.selfAuthored}">
+                                        <img *ngIf="usermessage.imageUrl" class="profile" [ngClass]="{'pull-right': usermessage.selfAuthored, 'pull-left': !usermessage.selfAuthored}" [src]="usermessage.imageUrl" alt="">
+                                        <p [ngClass]="{'pull-right': usermessage.selfAuthored, 'pull-left': !usermessage.selfAuthored}">{{usermessage.message}}</p>
+                                        <div class="chat-msg-author">
+                                            <strong>{{usermessage.username}}</strong>&nbsp;
+                                            <span class="time">Sent at: {{usermessage.date | date:'shortTime'}}</span>
+                                        </div>
                                     </div>
+                                </div> -->
+                                <div [ngClass]="(usermessage.selfAuthored)?'col-md-3 offset-md-9':'col-md-3 '">
+                                  <div [ngClass]="(usermessage.selfAuthored)?' chat-bubble chat-bubble--right max-left-msg-right':'chat-bubble chat-bubble--left max-left-msg'">
+                                    {{usermessage.message}}
+                                    <span class="text-right text-clock">{{usermessage.date | date:'shortTime'}}</span>
+                                  </div>
                                 </div>
                             </div>
                         </div>
+                        <div class="start_new_message" *ngIf="messages.length == 0">
+                            <h1>Please start a new message </h1>
+                        </div>
+                        <p>{{actions}}</p>
+                        <div class="chat-bottom-bar">
+                            <form style="display: inherit;" (ngSubmit)="sendMessage()" action="">
+                                <div class="input-group">
+                                    <input id="messageText" type="text" class="form-control input-sm chat-input" (keyup.enter)="onEnter($event)" (ngModelChange)="typing(messageText)" placeholder="Enter message" [(ngModel)]="messageText" name="messageText">
+                                    <span class="input-group-btn"></span>
+                                    <input type="submit" class="btn btn-sm chat-submit-button" value="Send">
+    
+                                </div>
+                            </form>
+                        </div>
+    
                     </div>
-                    <div class="chat-bottom-bar">
-                        <form style="display: inherit;" (ngSubmit)="sendMessage()" action="">
-                            <div class="input-group">
-                                <input type="text" class="form-control input-sm chat-input" placeholder="Enter message" [(ngModel)]="messageText" name="messageText">
-                                <span class="input-group-btn"></span>
-                                <input type="submit" class="btn btn-sm chat-submit-button" value="Send">
-
-                            </div>
-                        </form>
-                    </div>
-
+    
                 </div>
-
+    
             </div>
-
+    
         </div>
-
     </div>
 </div>
 
