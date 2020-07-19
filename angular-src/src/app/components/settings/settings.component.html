@@ -51,9 +51,9 @@
                         </span>
                       </div>
                     <div class="panel-body" style="max-height: 74vh; height: 74vh;">
-                        <div class="msg-container-base" *ngIf="messages.length > 0">
-                            <div class="row msg-container" *ngFor="let usermessage of messages | orderBy:'date'">
-                                <div class="col-md-12 col-xs-12">
+                        <div class="msg-container-base" *ngIf="messages.length > 0" #scrollMe [scrollTop]="scrollMe.scrollHeight">
+                            <div class="row no-gutters msg-container" *ngFor="let usermessage of messages | orderBy:'date'">
+                                <!-- <div class="col-md-12 col-xs-12">
                                     <div class="chat-msg" [ngClass]="{'chat-msg-sent': usermessage.selfAuthored, 'chat-msg-receive': !usermessage.selfAuthored}">
                                         <img *ngIf="usermessage.imageUrl" class="profile" [ngClass]="{'pull-right': usermessage.selfAuthored, 'pull-left': !usermessage.selfAuthored}" [src]="usermessage.imageUrl" alt="">
                                         <p [ngClass]="{'pull-right': usermessage.selfAuthored, 'pull-left': !usermessage.selfAuthored}">{{usermessage.message}}</p>
@@ -62,6 +62,12 @@
                                             <span class="time">Sent at: {{usermessage.date | date:'shortTime'}}</span>
                                         </div>
                                     </div>
+                                </div> -->
+                                <div [ngClass]="(usermessage.selfAuthored)?'col-md-3 offset-md-9':'col-md-3 '">
+                                  <div [ngClass]="(usermessage.selfAuthored)?' chat-bubble chat-bubble--right max-left-msg-right':'chat-bubble chat-bubble--left max-left-msg'">
+                                    {{usermessage.message}}
+                                    <span class="text-right text-clock">{{usermessage.date | date:'shortTime'}}</span>
+                                  </div>
                                 </div>
                             </div>
                         </div>
