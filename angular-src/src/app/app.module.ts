@@ -24,6 +24,7 @@ import { OrderByPipe } from './components/mailbox/order-by.pipe';
 import { UsersComponent } from './components/users/users.component';
 import { ForgotComponent } from './components/forgot/forgot.component';
 import { ResetComponent } from './components/reset/reset.component';
+import { ChatComponent } from './components/chat/chat.component';
 
 const appRoutes: Routes =  [
   {path:'', component: HomeComponent},
@@ -35,7 +36,8 @@ const appRoutes: Routes =  [
   {path:'profile', component: ProfileComponent, canActivate:[AuthGuard]},
   {path:'settings', component: SettingsComponent, canActivate:[AuthGuard]},
   {path:'mailbox', component: MailboxComponent, canActivate:[AuthGuard]},
-  {path:'users', component: UsersComponent, canActivate:[AuthGuard]}
+  {path:'users', component: UsersComponent, canActivate:[AuthGuard]},
+  {path:'chat', component: ChatComponent, canActivate:[AuthGuard]}
 ]
 
 @NgModule({
@@ -52,7 +54,8 @@ const appRoutes: Routes =  [
     UsersComponent,
     OrderByPipe,
     ForgotComponent,
-    ResetComponent
+    ResetComponent,
+    ChatComponent
   ],
   imports: [
     BrowserModule,

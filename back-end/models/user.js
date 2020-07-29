@@ -40,6 +40,30 @@ const UserSchema = mongoose.Schema ({
   resetPasswordExpires: {
     type: Date
   },
+  lastMessage:  [{
+    idUserSent: {
+      type: String,
+      require: true,
+      unique: true
+    },
+    username: {
+      type: String,
+      required: true,
+      unique: true
+    },
+    message: {
+      type: String,
+      require: true
+    },
+    date: {
+      type: String,
+      require: true
+    },
+    imageUrl: {
+      type: String,
+      require: false
+    }
+  }],
   message: [{
     idUserSent: {
       type: String,
@@ -63,51 +87,6 @@ const UserSchema = mongoose.Schema ({
       type: String,
       require: false
     }
-    // selfAuthored: {
-    //   type: Boolean,
-    //   require: true
-    // }
-    
-    // text: {
-    //   type: String,
-    //   require: true
-    // },
-    // date: {
-    //   type: String,
-    //   require: true
-    // },
-    // image: {
-    //   type: String,
-    //   require: false
-    // } 
-
-
-
-    // username: {
-    //   type: String,
-    //   required: true,
-    //   unique: true
-    // },
-    // message: {
-    //   type: String,
-    //   require: true
-    // },
-    // timeNow: {
-    //   type: String,
-    //   require : true
-    // },
-    // day: {
-    //   type: String,
-    //   require: true
-    // },
-    // phone: {
-    //   type: Number,
-    //   require: false
-    // },
-    // isnew : {
-    //   type: String,
-    //   require: true
-    // }
   }]
 });
 

@@ -77,6 +77,13 @@ router.get('/profile/getAllUsers', function(req, res){
       res.send('something went really wrong');
       next();
     }
+    users.forEach(element => {
+      if(element.message != undefined){
+        if (element.message.length > 0) {
+          element.lastMessage = element.message.slice(-1)[0];
+        }
+      }
+    });
     res.json(users)
   });
 });
@@ -144,7 +151,7 @@ router.get('/mailbox/getMessages/:id', function(req, res){
 });
 
 router.post('/mailbox/sendMessage', (req, res, next) => {
-  User.findOneAndUpdate({ _id: req.body.idUserSent }, { $push: { message: req.body  } }).then(function(data){
+  User.findOneAndUpdate({ _id: req.body.idUserSent }, { $push: { message: req.body  } }, { $set: { lastMessage: req.body  } }).then(function(data){
     res.json({success:true,msg: 'Message sent'});
   });
 });

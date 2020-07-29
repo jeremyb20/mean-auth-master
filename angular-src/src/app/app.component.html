@@ -17,8 +17,8 @@
                 <!-- <button class="btn btn-primary article" [routerLink]="['/dashboard']">Dashboard</button> -->
                 <button class="btn btn-primary btn-lg article" (click)="goDashboard()">Dashboard</button>
               </p>
-              <li class="active">
-                  <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Home</a>
+              <li class="">
+                  <button href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle button-toggle-navbar">Home</button>
                   <ul class="collapse list-unstyled" id="homeSubmenu">
                       <li *ngIf="authService.loggedIn()" [routerLinkActive]="['active']" [routerLinkActiveOptions] = "{exact:true}">
                             <a class="nav-link" [routerLink]="['/profile']">Profile </a>
@@ -33,7 +33,7 @@
               </li>
               <li>
                   <a href="#">About</a>
-                  <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Pages</a>
+                  <button href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle button-toggle-navbar">Pages</button>
                   <ul class="collapse list-unstyled" id="pageSubmenu">
                       <li>
                           <a href="#">Page 1</a>
@@ -69,7 +69,7 @@
           <nav class="navbar navbar-expand-lg navbar-light bg-light">
               <div *ngIf="authService.loggedIn()" [routerLinkActive]="['active']" [routerLinkActiveOptions] = "{exact:true}" class="container-fluid">
 
-                  <button type="button" id="sidebarCollapse" class="navbar-btn">
+                  <button type="button" id="sidebarCollapse" (click)="isCollapsed = !isCollapsed" class="navbar-btn">
                       <span></span>
                       <span></span>
                       <span></span>
@@ -84,7 +84,7 @@
                               <a class="nav-link" [routerLink]="['/mailbox']">Mailbox</a>
                           </li>
                           <li class="nav-item" *ngIf="authService.loggedIn()" [routerLinkActive]="['active']" [routerLinkActiveOptions] = "{exact:true}">
-                              <a class="nav-link" [routerLink]="['/mailbox']">Chat</a>
+                              <a class="nav-link" [routerLink]="['/chat']">Chat</a>
                           </li>
                           <li class="nav-item" *ngIf="authService.loggedIn()" [routerLinkActive]="['active']" [routerLinkActiveOptions] = "{exact:true}">
                               <a class="nav-link" [routerLink]="['/settings']">Settings</a>

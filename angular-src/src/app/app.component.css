@@ -234,3 +234,37 @@ a.article, a.article:hover {
     }
 
 }
+
+
+.button-toggle-navbar {
+    position: relative;
+    padding: 10px;
+    font-size: 1.1em;
+    display: block;
+    background: transparent;
+    border: none;
+    color: #fff;
+    width: 100%;
+    text-align: inherit;
+}
+.button-toggle-navbar:focus {
+    outline: 0px dotted;
+    /* outline: 5px auto -webkit-focus-ring-color; */
+}
+
+.button-toggle-navbar:hover {
+    background-color: #fff;
+    color: #7386D5;
+}   
+
+.button-toggle-navbar ::after {
+    display: inline-block;
+    margin-left: 0.255em;
+    vertical-align: 0.255em;
+    content: "";
+    border-top: 0.3em solid;
+    border-right: 0.3em solid transparent;
+    border-bottom: 0;
+    border-left: 0.3em solid transparent;
+}
+

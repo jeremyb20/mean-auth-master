@@ -353,7 +353,7 @@ hr {
   width: max-content;
   border-radius: 9px;
   position: relative;
-  animation: fadeIn 1s ease-in;
+  /* animation: fadeIn 1s ease-in; */
 }
 .chat-bubble:after {
   content: '';
@@ -428,10 +428,7 @@ hr {
   align-items: center;
   bottom: 0;
 }
-/* .chat-box-tray input {
-  margin: 0 10px;
-  padding: 6px 2px;
-} */
+
 .chat-box-tray i {
   color: grey;
   font-size: 30px;
@@ -452,6 +449,10 @@ hr {
   vertical-align: middle;
   padding-top: 300px;
   padding-bottom: 300px;   
+}
+
+.text p {
+  color: rgb(230, 166, 64);
 }
 
 .pull-right {
