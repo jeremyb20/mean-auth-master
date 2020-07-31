@@ -12,6 +12,7 @@ const multer = require('multer');
 const session = require('express-session');
 const flash = require('express-flash');
 const User = require('./back-end/models/user');
+const { userJoin, userLeave } = require('./back-end/utils/users');
 
 
 // Port Number
@@ -101,12 +102,45 @@ var server = app.listen(port, () => {
   console.log('Server started on port '+port);
 });
 
+var clients = [];
+
 let io = socket(server)
 io.on('connection', (socket) =>{
   console.log(`${socket.id} is connected`);
+  // socket.on('joinRoom', ({ username, room }) => {
+  //   const user = userJoin(socket.id, username, room);
+
+  //   socket.join(user.room);
+
+  //   // Welcome current user
+  //   socket.emit('message', formatMessage(botName, 'Welcome to ChatCord!'));
+
+  //   // Broadcast when a user connects
+  //   socket.broadcast.to(user.room).emit('message',formatMessage(botName, `${user.username} has joined the chat`));
+
+  //   // Send users and room info
+  //   io.to(user.room).emit('roomUsers', { room: user.room, users: getRoomUsers(user.room)});
+  // });
+
+
+  // socket.broadcast.emit('conection', socket.id);
+  socket.on('user-connected', (data) => {
+    clients = userJoin(socket.id, data);
+    socket.join(clients);
+    io.emit('user-connected', clients);
+  })
 
   socket.on('disconnect', () => {
-    console.log('user disconnected');
+    const user = userLeave(clients);
+    if(clients.username.status === undefined){
+      clients.username.status = "Offline";
+    }else{
+      clients.username.status = "Offline"
+    }
+    
+    if (user) {
+      io.emit('user-connected', clients);
+    }
   });
 
   socket.on('send-message', (data) => {
@@ -114,7 +148,6 @@ io.on('connection', (socket) =>{
       User.findOneAndUpdate({ _id: data.idUserSent }, { $push: { message: sendMessage } }).then(function(data){
         io.emit('message-received', sendMessage);
       });
-
   });
 
   socket.on('typing', (data)=> {

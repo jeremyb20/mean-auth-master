@@ -33,9 +33,17 @@ export class ChatComponent implements OnInit {
   lastMessage: Array<any>;
   items = this.itemsCopy;
   itemUserSelected = [];
-
+  copyUsers = [];
   allUsers = [];
   email: string;
+  userStatus = [
+    {id: 1, name: "Online"},
+    {id: 2, name: "Offline"},
+    {id: 3, name: "Away"},
+    {id: 4, name: "Bussy"},
+    {id: 5, name: "Invisible"}
+  ];
+  selectedStatus = null;
   
   size: SCREEN_SIZE;
   prefix = 'is-';
@@ -113,7 +121,13 @@ export class ChatComponent implements OnInit {
         this.user = profile.user;
         this.email = profile.user.email;
         this.getAllUsers();
+        var user = {
+          username: this.user.username,
+          status: 'Online'
+        }
+        this.user.status = profile.status == undefined? 'Online': profile.status;
         this.getLast(profile.user.message, true);
+        this.chat.emit('user-connected', user);
       },
       err => {
         console.log(err);
@@ -132,6 +146,10 @@ export class ChatComponent implements OnInit {
         this.actions = '';
         this.writing = '';
       });
+
+      this.chat.on('user-connected',(data: any)=> {
+        this.getUsersConected(this.allUsers, data);
+      })
 
       this.chat.on('typing',(data:any) => {
         if(data == 13) {
@@ -172,6 +190,29 @@ export class ChatComponent implements OnInit {
     err => {
       return false;
     });
+  }
+
+  activeClick() {
+    var user = {
+      username: this.user.username,
+      status: this.selectedStatus.name
+    }
+    this.chat.emit('user-connected', user);
+    this.user.status = this.selectedStatus.name;
+  }
+
+  getUsersConected(allUsers:any, userConected:any) {
+    if(allUsers != undefined) {
+      if(allUsers.length > 0){
+        allUsers.forEach((element: { username: any; status: boolean; }) => {
+          if(userConected.username != undefined ){
+            if (element.username == userConected.username.username) {
+              element.status = userConected.username.status;
+            }
+          }
+        });
+      }
+    }
   }
 
   selectUserClick(val:any, isUserSelected:boolean): void {
@@ -235,8 +276,6 @@ export class ChatComponent implements OnInit {
 
   sortDate(val:any) {
     if(val != undefined) {
-      
-
       var bar = new Promise((resolve, reject) => {
         val.sort((a, b) => {
           resolve()

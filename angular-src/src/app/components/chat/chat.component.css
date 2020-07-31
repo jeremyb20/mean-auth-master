@@ -213,12 +213,14 @@ button {
   background: #eee;
   padding: 10px 15px;
   border-radius: 7px;
+  display: flex;
 }
 .settings-tray .no-gutters {
   padding: 0;
 }
 .settings-tray--right {
   float: right;
+  margin-top: 10px;
 }
 .settings-tray--right i {
   margin-top: 10px;
@@ -500,4 +502,61 @@ hr {
 .chat-submit-button:hover {
   background-color: #82e03a;
   color: #000;
+}
+.isOnline {
+  background-color: #82e03a;
+  float: right;
+  height: 10px;
+  width: 10px;
+  border-radius: 5px;
+}
+.Online {
+  background-color: #82e03a;
+}
+
+.isOffline {
+  background-color: rgb(51, 44, 44);
+  float: right;
+  height: 10px;
+  width: 10px;
+  border-radius: 5px;
+}
+.Offline {
+  background-color: rgb(51, 44, 44);
+}
+
+.isAway {
+  background-color: #ffd21f;
+  float: right;
+  height: 10px;
+  width: 10px;
+  border-radius: 5px;
+}
+
+.Away {
+  background-color: #ffd21f;
+}
+
+.isBussy {
+  background-color:#f5455c;
+  float: right;
+  height: 10px;
+  width: 10px;
+  border-radius: 5px;
+}
+
+.Bussy {
+  background-color:#f5455c;
+}
+
+.isInvisible {
+  background-color: #cbced1;
+  float: right;
+  height: 10px;
+  width: 10px;
+  border-radius: 5px;
+}
+
+.Invisible {
+  background-color: #cbced1;
 }

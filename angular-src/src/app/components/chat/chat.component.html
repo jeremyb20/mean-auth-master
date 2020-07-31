@@ -3,13 +3,23 @@
   <div *ngIf="user" class="container-fluid">
     <div class="row no-gutters">
         <div *ngIf="!sizeBoolean || showHeaderMsg && !showBodyMsg" class="col-md-4 border-right">
-            <div class="settings-tray">
-              <img class="profile-image" [src]="user.photo" alt="Profile img">
-              <span class="settings-tray--right">
-                <i class="fa fa-refresh" aria-hidden="true"></i>
-                <i class="material-icons">message</i>
-                <i class="material-icons">menu</i>
-              </span>
+            <div class="settings-tray" [ngClass]="{'Online': user.status === 'Online', 'Offline': user.status === 'Offline', 'Away': user.status === 'Away' , 'Bussy': user.status === 'Bussy', 'Invisible': user.status === 'Invisible' }">
+              <div class="col-md-2 col-sm-2 col-xs-2 col-3">
+                <img class="profile-image" [src]="user.photo" alt="Profile img">
+              </div>
+              <div class="col-md-6 col-sm-6 col-xs-6 col-4 text-center">
+                <select id="inputState" [(ngModel)]="selectedStatus" (change)="activeClick($event.target.value)" class="form-control settings-tray--right">
+                  <option [ngValue]="null" [disabled]="true" >Select Status</option>
+                  <option *ngFor="let status of userStatus" [ngValue]="status">{{status.name}}</option>
+                </select>
+              </div>
+              <div class="col-md-4 col-sm-4 col-xs-4 col-5 .d-sm-none .d-md-block">
+                <span class="settings-tray--right">
+                  <i class="fa fa-refresh" aria-hidden="true"></i>
+                  <i class="material-icons">message</i>
+                  <i class="material-icons">menu</i>
+                </span>
+              </div>
             </div>
             <div class="search-box">
               <div class="input-wrapper">
@@ -19,8 +29,10 @@
             </div>
             <div id='data-list-container'>
               <div *ngFor="let value of allUsers" class="friend-drawer friend-drawer--onhover" (click)="selectUserClick(value, true)">
-                <img class="profile-image" [src]="value.photo" alt="">
+                <img class="profile-image" [src]="value.photo" alt="image">
                 <div class="text">
+                  <div [ngClass]="{'isOnline': value.status === 'Online', 'isOffline': value.status === 'Offline', 'isAway': value.status === 'Away' , 'isBussy': value.status === 'Bussy', 'isInvisible': value.status === 'Invisible' }">
+                  </div>
                   <h6>{{value.username}}</h6>
                   <div *ngFor="let item of value.lastMessage">
                     <span *ngIf='value' class="time-small">{{item.date | date:'shortTime'}}</span>

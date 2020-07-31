@@ -2,6 +2,7 @@ import { Component ,OnInit } from '@angular/core';
 import { AuthService } from './services/auth.service';
 import { Router } from '@angular/router';
 import { FlashMessagesService } from 'angular2-flash-messages';
+import { ChatService } from './services/chat.service';
 
 @Component({
   selector: 'app-root',
@@ -16,6 +17,7 @@ export class AppComponent implements OnInit {
 
   constructor(
     private authService: AuthService,
+    private chat: ChatService,
     private router: Router,
     private flashMessage: FlashMessagesService) { }
 
@@ -24,6 +26,11 @@ export class AppComponent implements OnInit {
       if(isLogged){
         this.authService.getProfile().subscribe(profile => {
           this.user = profile.user;
+          var user = {
+            username: this.user.username,
+            status: 'Online'
+          }
+          this.chat.emit('user-connected', user);
       },
        err => {
          console.log(err);
@@ -51,6 +58,11 @@ export class AppComponent implements OnInit {
 
   closeModel(val) {
     if(val){
+      var user = {
+        username: this.user.username,
+        status: 'Offline'
+      }
+      this.chat.emit('user-connected', user);
       this.onLogoutClick();
       $("#myModal").modal('hide');
     }else{
